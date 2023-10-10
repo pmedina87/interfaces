@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/src/assets/img/logo.ico">
+    <link rel="shortcut icon" href="../assets/img/logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Login</title>
-    <link rel="stylesheet" href="/src/css/app.css">
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
     <div class="container-form" id="container-form-login">
@@ -17,11 +17,11 @@
             <div class="form-control">
                 <div class="campo">
                     <input type="text" name="usuario" id="login-usuario" placeholder="Nombre de usuario">
-                    <img src="/src/assets/img/form/user.svg" alt="Logo de usuario">
+                    <img src="../assets/img/form/user.svg" alt="Logo de usuario">
                 </div>
                 <div class="campo">
                     <input type="password" name="contrasenia" id="login-contrasenia" placeholder="Contrasenia">
-                    <img src="/src/assets/img/form/key.svg" alt="Logo de llave">
+                    <img src="../assets/img/form/key.svg" alt="Logo de llave">
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                     <input type="checkbox" name="chk-captcha" id="chk-captcha">
                     <label for="chk-captcha">No soy un robot</label>
                 </div>
-                <img src="/src/assets/img/recaptcha.svg" alt="ReCaptcha" srcset="">
+                <img src="../assets/img/recaptcha.svg" alt="ReCaptcha" srcset="">
             </div>
             <div class="enviar-form-container">
                 <button type="submit" class="btn-form border-rad" id="btn-loginForm" disabled>Iniciar sesión</button>
@@ -45,24 +45,24 @@
                 </div>
 
                 <div class="flex f-jc-center">
-                    <a href="#"><img src="/src/assets/img/rrss/google.svg" alt="Google"></a>
-                    <a href="#"><img src="/src/assets/img/rrss/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="../assets/img/rrss/google.svg" alt="Google"></a>
+                    <a href="#"><img src="../assets/img/rrss/facebook.svg" alt="Facebook"></a>
                 </div>
             </div>
 
         </form>
     </div>
     <div class="registration-success hidden" id="registration-success-login">
-        <div class="checkmark"><img src="/src/assets/img/iconos/check_icon.svg" alt="Icono de check"></div>
+        <div class="checkmark"><img src="../assets/img/iconos/check_icon.svg" alt="Icono de check"></div>
         <p>¡Registro exitoso!</p>
     </div>
     <div class="registration-error hidden" id="registration-error-login">
-        <div class="notcheckmark"><img src="/src/assets/img/iconos/cruz_icon.svg" alt="Icono de cruz"></div>
+        <div class="notcheckmark"><img src="../assets/img/iconos/cruz_icon.svg" alt="Icono de cruz"></div>
         <p>¡El usuario no ha podido ser autenticado!</p>
         <button type="button" class="btn-form border-rad">
             <a href="login.html">Volver a intentar</a>
         </button>
     </div>
-    <script src="/src/js/login.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>
