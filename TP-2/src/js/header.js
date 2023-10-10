@@ -21,7 +21,7 @@ if(isLogin != null) {
 
 btnCerrarSesionUser.addEventListener('click', function () {
     localStorage.removeItem('login');
-    avatarUser.src = "/src/assets/img/header/perfil.svg";
+    avatarUser.src = "../assets/img/header/perfil.svg";
     menuSinLogear.classList.toggle("hidden");
 		menuLogeado.classList.toggle("hidden");
 });
