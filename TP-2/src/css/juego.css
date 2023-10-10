@@ -1,0 +1,232 @@
+
+.container__juego__total{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-primario-900);
+  width: 100%;
+  padding-block: 2rem;
+  color: var(--color-primario-100);
+}
+
+.grid__juego{
+  display: grid;
+  grid-template-areas: 
+              "juego publicidad"
+              "juego publicidad"
+              "descripcion ."
+              "assets ."
+              "comentarios .";
+  grid-template-columns: 6fr 1fr;
+  gap: 2rem;
+  padding-inline: 1rem;
+  width: 100%;
+}
+
+.publicidad__container{
+  grid-area: publicidad;
+  display: flex;
+  position: sticky;
+  top: 136px;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.publicidad__container img{
+  object-fit: cover;
+  object-position: center;
+}
+
+.juego__container{
+  grid-area: juego;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#juego{
+ 
+  width: 100%;
+  height: 30rem;
+  border-radius: 20px;
+}
+
+.descripcion{
+  grid-area: descripcion;
+}
+
+.descripcion>div{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-block: 1rem;
+}
+
+.controles{
+  display: flex;
+  gap: 3rem;
+}
+
+.controles div{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.controles div img{
+  width: 40px;
+  height: 40px;
+  padding: .4rem;
+  background-color: var(--color-primario-700);
+  border-radius: 50%;
+}
+
+.controles div:first-child img:nth-child(2){
+  rotate: 180deg;
+}
+
+.controles div:first-child img:nth-child(3){
+  rotate: 90deg;
+}
+
+.assets{
+  grid-area: assets;
+  display: flex;
+  gap: 1rem;
+  margin-block: 3rem;
+}
+
+.assets img{
+  border-radius: 20px;
+}
+
+.contenedor__comentarios{
+  grid-area: comentarios;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contenedor__comentarios textarea{
+  color: var(--color-primario-100);
+  width: 100%;
+  margin-top: 1rem;
+  font-family: inherit;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  resize: none;
+  border-bottom: 2px solid var(--color-primario-100);
+}
+
+.contenedor__comentarios textarea::placeholder{
+  color: var(--color-primario-500);
+}
+
+.comentar{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.comentar .buttons{
+  display: flex;
+  align-self: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.comentario{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comentario p{
+  position: relative;
+}
+
+.comentario div span:first-child{
+  margin-right: 1rem;
+}
+
+.comentario>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comentario img{
+  width: 40px;
+  height: 40px;
+}
+
+.assets img {
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  text-align: center;
+  height: 100vh;
+}
+
+.popup img#imagenEnPopup {
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+  display: block;
+}
+
+.popup .cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.me-gusta {
+  fill: aqua;
+}
+
+.animacion-mg {
+  transform: translateY(10px) rotate(360deg);
+
+}
+
+.animacion-nmg {
+  transform: translateY(0px) rotate(-360deg);
+}
+
+.comentario div img {
+  transition: transform 0.5s ease-in-out;
+}
+
+/*aca va la animacion de la galeria*/
+.card_animation{}
+.card_animation:hover{
+  animation: card_animation 200ms cubic-bezier(0.4, 0, 1, 1) forwards;
+  z-index: 1;
+}
+
+@keyframes card_animation{
+  0%{scale: 1;}
+  60%{scale: 1.08;}
+  100%{scale: 1.05;}
+}
+.card_animation:hover{
+  scale: 1.05;
+}

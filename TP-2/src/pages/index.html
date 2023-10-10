@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/src/assets/img/logo.ico">
+    <link rel="stylesheet" href="/src/css/app.css">
+    <title>Juego Mania</title>
+</head>
+
+<body>
+    <div class="cargando">
+        <div>
+            <progress id="barra" max="100" value="0"></progress>
+            <span id="porcentaje"></span>
+        </div>
+        <span>Cargando <div class="contenedor-puntos"><div></div><div></div><div></div></div></span>
+    </div>
+    <div class="container-pagina hidden">
+        <header>
+            <div class="header-encabezado max-width">
+                <div>
+                    <button><img src="/src/assets/img/header/hamburguer.svg" class="icono" id="header-hamburguesa-button"></button>
+                    <a href="/src/pages/index.html"><img src="/src/assets/img/header/juegomania.svg" alt="Icono de Logomania"></a>            
+                </div>
+                <div class="header-barra-busqueda hidden">
+                    <button id="btn-ocultar-barra"><img src="/src/assets/img/header/left-arrow-alt_svgrepo.com.svg" alt=""></button>
+                    <input type="text" class="header-busqueda-input" placeholder="Buscar juego...">
+                </div>
+                <div class="header-barra-botones">
+                    <button class="icono" id="header-lupa-button"><img src="/src/assets/img/header/buscador.svg"></button>
+                    <div>
+                        <button class="icono" id="btn_carrito"><img src="/src/assets/img/header/carrito.svg"></button>
+                        <div class="contenedor-carrito">
+                            <div>
+                                <div class="carrito__articulo">
+                                    <img src="/src/assets/img/accion/Assasins creed odyssey.jpg" alt="">
+                                    <div>
+                                        <p>Assasins Creed: Odyssey</p>
+                                        <div>
+                                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                                            <span>$1400</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carrito__articulo">
+                                    <img src="/src/assets/img//recomendados para ti/black.jpg" alt="">
+                                    <div>
+                                        <p>Black</p>
+                                        <div>
+                                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                                            <span>$1400</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Total: $ 3950</p>
+                                <button>Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="icono" id="header-user-button"><img id="avatar-user" src="/src/assets/img/header/perfil.svg"></button>
+                </div>
+                <div id="desplegable-categorias" class="hidden">
+                    <div class="header-categorias">
+                        <p><img src="/src/assets/img/header/desplegable_izquierdo/accion.svg" alt="Icono de los juegos de accion">Acción</p>
+                        <p><img src="/src/assets/img/header/desplegable_izquierdo/terror.svg" alt="Icono de los juegos de terror">Terror</p>
+                        <p><img src="/src/assets/img/header/desplegable_izquierdo/vestir.svg" alt="Icono de los juegos de vestir">Vestir</p>
+                        <p><img src="/src/assets/img/header/desplegable_izquierdo/estrategia.svg" alt="Icono de los juegos de estrategia">Estrategia</p>
+                    </div>
+                </div>
+                <div id="header-menu-user" class="hidden">
+                    <div id="sin-logear" class="header-menu-usuario">
+                        <a href="login.html" id="btn-login"><img src="/src/assets/img/header/desplegable_derecho/key.svg" alt="Icono para iniciar sesión">Iniciar Sesión</a>
+                        <button type="button" id="btnSalir"><img src="/src/assets/img/header/desplegable_derecho/salir.svg" alt="Icono para salir">Salir</button>
+                    </div>
+                    <div id="logeado" class="header-menu-usuario hidden">
+                        <a href="login.html" id="btn-login"><img src="/src/assets/img/header/desplegable_derecho/perfil.svg"
+                                alt="Icono para iniciar sesión">Mi perfil</a>
+                        <a href="#"><img src="/src/assets/img/header/desplegable_derecho/book.svg" alt="Icono para salir">Biblioteca</a>
+                        <button type="button" id="cerrarSesionUser"><img src="/src/assets/img/header/desplegable_derecho/cerrar-sesion2.svg" alt="Icono para salir">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <section class="populares">
+                <p class="categorias">Mas populares</p>
+                <main class="grilla">
+                    <div class="card card_animation">
+                        <a href="juego.html">
+                        <img src="/src/assets/img/mas-populares/tablero_imagen.png" alt="Juegos populares">
+                        </a>
+                        <div>
+                            <p class="nombre_juego">Conecta la galaxia</p>
+                            <div class="cuadro_valores">
+                               <p class="precio">Gratis</p>
+                            </div>
+                            <span class="adquirido">Adquirido</span>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/crash bandicoot 4 cuestion de tiempo.webp"
+                        alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Crash Bandicoot 4: Cuestion de tiempo para rescatar a</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">$900</p>
+                            </div>
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/halo 5 - guardianes.jpg" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Halo 5: Guardianes</p>
+                            <div class="cuadro_valores">
+                                <p class="descuento">-10%</p>
+                                <p class="precio_neto">$1500</p>
+                                <p class="precio">$1350</p>
+                            </div>
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/minecraft.jpg" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Minecraft</p>
+                            <div class="cuadro_valores">                            
+                                <p class="precio">Gratis</p>
+                            </div>    
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/pokemon rojo fuego.png" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Pokemon edición rojo fuego</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">Gratis</p>
+                            </div>   
+                            <span class="adquirido">Adquirido</span>         
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/Rabbids_Coding.webp" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Rabbids coding</p>
+                            <div class="cuadro_valores">
+                                <p class="descuento">-50%</p>
+                                <p class="precio_neto">$800</p>
+                                <p class="precio">$400</p>
+                            </div>
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/virtual families.webp" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Virtual families</p>
+                            <div class="cuadro_valores">
+                               <p class="precio">Gratis</p>
+                            </div>   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/yuhioh duel links.jpg" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Yu-Gi-Oh! Duel Links</p>
+                            <div class="cuadro_valores">
+                               <p class="precio">Gratis</p>
+                            </div>
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card card_animation">
+                        <img src="/src/assets/img/mas-populares/bomb-it-3.jpg" alt="Juegos populares">
+                        <div>
+                            <p class="nombre_juego">Bombit it 3</p>
+                            <div class="cuadro_valores">
+                               <p class="precio">Gratis</p>
+                           </div>
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </main>
+            </section>
+            <section class="carruseles">
+                <div class="carrusel__container max-width" id="recomendados">
+                    <div>
+                        <p class="categorias">Recomendados para ti</p>
+                        <div class="carrusel__buttons">
+                            <button id="btn_izq_recomnedados" class="izquierda">
+                                <img src="/src/assets/img/flecha_carrusel.svg" alt="boton izquierdo del carrusel">
+                            </button>
+                            <button id="btn_der_recomnedados" class="derecha">
+                                <img src="/src/assets/img/flecha_carrusel.svg" alt="boton derecho del carrusel">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="carrusel__cards" id="recomendadosCard">
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/black.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Black</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">$2600</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>                        
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/hogwarts legacy.webp" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Howarts legacy</p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-10%</p>
+                                    <p class="precio_neto">$1000</p>
+                                    <p class="precio">$900</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>    
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/final-fantasy-xvi.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Final Fantasy XVI: </p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-10%</p>
+                                    <p class="precio_neto">$3000</p>
+                                    <p class="precio">$2700</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/resident evil 4.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Resident evil 4 remake</p>
+                                <div class="cuadro_valores">       
+                                    <p class="precio">Gratis</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/diablo IV.webp" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Diablo 4</p>
+                                <div class="cuadro_valores">
+                                     <p class="precio">$1400</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/sea of stars.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Sea of Stars</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">Gratis</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/WWE 2K17.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">WWE 2K17</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">Gratis</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/tony-hawks-pro-skater-3.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Tony Hawks pro skater 3</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">$140</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/recomendados para ti/spider man web of shadows.jpg" alt="Recomendados">
+                            <div>
+                                <p class="nombre_juego">Spiderman, web of shadows</p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-10%</p>
+                                    <p class="precio_neto">$3000</p>
+                                    <p class="precio">$2700</p>
+                                </div>
+                                <button class="btn">
+                                    <img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carrusel__container max-width" id="accion">
+                    <div>
+                        <p class="categorias">Acción</p>
+                        <div class="carrusel__buttons">
+                            <button class="izquierda" id="btn_izq_accion"><img src="/src/assets/img/flecha_carrusel.svg" alt="boton izquierdo del carrusel"></button>
+                            <button class="derecha" id="btn_der_accion"><img src="/src/assets/img/flecha_carrusel.svg" alt="boton derecho del carrusel"></button>
+                        </div>
+                    </div>
+                    <div class="carrusel__cards" id="accionCard">
+                        <div class="card">
+                                <img src="/src/assets/img/accion/dragon ball z budokai tenkaichi 3.jpeg" alt="Accion">
+                                <div>
+                                    <p class="nombre_juego">Dragon ball Z Budokai tenkaichi 3</p>
+                                    <div class="cuadro_valores">
+                                        <p class="precio">$2600</p> 
+                                    </div>
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/Mortal_Kombat_X.png" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Mortal Kombat</p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-10%</p>
+                                    <p class="precio_neto">$1000</p>
+                                    <p class="precio">$900</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/god of war 2.jpg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">God of war II</p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-50%</p>
+                                    <p class="precio_neto">$1500</p>
+                                    <p class="precio">$750</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/roblox.jpeg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Roblox</p>
+                                <p class="precio">Gratis</p>
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/uncharted 4.jpg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Uncharted 4: El fin de un ladron</p>
+                                <p class="precio">$1140</p>
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/call of duty infinite warfare.jpg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Call of Duty: Infinite Warfare</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">Gratis</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/fornite.jpg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Fornite</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">Gratis</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/red dead redemption II.jpg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Red dead red II</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">$140</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/accion/Assasins creed odyssey.jpg" alt="Accion">
+                            <div>
+                                <p class="nombre_juego">Assasins creed: Odyssey</p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-10%</p>
+                                    <p class="precio_neto">$3000</p>
+                                    <p class="precio">$2700</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carrusel__container max-width" id="terror">
+                    <div>
+                        <p class="categorias">Terror</p>
+                        <div class="carrusel__buttons">
+                            <button class="izquierda" id="btn_izq_terror"><img src="/src/assets/img/flecha_carrusel.svg" alt="boton izquierdo del carrusel"></button>
+                            <button class="derecha" id="btn_der_terror"><img src="/src/assets/img/flecha_carrusel.svg" alt="boton derecho del carrusel"></button>
+                        </div>
+                    </div>
+                    <div class="carrusel__cards" id="terrorCard">
+                        <div class="card">
+                            <img src="/src/assets/img/terror/Five nights at freddys 4.webp" alt="Terror">
+                            <div>
+                                <p class="nombre_juego">Five nigths at Freddy´s 4</p>
+                                <div class="cuadro_valores">
+                                     <p class="precio">$2600</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/terror/outlast.jpg" alt="Terror">
+                            <div>
+                                <p class="nombre_juego">Outlast</p>
+                                <div class="cuadro_valores">
+                                     <p class="precio">$900</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>   
+                        <div class="card">
+                            <img src="/src/assets/img/terror/sillent hill 2.jpg" alt="Terror">
+                            <div>
+                                <p class="nombre_juego">Sillent Hill 2</p>
+                                <div class="cuadro_valores">
+                                    <p class="descuento">-10%</p>
+                                    <p class="precio_neto">$2000</p>
+                                     <p class="precio">$1800</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>                       
+                        <div class="card">
+                        <img src="/src/assets/img/terror/amnesia.jpg" alt="Terror">
+                        <div>
+                            <p class="nombre_juego">Amnesia</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">Gratis</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>   
+                        <div class="card">
+                        <img src="/src/assets/img/terror/poppy playtime.jpg" alt="Terror">
+                        <div>
+                            <p class="nombre_juego">Poppy Playtmie</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">$1140</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>   
+                        <div class="card">
+                        <img src="/src/assets/img/terror/Little_Nightmares_II.jpg" alt="Terror">
+                        <div>
+                            <p class="nombre_juego">Little Nightmares II</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">Gratis</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>    
+                        <div class="card">
+                        <img src="/src/assets/img/terror/Phasmophobia.jpg" alt="Terror">
+                        <div>
+                            <p class="nombre_juego">Phasmophobia</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">Gratis</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>    
+                        <div class="card">
+                        <img src="/src/assets/img/terror/slender the arrival.jpg" alt="Terror">
+                        <div>
+                            <p class="nombre_juego">Slender: la llegada</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">$140</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>  
+                        <div class="card">
+                        <img src="/src/assets/img/terror/haunt.jpg" alt="Terror">
+                        <div>
+                            <p class="nombre_juego">Haunt</p>
+                            <div class="cuadro_valores">
+                                <p class="descuento">-10%</p>
+                                <p class="precio_neto">$3000</p>
+                                    <p class="precio">$2700</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carrusel__container max-width" id="vestir">
+                    <div>
+                        <p class="categorias">Vestir</p>
+                        <div class="carrusel__buttons">
+                            <button class="izquierda" id="btn_izq_vestir"><img src="/src/assets/img/flecha_carrusel.svg" alt="boton izquierdo del carrusel"></button>
+                            <button class="derecha" id="btn_der_vestir"><img src="/src/assets/img/flecha_carrusel.svg" alt="boton derecho del carrusel"></button>
+                        </div>
+                    </div>
+                    <div class="carrusel__cards" id="vestirCard">
+                        <div class="card">
+                            <img src="/src/assets/img/vestir/barbiemania.jpg" alt="Vestir">
+                            <div>
+                                <p class="nombre_juego">Barbiemania</p>
+                                <div class="cuadro_valores">
+                                    <p class="precio">$2600</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/viste a estrellas del pop.png" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">Viste a estrellas del pop</p>
+                            <div class="cuadro_valores">
+                                <p class="descuento">-10%</p>
+                                <p class="precio_neto">$1000</p>
+                                    <p class="precio">$900</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>   
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/princess dress up.jpg" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">Princess Dress-up</p>
+                            <div class="cuadro_valores">
+                                <p class="descuento">-25%</p>
+                                <p class="precio_neto">$1000</p>
+                                    <p class="precio">$750</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>                         
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/monstruo magico.jpg" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">Monstruo magico</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">Gratis</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>     
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/heroina gotica.jpg" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">Heroina gotica</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">$1140</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>
+                        <div class="card">
+                            <img src="/src/assets/img/vestir/ascension.jpg" alt="Vestir">
+                            <div>
+                                <p class="nombre_juego">Ascencion</p>
+                                <div class="cuadro_valores">
+                                   <p class="precio">Gratis</p> 
+                                </div>                   
+                                <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                            </div>
+                        </div>    
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/destino de vacaciones tropicales.jpg" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">Destino de vacaciones tropicales</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">Gratis</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>    
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/pequenio triton.jpg" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">Little triton</p>
+                            <div class="cuadro_valores">
+                                <p class="precio">$140</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>    
+                        <div class="card">
+                        <img src="/src/assets/img/vestir/la biblioteca oscura.jpg" alt="Vestir">
+                        <div>
+                            <p class="nombre_juego">La biblioteca oscura/p>
+                            <div class="cuadro_valores">
+                                <p class="descuento">-10%</p>
+                                <p class="precio_neto">$3000</p>
+                                    <p class="precio">$2700</p> 
+                            </div>                   
+                            <button class="btn"><img src="/src/assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="footer-mobile">
+            <div class="pagos-mobile">
+                <div class="lines-container">
+                    <div class="line flex-grow"></div>
+                    <p class="titulo">Nuestras formas de pago</p>
+                    <div class="line flex-grow"></div>
+                </div>
+                <div class="tarjetas">
+                    <img src="/src/assets/img/tarjetas_pago/visa.svg" alt="Visa" srcset="">
+                    <img src="/src/assets/img/tarjetas_pago/paypal.svg" alt="Paypal" srcset="">
+                    <img src="/src/assets/img/tarjetas_pago/mastercard.svg" alt="MasterCard" srcset="">
+                    <img src="/src/assets/img/tarjetas_pago/amex.svg" alt="Amex" srcset="">
+                </div>
+            </div>
+            <div class="servicios-mobile">
+                <div>
+                    <p class="titulo">Ayuda</p>
+                    <p>Servicio técnico</p>
+                    <p>Preguntas frecuentes</p>
+                    <p>Opciones de pago</p>
+                    <p>Arrepentimiento</p>
+                    <p>223-444567898</p>
+                </div>
+                <div>
+                    <p class="titulo">Comunidad</p>
+                    <p>Noticias</p>
+                    <p>Eventos</p>
+                    <p>Foro</p>
+                </div>
+                <div>
+                    <p class="titulo">Compañia</p>
+                    <p>Empleos</p>
+                    <p>Visita nuestro sitio corporativo</p>
+                    <p>Servicio marketing</p>
+                </div>
+                <div class="redes-sociales">
+                    <p class="titulo">Redes Sociales</p>
+                    <div class="redes">
+                        <img src="/src/assets/img/rrss/instagram.svg" alt="Instagram" srcset="">
+                        <img src="/src/assets/img/rrss/youtube.svg" alt="YouTube" srcset="">
+                        <img src="/src/assets/img/rrss/facebook.svg" alt="Facebook" srcset="">
+                    </div>
+                </div>
+                <div class="validacion">
+                    <div class="carousel-slide">
+                        <img src="/src/assets/img/validacion/Rockstar-logo.svg" alt="" srcset="">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/src/assets/img/validacion/blizzard-logo.svg" alt="" srcset="">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/src/assets/img/validacion/Capcom_logo.svg" alt="" srcset="">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/src/assets/img/validacion/Riot_Games_logo.svg" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    
+    <script src="/src/js/index.js"></script>
+    <script src="/src/js/header.js"></script>
+    <script src="/src/js/carrusel.js"></script>
+    <script src="/src/js/mostrarCarrito.js"></script>
+</body>
+</html>

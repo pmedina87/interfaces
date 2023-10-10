@@ -1,0 +1,128 @@
+/* FOOTER */
+footer {
+    background-color: var(--color-primario-700);
+    color: var(--color-primario-100);
+}
+
+.footer-mobile p.titulo {
+    font-size: var(--fs-subtitulo);
+}
+
+.footer-mobile p {
+    font-size: var(--fs-texto);
+}
+
+.footer-mobile {
+    display: block;
+}
+
+.pagos-mobile, 
+.servicios-mobile, 
+.redes-sociales {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.pagos-mobile .tarjetas, .redes-sociales .redes {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.pagos-mobile .tarjetas img,
+.redes-sociales .redes img {
+    width: 50px;
+}
+
+.footer-mobile .column-left {
+    float: left;
+    padding-left: 30%;
+    width: 50%;
+}
+
+.servicios-mobile {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.redes {
+    padding-bottom: 20px;
+}
+
+.footer-mobile div,
+.servicios-mobile div {
+    gap: 15px;
+}
+
+.validacion {
+    display: flex;
+    overflow: hidden;
+    padding:10px 50px 10px 50px;
+}
+
+.carousel-slide {
+    flex: 1;
+    transition: 1s ease;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .pagos-mobile {
+        padding-bottom: 25px;
+    }
+
+    .pagos-mobile .tarjetas,
+    .redes-sociales .redes {
+        display: flex;
+        justify-content: space-between;
+        max-width: 600px;
+    }
+    .pagos-mobile .tarjetas {
+        gap: 80px;
+    }
+
+    .pagos-mobile .tarjetas img {
+        width: 100px;
+    }
+    .servicios-mobile {
+        display: grid;
+        grid-template-columns: repeat(4, 170px);
+    }
+
+    .validacion{
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .pagos-mobile {
+        padding-bottom: 25px;
+    }
+
+    .pagos-mobile .tarjetas,
+    .redes-sociales .redes {
+        display: flex;
+        justify-content: space-between;
+        max-width: 600px;
+    }
+
+    .pagos-mobile .tarjetas {
+        gap: 80px;
+    }
+
+    .pagos-mobile .tarjetas img {
+        width: 100px;
+    }
+
+    .servicios-mobile {
+        display: grid;
+        grid-template-columns: repeat(4, 170px);
+    }
+
+    .validacion {
+        grid-column: 1 / -1;
+    }
+}

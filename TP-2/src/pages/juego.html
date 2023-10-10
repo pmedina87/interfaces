@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/logo.ico">
+    <link rel="stylesheet" href="../css/app.css">
+    <title>Cuatro en Linea</title>
+</head>
+<body> 
+     <div class="cargando">
+            <div>
+                <progress id="barra" max="100" value="0"></progress>
+                <span id="porcentaje"></span>
+            </div>
+            <span>Cargando <div class="contenedor-puntos"><div></div><div></div><div></div></div></span>
+     </div>
+     <div class="container-pagina hidden">
+         <header>
+          <div class="header-encabezado max-width">
+            <div>
+                <button><img src="../assets/img/header/hamburguer.svg" class="icono" id="header-hamburguesa-button"></button>
+                <a href="../pages/index.html"><img src="../assets/img/header/juegomania.svg" alt="Icono de Logomania"></a>
+            </div>
+            <div class="header-barra-busqueda hidden">
+                <input type="text" class="header-busqueda-input" placeholder="Buscar juego...">
+            </div>
+            <div class="header-barra-botones">
+                <button class="icono" id="header-lupa-button"><img src="../assets/img/header/buscador.svg"></button>
+                <div>
+                    <button class="icono" id="btn_carrito"><img src="../assets/img/header/carrito.svg"></button>
+                    <div class="contenedor-carrito">
+                        <div>
+                            <div class="carrito__articulo">
+                                <img src="../assets/img/accion/Assasins creed odyssey.jpg" alt="">
+                                <div>
+                                    <p>Assasins Creed: Odyssey</p>
+                                    <div>
+                                        <button class="btn"><img src="../assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                                        <span>$1400</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carrito__articulo">
+                                <img src="../assets/img//recomendados para ti/black.jpg" alt="">
+                                <div>
+                                    <p>Black</p>
+                                    <div>
+                                        <button class="btn"><img src="../assets/img/card/agregar_al_carrito.svg" alt="icono carrito">Agregar al carrito</button>
+                                        <span>$1400</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Total: $ 3950</p>
+                            <button>Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="icono" id="header-user-button"><img id="avatar-user" src="../assets/img/header/perfil.svg"></button>
+            </div>
+            <div id="desplegable-categorias" class="hidden">
+                <div class="header-categorias">
+                    <p><img src="../assets/img/header/desplegable_izquierdo/accion.svg" alt="Icono de los juegos de accion">Acción</p>
+                    <p><img src="../assets/img/header/desplegable_izquierdo/terror.svg" alt="Icono de los juegos de terror">Terror</p>
+                    <p><img src="../assets/img/header/desplegable_izquierdo/vestir.svg" alt="Icono de los juegos de vestir">Vestir</p>
+                    <p><img src="../assets/img/header/desplegable_izquierdo/estrategia.svg" alt="Icono de los juegos de estrategia">Estrategia</p>
+                </div>
+            </div>
+            <div id="header-menu-user" class="hidden">
+                <div id="sin-logear" class="header-menu-usuario">
+                    <a href="login.html" id="btn-login"><img src="../assets/img/header/desplegable_derecho/key.svg" alt="Icono para iniciar sesión">Iniciar Sesión</a>
+                    <a href="#"><img src="../assets/img/header/desplegable_derecho/salir.svg" alt="Icono para salir">Salir</a>
+                </div>
+                <div id="logeado" class="header-menu-usuario hidden">
+                    <a href="login.html" id="btn-login"><img src="../assets/img/header/desplegable_derecho/perfil.svg"
+                            alt="Icono para iniciar sesión">Mi perfil</a>
+                    <a href="#"><img src="../assets/img/header/desplegable_derecho/book.svg" alt="Icono para salir">Biblioteca</a>
+                    <button type="button" id="cerrarSesionUser"><img src="../assets/img/header/desplegable_derecho/cerrar-sesion2.svg" alt="Icono para salir">Cerrar sesión</button>
+                </div>
+            </div>
+                </div>
+            </header>
+            <section class="container__juego__total">
+                <div class="grid__juego max-width">
+                
+                    <div class="juego__container">
+                        <p><a href="../pages/index.html">Inicio</a> / <a href="#">Mas Populares</a> / Conecta la galaxia</p>
+                        <div id="juego">
+                            <img src="../assets/img/mas-populares/tablero_imagen.png" alt="Elegido">mas populares</p>  
+                        </div>
+                    </div>
+                    <div class="publicidad__container">
+                        <img src="../assets/img/galeria/publi1.png" alt="">
+                        <img src="../assets/img/galeria/publi2.png" alt="">
+                    </div>
+                    <div class="descripcion">
+                        <div>
+                            <div class="controles">
+                                <div>
+                                    <span>Jugador 1</span>
+                                    <img src="../assets/img/flecha_carrusel.svg" alt="Tecla 'A' para ir a la izquierda"> 
+                                    <img src="../assets/img/flecha_carrusel.svg" alt="Tecla 'S' para soltar la ficha"> 
+                                    <img src="../assets/img/flecha_carrusel.svg" alt="Tecla 'D' para ir a la derecha"> 
+                                </div>
+                                <div>
+                                    <span>Jugador 2</span>
+                                    <img src="../assets/img/ControlesASD/letraA.svg" alt="Tecla 'A' para soltar la ficha"> 
+                                    <img src="../assets/img/ControlesASD/letraS.svg" alt="Tecla 'S' para ir a la derecha"> 
+                                    <img src="../assets/img/ControlesASD/letraD.svg" alt="Tecla 'A' para ir a la izquierda"> 
+                                </div>
+                            </div>
+                            <button><img src="../assets/img/iconos/icono_compartir.svg" alt="boton de compartir"></button>
+                        </div>
+                        <p>Adéntrate en una galaxia muy, muy lejana y desafía a jugadores de todo el universo en Conecta la galaxia, el juego de 4 en línea con la épica temática de Star Wars. Únete a la lucha entre la Alianza Rebelde y el Imperio Galáctico mientras compites por la supremacía en un emocionante campo de batalla.</p>
+                    </div>
+                    <div class="popup" id="popup">
+                        <img src="" alt="Imagen ampliada" id="imagenEnPopup">
+                        <span class="cerrar" id="cerrarPopup">&times;</span>
+                    </div>
+                    <div class="assets">
+                        <div class="card card_animation">
+                             <img id="img0" onclick="abrir(0)" src="../assets/img/galeria/gal.jpg" alt="">
+                        </div>
+                        <div class="card card_animation">
+                            <img id="img1" onclick="abrir(1)" src="../assets/img/galeria/gal2.jpg" alt="">
+                        </div>
+                        <div class="card card_animation">   
+                            <img id="img2" onclick="abrir(2)" src="../assets/img/galeria/gal3.jpg" alt="">
+                        </div>
+                        <div class="card card_animation">    
+                            <img id="img3" onclick="abrir(3)" src="../assets/img/galeria/gal4.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="contenedor__comentarios">
+                        <div class="comentar">
+                            <p><span class="bold">Nombre de usuario</span></p>
+                            <textarea name="" id="" placeholder="Comentario..."></textarea>
+                            <div class="buttons">
+                                <button>Cancelar</button>
+                                <button>Publicar</button>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <div>
+                                <p><span class="bold">Nombre de usuario</span><span class="italics">Hace 4 horas</span></p>
+                                <button id="btn0" onclick="megusta(0)"><img class="me-gusta" id="imgmg0" src="../assets/img/iconos/icono_me_gusta.svg" alt="Boton de me gusta"></button>
+                            </div>
+                            <p>¡La emoción de jugar en esta galaxia muy, muy lejana es indescriptible! Cada partida es una aventura. Me encanta cómo han incorporado elementos de Star Wars. ¡No puedo dejar de jugar!</p>
+                        </div>
+                        <div class="comentario">
+                            <div>
+                                <p><span class="bold">Nombre de usuario</span><span class="italics">Hace 2 días</span></p>
+                                <button id="btn1" onclick="megusta(1)"><img class="me-gusta" id="imgmg1" src="../assets/img/iconos/icono_me_gusta.svg" alt="Boton de me gusta"></button>
+                            </div>
+                            <p>Este juego es adictivo de la mejor manera posible. Solo planeé jugar unas partidas rápidas y aquí estoy, horas después, todavía enganchado. La estrategia de '4 en línea' en el mundo de Star Wars es una combinación ganadora.</p>
+                        </div>
+                        <div class="comentario">
+                            <div>
+                                <p><span class="bold">Nombre de usuario</span><span class="italics">Hace 1 semana</span></p>
+                                <button id="btn2" onclick="megusta(2)"><img class="me-gusta" id="imgmg2" src="../assets/img/iconos/icono_me_gusta.svg" alt="Boton de me gusta"></button>
+                            </div>
+                            <p>Este juego es adictivo de la mejor manera posible. Solo planeé jugar unas partidas rápidas y aquí estoy, horas después, todavía enganchado. La estrategia de '4 en línea' en el mundo de Star Wars es una combinación ganadora.</p>
+                        </div>
+                        <div class="comentario">
+                            <div>
+                                <p><span class="bold">Nombre de usuario</span><span class="italics">Hace 3 semanas</span></p>
+                                <button id="btn3" onclick="megusta(3)"><img class="me-gusta" id="imgmg3" src="../assets/img/iconos/icono_me_gusta.svg" alt="Boton de me gusta"></button>
+                            </div>
+                            <p>Si pudiera darle a este juego 10 estrellas, lo haría. Es uno de los mejores juegos de Star Wars que he jugado. Los efectos son impresionantes, y el ambiente es completamente inmersivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>     
+    <script src="../js/header.js"></script>
+    <script src="../js/juego.js"></script>
+    <script src="../js/mostrarCarrito.js"></script>
+</body>
+</html>

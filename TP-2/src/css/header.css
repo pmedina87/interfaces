@@ -1,0 +1,201 @@
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-primario-800);
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.header-encabezado {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1rem;
+    justify-content: space-between;
+}
+
+.header-encabezado>div:first-child{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+.header-barra-botones{
+    display: flex;
+    gap: 1rem;
+}
+
+header .icono{
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilos del desplegable de las categorias */
+#desplegable-categorias{
+    position: fixed;
+    top: 104px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 104px);
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#header-menu-user {
+    position: fixed;
+    top: 104px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 104px);
+    background-color: rgba(0, 0, 0, .4);   
+}
+
+.header-categorias,
+.header-menu-usuario {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem 1rem 1rem 2rem;
+    background-color: var(--color-primario-900);
+    color: var(--color-primario-100);
+    border-radius: 20px;
+}
+
+.header-menu-usuario {
+    right: 0;
+}
+
+.header-barra-busqueda{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    gap: 1rem;
+    /* border-radius: 2rem; */
+    padding: 2.6rem 1rem;
+    margin-left: -1rem;
+    overflow: hidden;
+    background-color: var(--color-primario-800);
+}
+
+.buscador-window{
+    position: relative;
+    width: 50%;
+    padding: 0;
+}
+
+.buscador-window input{
+    padding: 1rem;
+}
+
+.header-barra-busqueda input{
+    border-radius: 1rem;
+    padding-inline: 1rem;
+    width: 100%;
+}
+
+
+.header-categorias p,
+.header-menu-usuario a,
+.header-menu-usuario button{
+    padding: .5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(var(--fs-texto) + 4);
+    font-weight: bold;
+}
+
+.header-categorias img,
+.header-menu-usuario img {
+    width: 30px;
+}
+
+/* Carrito desplegable */
+.header-barra-botones>div{
+    position: relative;
+}
+
+.header-barra-botones .contenedor-carrito{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primario-900);
+    padding: 1rem;
+    width: max-content;
+    font-weight: bold;
+    color: var(--color-primario-100);
+    transform: translate(-80%, calc(100% + 2.5rem));
+    border-radius: .3rem;
+    overflow: hidden;
+    max-height: 0rem;
+    transition: max-height 600ms ease-in;
+    padding: 0 1rem;
+}
+.contenedor-carrito>div:last-child{
+    display: grid;
+    justify-content: flex-end;
+    text-align: end;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.contenedor-carrito>div:last-child button{
+    padding-block: .5rem;
+    position: relative;
+    right: 0;
+    font-size: var(--fs-subtitulo);
+    font-weight: bold;
+}
+
+.contenedor-carrito.carrito-activado{
+    max-height: 30rem;
+}
+
+.carrito__articulo{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: .5rem;
+    border-bottom: solid 2px var(--color-primario-100);
+    font-size: var(--fs-texto);
+    margin-block: .4rem;
+}
+/* Necesitamos ponerle margen a los hijos, ya que para hacer la
+animacion si ponemos que el contenedor tenga padding-block mostrará
+2 rem aunque esté sin desplegar el carrito.  */
+.carrito__articulo:first-child{
+    margin-top: 1rem;
+}
+
+.carrito__articulo:last-child{
+    margin-bottom: 1rem;
+}
+
+.carrito__articulo>img{
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+.carrito__articulo div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.carrito__articulo div img{
+    width: 20px;
+    height: 20px;
+    margin-right: .3rem;
+}
+
+.carrito__articulo div div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

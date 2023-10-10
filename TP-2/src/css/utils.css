@@ -1,0 +1,134 @@
+.container-form{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding-block: 1rem;
+  background-color: var(--color-primario-900);
+}
+.container-form form{
+  display: grid;
+  row-gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  width: fit-content;
+  background-color: var(--color-primario-800);
+  color: var(--color-primario-100);
+  /* width: 486px; */
+}
+.container-form .form-control{
+  display: grid;
+  row-gap: 40px;
+  width: 406px;
+}
+
+.border-rad{
+  border-radius: 20px;
+}
+
+.lines-container{
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex{
+  display: flex;
+  gap: 1rem;
+}
+.campo{
+  position: relative;
+}
+.campo input{
+  width: 100%;
+  height: 100%;
+  padding-block: .5rem;
+  background-color: transparent;
+  border-bottom: solid 2px var(--color-primario-100);
+  color: var(--color-primario-100);
+  transition: border 100ms ease-in;
+}
+
+.campo input::placeholder{
+  color: var(--color-primario-500);
+}
+
+.campo input:focus{
+  border-bottom: solid 2px var(--color-acento-500);
+}
+.campo img{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 0;
+}
+
+.f-jc-center{
+  justify-content: center;
+}
+
+.f-ai-center{
+  align-items: center;
+}
+
+.flex-grow{
+  flex-grow: 1;
+}
+
+.line{
+  height: 2px;
+  background-color: var(--color-primario-100);
+}
+.container-form .titular{
+  font-size: var(--fs-titulo);
+}
+
+.enviar-form-container{
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 16px;
+}
+.enviar-form-container a{
+  font-weight: bold;
+}
+
+.btn-form{
+  padding: 12px;
+  background-color: var(--color-acento-500);
+  font-size: var(--fs-subtitulos);
+  font-weight: bold;
+  color: var(--color-primario-100);
+}
+
+.btn-form:disabled{
+  filter: grayscale(1);
+  cursor: auto;
+}
+
+.registro-redes-sociales{
+  display: grid;
+}
+
+.registro-redes-sociales img{
+  object-fit: cover;
+}
+
+/* Registra el maximo ancho de los contenedores para que queden alineados igualmente (carruseles y header) */
+.max-width{
+  max-width: 1300px;
+}
+
+/* Esconde un elemento (como la barra de navegacion del header cuando estamos en mobile) */
+.hidden{
+  display: none !important;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.italics{
+  font-style: italic;
+}
