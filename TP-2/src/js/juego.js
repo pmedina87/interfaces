@@ -49,12 +49,12 @@ function megusta(pos) {
     let img = document.querySelector("#imgmg" + pos);
     
     if(isMeGusta == null || !isMeGusta) {
-        img.src = "/src/assets/img/juego/corazon.svg";
+        img.src = "../assets/img/juego/corazon.svg";
         img.classList.toggle("animacion-mg");
         img.classList.toggle("animacion-nmg");
         isMeGusta = true;
     } else {
-        img.src = "/src/assets/img/iconos/icono_me_gusta.svg";
+        img.src = "../assets/img/iconos/icono_me_gusta.svg";
         img.classList.toggle("animacion-nmg");
         img.classList.toggle("animacion-mg");
         isMeGusta = false;
