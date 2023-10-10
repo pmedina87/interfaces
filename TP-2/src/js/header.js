@@ -14,7 +14,7 @@ let menuLogeado = document.querySelector("#logeado");
 let btnCerrarSesionUser = document.querySelector("#cerrarSesionUser"); 
 
 if(isLogin != null) {
-    avatarUser.src = "/src/assets/img/header/avatar1.svg";
+    avatarUser.src = "../assets/img/header/avatar1.svg";
     menuSinLogear.classList.toggle('hidden');
     menuLogeado.classList.toggle("hidden");
 }
