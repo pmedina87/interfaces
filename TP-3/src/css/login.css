@@ -1,0 +1,110 @@
+.captcha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primario-100);
+    border-radius: 5px;
+    color: var(--color-primario-900);
+    padding: 1rem 4rem;
+}
+
+.captcha img {
+    width: 50px;
+}
+
+.captcha>div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
+
+.registration-success {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+}
+
+.registration-success img {
+    padding: 1rem;
+}
+
+.registration-error {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px #f42308aa;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    color: #f42308;
+}
+
+.animacion_error{
+    animation-name: temblor;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes temblor{
+    0%{transform: translateX(-50%);}
+    25%{transform: translateX(-55%);}
+    50%{transform: translateX(-45%);}
+    75%{transform: translateX(-55%);}
+    100%{transform: translateX(-50%);}
+}
+
+
+.checkmark, 
+.notcheckmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    font-size: 36px;
+}
+
+.checkmark {
+    border: 2px solid #00cc00;
+    animation: checkmark 0.5s ease-in-out 1;
+    box-shadow: 0 0 200px 3px #00cc00;
+}
+
+.notcheckmark {
+    border: 2px solid #f42308;
+    animation: notcheckmark 0.5s ease-in-out 1;
+    box-shadow: 0 0 200px 3px #f42308;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,42 @@
+:root{
+  /* Color primario */
+  --color-primario-100: #F3F3E6;
+  --color-primario-200: #DBDBD0;
+  --color-primario-300: #B6B7B0;
+  --color-primario-400: #92938F;
+  --color-primario-500: #7A7B79;
+  --color-primario-600: #5C5D5D;
+  --color-primario-700: #3E3F42;
+  --color-primario-800: #202126;
+  --color-primario-900: #0C0D14;
+
+  /* Color secundario */
+  --color-secundario-100: #C3E2E5;
+  --color-secundario-200: #9BCEDD;
+  --color-secundario-300: #73BBD4;
+  --color-secundario-400: #4BA7CC;
+  --color-secundario-500: #2394C4;
+  --color-secundario-600: #1F7BA4;
+  --color-secundario-700: #1B6384;
+  --color-secundario-800: #164A64;
+  --color-secundario-900: #123244;
+  
+  /* Color acento */
+  --color-acento-100: #FFE3BA;
+  --color-acento-200: #FFD08C;
+  --color-acento-300: #FFBD5E;
+  --color-acento-400: #FFAA30;
+  --color-acento-500: #FF9702;
+  --color-acento-600: #D17C02;
+  --color-acento-700: #A26001;
+  --color-acento-800: #744501;
+  --color-acento-900: #462901;
+
+  /* Font sizes */
+  --fs-titulo: 36px;
+  --fs-subtitulo: 24px;
+  --fs-texto: 12px;
+  --fs-precio-tachado: 14px;
+
+  --ff: 'Roboto', sans-serif;
+}

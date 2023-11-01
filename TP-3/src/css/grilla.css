@@ -1,0 +1,158 @@
+.populares{
+  background-color: var(--color-primario-900);
+  margin-inline: auto;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1rem;
+}
+
+.categorias{
+  font-size: var(--fs-titulo);
+  color: var(--color-primario-100);
+  font-weight: bold;
+  text-align: start;
+}
+
+.grilla{
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 1rem;
+  padding-inline: 1rem;/*1rem =16px*/
+  max-width: 1000px;
+}
+
+.card{
+  color: var(--color-primario-100);
+  display: grid;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: .7;
+  transition: opacity 200ms ease;
+  height: 100%;
+}
+
+.card:hover{
+  opacity: 1;
+}
+
+.card img{
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  transition: transform 200ms ease-in;
+}
+.card img:hover{
+  cursor: pointer;
+}
+
+.card>div{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: .5rem;
+  background-color: var(--color-primario-800);
+}
+.card button, .card span{
+  display: flex;
+  align-items: center;
+  column-gap: .3rem;
+  align-self: flex-end;
+  background-color: transparent;
+  font-size: var(--fs-texto);
+}
+
+span.adquirido{
+  background: linear-gradient(30deg, var(--color-secundario-500)0% 4%, var(--color-acento-500)30% 60%, var(--color-secundario-500)96% 100%);
+  padding: .1rem 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+.card button{
+  position: relative;
+  overflow-x: hidden;
+  height: fit-content;
+}
+
+.card button::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-radius: 2rem;
+  transform: translateX(-105%);
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-acento-500);
+  transition: transform 300ms ease-out;
+}
+.card button:hover::after{
+  transform: translateX(0);
+}
+
+.card button img{
+  width: 20px;
+  height: 20px;
+}
+
+.card .nombre_juego{
+  font-size: var(--fs-texto);
+  font-weight: bold;
+  /* Mostrar solo 1 linea parael titulo */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+.card .precio{
+  font-size: var(--fs-subtitulo);
+  font-weight: bold;
+  margin-left: 5px;
+  
+}
+
+.card .precio_neto{
+  text-decoration: line-through;
+  color:var(--color-primario-500);
+  font-family: var(--ff);
+  font-size:var(--fs-precio-tachado);
+  font-weight: bold;
+  margin-left: 5px;
+
+}
+
+.card .descuento{
+  background-color:var(--color-secundario-500);
+  width: 36px;  
+  height: 25px;  
+  font-weight: bold;
+  font-size: var(--fs-texto);
+  padding-top: 4px;
+  text-align:center;
+  margin-left: 5px;
+}
+
+.cuadro_valores{ 
+  align-items: baseline;
+  display: flex;  
+}  
+
+.card_animation{}
+.card_animation:hover{
+  animation: card_animation 200ms cubic-bezier(0.4, 0, 1, 1) forwards;
+  z-index: 1;
+}
+
+@keyframes card_animation{
+  0%{scale: 1;}
+  60%{scale: 1.08;}
+  100%{scale: 1.05;}
+}
+.card_animation:hover{
+  scale: 1.05;
+}

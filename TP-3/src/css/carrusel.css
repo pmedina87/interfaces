@@ -1,0 +1,74 @@
+.carruseles{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  row-gap: 3rem;
+  padding: 4rem 1rem;
+  background-color: var(--color-primario-900);
+
+}
+
+.carrusel__container{
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.carrusel__container>div:first-child{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.carrusel__container .carrusel__buttons{
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.carrusel__container .carrusel__buttons button{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: .2rem;
+}
+
+.carrusel__container .carrusel__buttons>button:first-child{
+  rotate: 180deg;
+}
+
+.carrusel__container .carrusel__buttons img{
+  width: 1rem;
+  height: 1rem;
+}
+
+.carrusel__cards{
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+  transition: transform 2s ease;
+  /* transform: translateX(150px); */
+}
+
+.carrusel__cards .card{
+  width: 240px;
+}
+
+
+#btn_izq_recomnedados:hover,
+#btn_der_recomnedados:hover,
+#btn_izq_accion:hover,
+#btn_der_accion:hover,
+#btn_izq_terror:hover,
+#btn_der_terror:hover,
+#btn_izq_vestir:hover,
+#btn_der_vestir:hover {
+  background-color: var(--color-primario-500);
+}
+
+
