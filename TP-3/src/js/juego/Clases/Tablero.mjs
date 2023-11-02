@@ -45,7 +45,9 @@ export default class Tablero {
 
 		this.timerJug1 = new Timer(this.canvas_context, this.jug1, 100000);
 		
-		// this.timerJug2 = this.crearTimmer();
+		// Variables logica del juego
+		this.posicionesIngreso = [];	
+		this.setearArregloEntradaFichas();	
 	}
 
 	crearTimmer() {
@@ -134,8 +136,16 @@ export default class Tablero {
 		// Dibujamos las fichas
 		this.fichas.forEach(ficha => ficha.dibujar());
 		this.timerJug1.dibujar();
-		
+		// this.setearNombresJugadores();
+			
 	}
+
+	// setearNombresJugadores() {
+	// 	console.log(1);
+	// 	this.canvas_context.font = "30px Arial";
+	// 	this.canvas_context.fillText(this.jug1.getNombre(), 50, 50);
+	// 	this.canvas_context.fillText(this.jug2.getNombre(), 450, 50);
+	// }
 
 	getCoordenadasCentroTablero() {
 		return { x: this.posX, y: this.posY };
@@ -211,5 +221,20 @@ export default class Tablero {
 			this.fichas[indice_ficha].setearNuevasCoordenadas(x, y);
 		}
 	}
+
+
+
+	/////////////////////////////////////// LOGICA JUEGO ////////////////////////////////////////
+
+	setearArregloEntradaFichas(){
+		let posXActual =
+			this.getCoordenadasCentroTablero().x -
+			(this.columnas / 2) * (this.ancho / this.columnas);
+		
+		for (let index = 0; index <= this.columnas; index++) {
+			this.posicionesIngreso.push(posXActual + ((this.ancho / this.columnas) * index));
+		}
+	}
+
 
 }

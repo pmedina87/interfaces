@@ -34,6 +34,6 @@ export default class Timer {
 			}, 1000);
 		}
 		this.canvas_context.font = "30px Arial";
-		this.canvas_context.fillText(this.tiempo_restante, 45, 25);
+		this.canvas_context.fillText(this.tiempo_restante, 80, 50);
 	}
 }
