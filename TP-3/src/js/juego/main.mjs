@@ -10,6 +10,10 @@ let canvas_context = canvas.getContext("2d");
 let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
 
+canvas.addEventListener("mousemove", (event) => {
+	console.log({x: event.offsetX, y: event.offsetY});
+})
+
 btn_jugar.addEventListener("click", () => {
 	opc_juego.removeAttribute("hidden");
     btn_jugar.classList.add("hidden");
@@ -27,9 +31,9 @@ formulario.addEventListener("submit", (e) => {
 	let jugador1 = dataForm.get("jugador1");
 	let jugador2 = dataForm.get("jugador2");
 
-    let posXInicioTablero = 0;
+  let posXInicioTablero = 0;
 	let posYInicioTablero = 0;
-    let fichasJugador = 0;
+  let fichasJugador = 0;
 
 	// setear dinamicamente posX y posY de donde comienza el tablero, segun el tipo.
 	if (tablero == CUATRO_L) {
@@ -53,17 +57,15 @@ formulario.addEventListener("submit", (e) => {
 		fichasJugador = 45;
 	}
 
-	let tablero_juego = crearTablero(posXInicioTablero, posYInicioTablero, canvas_context, tablero, canvas);
+	// Creeamos un tablero centrado en el cambas
+	let tablero_juego = new Tablero(canvas_context, tablero);
+	
+
 	tablero_juego.dibujar();
 
 	let jug1 = crearJugador(jugador1);
 	let jug2 = crearJugador(jugador2);
-
 });
-
-function crearTablero(posX, posY, contexto, tablero) {
-	return new Tablero(posX, posY, contexto, tablero);
-}
 
 function crearJugador(jugador) {
 	let jugador_creado;
