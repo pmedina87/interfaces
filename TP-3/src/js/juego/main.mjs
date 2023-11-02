@@ -53,7 +53,7 @@ formulario.addEventListener("submit", (e) => {
 		fichasJugador = 45;
 	}
 
-	let tablero_juego = crearTablero(posXInicioTablero, posYInicioTablero, canvas_context, tablero);
+	let tablero_juego = crearTablero(posXInicioTablero, posYInicioTablero, canvas_context, tablero, canvas);
 	tablero_juego.dibujar();
 
 	let jug1 = crearJugador(jugador1);
