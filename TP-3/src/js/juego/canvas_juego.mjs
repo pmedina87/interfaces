@@ -59,6 +59,7 @@ canvas.addEventListener("click", ()=>{
 canvas.addEventListener("mouseleave", deseleccionarFichas);
 canvas.addEventListener("mousemove", moverFicha);
 
+
 function moverFicha(event){
   items.forEach(item => {
     // Se verifica si el item fue clickeado y en caso de que sí se le asigna la posicion actual del mouse 

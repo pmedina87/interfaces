@@ -1,9 +1,11 @@
 import Tablero from "./Clases/Tablero.mjs";
+import Jugador from "./Clases/Jugador.mjs";
 
 const CUATRO_L = 4;
 const CINCO_L = 5; 
 const SEIS_L = 6;
 const SIETE_L = 7;
+let cont_jugador = 0;
 
 let canvas = document.querySelector("#canvas_juego");
 let canvas_context = canvas.getContext("2d");
@@ -47,20 +49,23 @@ formulario.addEventListener("submit", (e) => {
 	
 	tablero_juego.dibujar();
 
-	let jug1 = crearJugador(jugador1, fichasJugador);
-	let jug2 = crearJugador(jugador2, fichasJugador);
+	const jug1 = crearJugador(jugador1, fichasJugador, 1, null);
+	const jug2 = crearJugador(jugador2, fichasJugador, 2, null);
+
+	jug1.dibujarFichas();
+	jug2.dibujarFichas();
 });
 
 
-function crearJugador(jugador) {
+function crearJugador(jugador, cant_fichas, num_jugador, x) {
 	let jugador_creado;
 	if (jugador != "") {
-		jugador_creado = new Jugador(jugador);
+		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, x);
 		cont_jugador++;
 	} else {
 		cont_jugador++;
 		let nombre = "jugador " + cont_jugador;
-		jugador_creado = new Jugador(nombre);
+		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, x);
 	}
 	return jugador_creado;
 }
