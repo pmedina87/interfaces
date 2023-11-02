@@ -4,7 +4,7 @@ export default class Timer {
 		this.jugador = jugador;
 		this.tiempo = tiempo;
 		this.is_pausado = true;
-		this.tiempo_transcurrido = 0;
+		this.tiempo_restante = this.tiempo;
 	}
 
 	getIsMismoJugador(jugador) {
@@ -19,18 +19,21 @@ export default class Timer {
 		this.is_pausado = !this.is_pausado;
 	}
 
-	setTiempoTranscurrido(t_tiempo) {
-		this.tiempo_transcurrido = t_tiempo;
-	}
+	// setTiempoRestante(t_tiempo) {
+	// 	this.tiempo_restante = t_tiempo;
+	// }
 
-	getTiempoTranscurrido() {
-		return this.tiempo_transcurrido;
+	getTiempoRestante() {
+		return this.tiempo_restante;
 	}
 
 	dibujar() {
-		setInterval(function () {
-            this.tiempo_transcurrido = tiempo;
-			this.tiempo_transcurrido--;
-		}, 1000);
+		if (!this.getIsPausado) {
+			setInterval(function () {
+				this.tiempo_restante--;
+			}, 1000);
+		}
+		this.canvas_context.font = "30px Arial";
+		this.canvas_context.fillText(this.tiempo_restante, 45, 25);
 	}
 }

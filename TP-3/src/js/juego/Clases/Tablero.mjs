@@ -2,6 +2,7 @@ import Rectangle from "./Rectangle.mjs";
 import Casillero from "./Casillero.mjs";
 import Jugador from "./Jugador.mjs";
 import Ficha from "./Ficha.mjs";
+import Timer from "./Timer.mjs";
 
 export default class Tablero {
 	// constructor(contexto, tipo) {
@@ -27,8 +28,6 @@ export default class Tablero {
 		this.desafio = desafio;
 		this.ancho = 500;
 		this.alto = 400;
-		this.timerJug1 = this.crearTimmer();
-		this.timerJug2 = this.crearTimmer();
 		this.jug1 = new Jugador(jugador1 != null ? jugador1 : "Jugador 1", 1, this.canvas_context);
 		this.jug2 = new Jugador(jugador2 != null ? jugador2 : "Jugador 2", 2, this.canvas_context);
 		this.filas = this.setFilasTablero();
@@ -40,14 +39,18 @@ export default class Tablero {
 			this.canvas_context.canvas.width,
 			this.canvas_context.canvas.height,
 			"rgb(130, 20, 60)"
-		);
+			);
 		this.casilleros = [];
 		this.crearCasilleros();
+
+		this.timerJug1 = new Timer(this.canvas_context, this.jug1, 100000);
+		
+		// this.timerJug2 = this.crearTimmer();
 	}
 
 	crearTimmer() {
 		this.canvas_context.font = "30px Arial";
-		
+
 	}
 
 	crearFichas(){
@@ -130,6 +133,7 @@ export default class Tablero {
 		this.casilleros.forEach(casillero => casillero.dibujar());
 		// Dibujamos las fichas
 		this.fichas.forEach(ficha => ficha.dibujar());
+		this.timerJug1.dibujar();
 		
 	}
 
