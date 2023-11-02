@@ -87,7 +87,45 @@
                 
                     <div class="juego__container">
                         <p><a href="../pages/index.html">Inicio</a> / <a href="#">Mas Populares</a> / Conecta la galaxia</p>
-                        <canvas id="canvas_juego" width="1060" height="530"></canvas>  
+                        <canvas id="canvas_juego" width="1060" height="530"></canvas>
+                        
+                        <div id="opciones-juego" hidden>
+                            <h4>Opciones del juego</h4>
+                            <form>
+                                <div>
+                                    <label>Tipo de Tablero: </label>
+                                    <select name="tablero" id="">
+                                        <option value="4">Cuatro en linea</option>
+                                        <option value="5">Cinco en linea</option>
+                                        <option value="6">Seis en linea</option>
+                                        <option value="7">Siete en linea</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="desafio">Tipo de Desafio: </label>
+                                    <select name="desafio" id="desafio">
+                                        <option value="batman_guason">Batman vs El Guason</option>
+                                        <option value="milei_massa">Milei vs Massa</option>
+                                        <option value="river_boca">River vs Boca</option>
+                                        <option value="homero-burns">Homero vs Mr Burns</option>
+                                    </select>
+                                </div>
+                                <div id="jug1">
+                                    <label for="jugador1">Jugador 1: </label>
+                                    <input type="text" name="jugador1" id="jugador1" placeholder="Ingrese el nombre del jugador 1" disabled>
+                                </div>
+                                <div id="jug2">
+                                    <label for="jugador2">Jugador 2: </label>
+                                    <input type="text" name="jugador2" id="jugador2" placeholder="Ingrese el nombre del jugador 2" disabled>
+                                </div>
+                                <div>
+                                    <button type="submit">Arrancar Juego!!</button>
+                                </div>
+                            </form>
+                        </div>
+                        <br>
+                        <button id="btn-jugar">Jugar</button>
+                        
                     </div>
                     <div class="publicidad__container">
                         <img src="../assets/img/galeria/publi1.png" alt="">
@@ -175,6 +213,6 @@
     <script src="../js/header.js"></script>
     <script src="../js/juego.js"></script>
     <script src="../js/mostrarCarrito.js"></script>
-    <script type="module" src="../js/juego/canvas_juego.mjs"></script>
+    <script type="module" src="../js/juego/main.mjs"></script>
 </body>
 </html>

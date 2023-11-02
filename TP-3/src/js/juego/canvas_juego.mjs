@@ -69,7 +69,7 @@ function moverFicha(event){
 }
 
 function isClickingInside(item, event){
-  console.log(item);
+  // console.log(item);
   // √((x2 - x1)² + (y2 - y1)²) < ficha.radius
   let distancia = Math.sqrt(Math.pow(item.posicionActual.x - event.offsetX, 2) + Math.pow(item.posicionActual.y - event.offsetY, 2));
   // Muestra la posicion actual del mouse siendo clickeado
