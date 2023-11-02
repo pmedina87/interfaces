@@ -27,8 +27,8 @@ export default class Tablero {
 		this.desafio = desafio;
 		this.ancho = 500;
 		this.alto = 400;
-		this.jug1 = new Jugador(jugador1, 1, this.canvas_context);
-		this.jug2 = new Jugador(jugador2, 2, this.canvas_context);
+		this.jug1 = new Jugador(jugador1 != null ? jugador1 : "Jugador 1", 1, this.canvas_context);
+		this.jug2 = new Jugador(jugador2 != null ? jugador2 : "Jugador 2", 2, this.canvas_context);
 		this.filas = this.setFilasTablero();
 		this.columnas = this.setColumnasTablero();
 		this.fichas = [];
