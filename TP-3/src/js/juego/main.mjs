@@ -29,7 +29,7 @@ formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const dataForm = new FormData(formulario);
 
-	let tablero = dataForm.get("tablero");
+	let opctablero = dataForm.get("tablero");
 	let desafio = dataForm.get("desafio");
 	let jugador1 = dataForm.get("jugador1");
 	let jugador2 = dataForm.get("jugador2");
@@ -37,7 +37,7 @@ formulario.addEventListener("submit", (e) => {
   let fichasJugador = 0;
 
 	// Asignamos cantidad de fichas x jugador en base al mood de juego seleccionado
-	switch(tablero){
+	switch(opctablero){
 		case CUATRO_L: fichasJugador = 21 ;break;
 		case CINCO_L: fichasJugador = 28 ;break;
 		case SEIS_L: fichasJugador = 36 ;break;
@@ -46,29 +46,10 @@ formulario.addEventListener("submit", (e) => {
 	}
 
 	// Creeamos un tablero centrado en el cambas
-	const tablero_juego = new Tablero(canvas_context, tablero);
+	const tablero_juego = new Tablero(canvas_context, opctablero, desafio, jugador1, jugador2);
 	
 	tablero_juego.dibujar();
 
-	const jug1 = crearJugador(jugador1, fichasJugador, 1, null);
-	const jug2 = crearJugador(jugador2, fichasJugador, 2, null);
-
-	jug1.dibujarFichas();
-	jug2.dibujarFichas();
 });
 
 
-function crearJugador(jugador, cant_fichas, num_jugador, x) {
-	let jugador_creado;
-
-	if (jugador != "") {
-		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, canvas_context, x);
-		cont_jugador++;
-	} else {
-		cont_jugador++;
-		let nombre = "jugador " + cont_jugador;
-		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, canvas_context, x);
-	}
-
-	return jugador_creado;
-}

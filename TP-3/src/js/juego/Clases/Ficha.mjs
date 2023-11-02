@@ -1,11 +1,10 @@
 export default class Ficha {
-  constructor(context, x, y, radius, background_color){
+  constructor(context, x, y, radius, background_color, jugador){
     /**
      * Se guarda la posicion inicial en caso de que se haga 
      * un movimiento invalido y tenga que volver 
      * a su posicion inicial
      */
-    console.log(context);
     this.posicionInicial = {x: x + context.canvas.offsetLeft, y: y + context.canvas.offsetTop}; 
     this.posicionActual = {x: x + context.canvas.offsetLeft, y: y + context.canvas.offsetTop}; 
     this.context = context;
@@ -13,9 +12,14 @@ export default class Ficha {
     this.background_color = background_color;
     this.isClickeada = false;   // Simula el efecto de drag
     this.isPlaced = false;      // Una vez que la ficha esté en el tablero necesitamos avisar que no se puede clickear
+    this.jugador = jugador;
   }
 
-  draw(){
+  getIsMismoJugador(jugador) {
+    return this.jugador === jugador;
+  }
+
+  dibujar(){
     this.context.fillStyle = this.background_color;
     
     if(this.isClickeada){
