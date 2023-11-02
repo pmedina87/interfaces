@@ -27,6 +27,8 @@ export default class Tablero {
 		this.desafio = desafio;
 		this.ancho = 500;
 		this.alto = 400;
+		this.timerJug1 = this.crearTimmer();
+		this.timerJug2 = this.crearTimmer();
 		this.jug1 = new Jugador(jugador1 != null ? jugador1 : "Jugador 1", 1, this.canvas_context);
 		this.jug2 = new Jugador(jugador2 != null ? jugador2 : "Jugador 2", 2, this.canvas_context);
 		this.filas = this.setFilasTablero();
@@ -41,6 +43,11 @@ export default class Tablero {
 		);
 		this.casilleros = [];
 		this.crearCasilleros();
+	}
+
+	crearTimmer() {
+		this.canvas_context.font = "30px Arial";
+		
 	}
 
 	crearFichas(){
@@ -60,7 +67,7 @@ export default class Tablero {
 				);
 			} 
 	       	else{
-						// Desde 0 hasta 210
+				// Desde 0 hasta 210
 	            posXInicioFicha = 50 + Math.round(Math.random()*160);
 	            posYInicioFicha = 0 + Math.round(Math.random()*200);
 	            color = "red";
@@ -75,13 +82,8 @@ export default class Tablero {
 					)
 				);
 	        }
-
-	        // console.log("x: " + posXInicioFicha + " | y: " + posYInicioFicha);
-	        // this.arr_fichas.push(new Ficha(this.canvas_context, posXInicioFicha, posYInicioFicha , 20, color));
 	    }
 	}
-
-	
 
 	setFilasTablero() {
 		switch (this.opctablero) {
