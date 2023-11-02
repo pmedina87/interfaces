@@ -21,6 +21,8 @@ export default class Tablero {
 
 	constructor(canvas_context, opctablero, desafio, jugador1, jugador2) {
 		this.canvas_context = canvas_context;
+		this.posX = canvas_context.canvas.getAttribute("width") / 2;
+		this.posY = canvas_context.canvas.getAttribute("height") / 2;
 		this.opctablero = opctablero;
 		this.desafio = desafio;
 		this.ancho = 500;
@@ -136,13 +138,13 @@ export default class Tablero {
 		let posXActual =
 			this.getCoordenadasCentroTablero().x -
 			(this.columnas / 2) * (this.ancho / this.columnas);
+			
 		let posYActual =
 			this.getCoordenadasCentroTablero().y - (this.filas / 2) * (this.alto / this.filas);
 		let casillerocreado = null;
 
 		for (let fila = 0; fila < this.filas; fila++) {
 			for (let columna = 0; columna < this.columnas; columna++) {
-				console.log(1);
 				// Creamos un casillero
 				casillerocreado = new Casillero(
 					null,
