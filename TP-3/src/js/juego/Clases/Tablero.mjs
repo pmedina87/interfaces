@@ -177,4 +177,39 @@ export default class Tablero {
 				(this.columnas / 2) * (this.ancho / this.columnas);
 		}
 	}
+
+	mouseDentroDeLaFicha(indice_ficha, event){
+		// Validamos que el indice sea valido
+		if(indice_ficha < 0 || indice_ficha > (this.fichas.length - 1)){ return false; }
+		// Validamos si la ficha no está colocada y si el mouse está dentro de la ficha
+		return this.fichas[indice_ficha].isClickingInside(event);
+	}
+	
+	fichaEstaSiendoClickeada(indice_ficha, event){
+		// Validamos que el indice sea valido
+		if(indice_ficha < 0 || indice_ficha > (this.fichas.length - 1)){ return false; }
+		// Validamos que el estado de la ficha como clickeada
+		if(!this.fichas[indice_ficha].getClickeada()){ return false; }
+		// Validamos si la ficha no está colocada y si el mouse está dentro de la ficha
+		return this.fichas[indice_ficha].isClickingInside(event);
+	}
+
+	setearFichaComoDesclickeada(indice_ficha){
+		if(indice_ficha >= 0 && indice_ficha <= (this.fichas.length - 1)){
+			this.fichas[indice_ficha].setearDesclickeada();
+		}
+	}
+
+	setearFichaComoClickeada(indice_ficha){
+		if(indice_ficha >= 0 && indice_ficha <= (this.fichas.length - 1)){
+			this.fichas[indice_ficha].setearClickeada();
+		}
+	}
+
+	setearNuevasCoordenadasAFicha(indice_ficha, x, y){
+		if(indice_ficha >= 0 && indice_ficha <= (this.fichas.length - 1)){
+			this.fichas[indice_ficha].setearNuevasCoordenadas(x, y);
+		}
+	}
+
 }

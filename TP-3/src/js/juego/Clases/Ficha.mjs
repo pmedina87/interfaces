@@ -54,4 +54,15 @@ export default class Ficha {
   setearNuevasCoordenadas(x, y){
     this.posicionActual = {x: x, y: y}
   }
+
+  isClickingInside(event){
+    // En caso de que la ficha ya halla sido jugada, automaticamente devuelve false 
+    if(this.isPlaced) { return false;}
+    
+    // √((x2 - x1)² + (y2 - y1)²) < ficha.radius
+    let distancia = Math.sqrt(Math.pow(this.posicionActual.x - event.offsetX, 2) + Math.pow(this.posicionActual.y - event.offsetY, 2));
+    // Muestra la posicion actual del mouse siendo clickeado
+    // console.log("radio: " + item.getRadius() + " | Distancia: " + distancia + " x: " + event.offsetX + " y: " + event.offsetY);
+    return (distancia < this.getRadius()); 
+  }
 }
