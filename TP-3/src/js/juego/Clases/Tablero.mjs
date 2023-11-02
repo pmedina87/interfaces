@@ -2,8 +2,7 @@ import Rectangle from "./Rectangle.mjs";
 import Casillero from "./Casillero.mjs";
 
 export default class Tablero {
-	constructor(posX, posY, contexto, tipo, canvas) {
-        this.canvas = canvas;
+	constructor(posX, posY, contexto, tipo) {
 		this.posX = posX;
 		this.posY = posY;
 		this.contexto = contexto;
@@ -16,7 +15,7 @@ export default class Tablero {
 		this.posYAux = this.posY;
 		this.dimensionCasillero = this.setDimensionCasillero();
 	}
-
+	
 	setAnchoTablero() {
 		if (this.tipo == "4") {
 			return 500;
@@ -101,12 +100,15 @@ export default class Tablero {
 	}
 
 	dibujar() {
-        const background = new Rectangle(
+      const background = new Rectangle(
 			this.contexto,
-			this.canvas.width,
-			this.canvas.height,
+			this.contexto.canvas.width,
+			this.contexto.canvas.height,
 			"rgb(130, 20, 60)"
 		);
+
+		background.draw();
+		
 		for (let fila = 0; fila < this.filas; fila++) {
 			for (let columna = 0; columna < this.columnas; columna++) {
 				let casillerocreado = new Casillero(
