@@ -112,23 +112,22 @@ export default class Tablero {
 
 	crearCasilleros(){
 		// Setteamos el borde superior izquierdo del primer casillero
-		console.log("Columbas: " + this.columnas + " | dividido 2: " + this.columnas/2);
-		console.log("Centro del tablero: " + "{x: " + (this.getCoordenadasCentroTablero().x / 2) + ", y: " + (this.getCoordenadasCentroTablero().y / 2) + "}");
 		let posXActual = this.getCoordenadasCentroTablero().x - ((this.columnas / 2) * ((this.ancho / this.columnas)));
 		let posYActual = this.getCoordenadasCentroTablero().y - ((this.filas / 2) * ((this.alto / this.filas)));
 		
 		for (let fila = 0; fila < this.filas; fila++) {
 			for (let columna = 0; columna < this.columnas; columna++) {
+				// Creamos un casillero
 				let casillerocreado = new Casillero(null, (this.ancho / this.columnas), (this.alto / this.filas), this.contexto, posXActual, posYActual);
-				
+				// Aumentamos la pos actual en X que usamos como pivote
 				posXActual += casillerocreado.getAncho();
-				
-				if (columna == this.columnas - 1) {
-					posYActual += casillerocreado.getAlto();
-				}
-
+				// Agregamos la nueva casilla a la lista de casilleros
 				this.casilleros.push(casillerocreado);
 			}
+			
+			// Aumentamos la pos actual en Y que usamos como pivote
+			posYActual += casillerocreado.getAlto();
+			
 			// Cada vez que terminamos una fila debemos volver a settear el X en el borde izquierdo del tablero
 			posXActual = this.getCoordenadasCentroTablero().x - ((this.columnas / 2) * ((this.ancho / this.columnas)));
 		}

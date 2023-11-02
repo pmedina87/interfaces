@@ -10,13 +10,14 @@ let canvas_context = canvas.getContext("2d");
 let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
 
+// Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
 canvas.addEventListener("mousemove", (event) => {
 	console.log({x: event.offsetX, y: event.offsetY});
 })
 
 btn_jugar.addEventListener("click", () => {
 	opc_juego.removeAttribute("hidden");
-    btn_jugar.classList.add("hidden");
+  btn_jugar.classList.add("hidden");
 })
 
 
@@ -31,36 +32,19 @@ formulario.addEventListener("submit", (e) => {
 	let jugador1 = dataForm.get("jugador1");
 	let jugador2 = dataForm.get("jugador2");
 
-  let posXInicioTablero = 0;
-	let posYInicioTablero = 0;
   let fichasJugador = 0;
 
-	// setear dinamicamente posX y posY de donde comienza el tablero, segun el tipo.
-	if (tablero == CUATRO_L) {
-		posXInicioTablero = 195;
-		posYInicioTablero = 50;
-		fichasJugador = 21;
-	}
-	if (tablero == CINCO_L) {
-		posXInicioTablero = 200;
-		posYInicioTablero = 55;
-		fichasJugador = 28;
-	}
-	if (tablero == SEIS_L) {
-		posXInicioTablero = 215;
-		posYInicioTablero = 65;
-		fichasJugador = 36;
-	}
-	if (tablero == SIETE_L) {
-		posXInicioTablero = 215;
-		posYInicioTablero = 40;
-		fichasJugador = 45;
+	// Asignamos cantidad de fichas x jugador en base al mood de juego seleccionado
+	switch(tablero){
+		case CUATRO_L: fichasJugador = 21 ;break;
+		case CINCO_L: fichasJugador = 28 ;break;
+		case SEIS_L: fichasJugador = 36 ;break;
+		case SIETE_L: fichasJugador = 45 ;break;
 	}
 
 	// Creeamos un tablero centrado en el cambas
 	let tablero_juego = new Tablero(canvas_context, tablero);
 	
-
 	tablero_juego.dibujar();
 
 	let jug1 = crearJugador(jugador1);
