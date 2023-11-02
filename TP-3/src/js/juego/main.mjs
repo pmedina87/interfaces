@@ -1,10 +1,10 @@
 import Tablero from "./Clases/Tablero.mjs";
 import Jugador from "./Clases/Jugador.mjs";
 
-const CUATRO_L = 4;
-const CINCO_L = 5; 
-const SEIS_L = 6;
-const SIETE_L = 7;
+const CUATRO_L = "4";
+const CINCO_L = "5"; 
+const SEIS_L = "6";
+const SIETE_L = "7";
 let cont_jugador = 0;
 
 let canvas = document.querySelector("#canvas_juego");
@@ -42,6 +42,7 @@ formulario.addEventListener("submit", (e) => {
 		case CINCO_L: fichasJugador = 28 ;break;
 		case SEIS_L: fichasJugador = 36 ;break;
 		case SIETE_L: fichasJugador = 45 ;break;
+		default: fichasJugador = 21;
 	}
 
 	// Creeamos un tablero centrado en el cambas
@@ -59,13 +60,15 @@ formulario.addEventListener("submit", (e) => {
 
 function crearJugador(jugador, cant_fichas, num_jugador, x) {
 	let jugador_creado;
+
 	if (jugador != "") {
-		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, x);
+		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, canvas_context, x);
 		cont_jugador++;
 	} else {
 		cont_jugador++;
 		let nombre = "jugador " + cont_jugador;
-		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, x);
+		jugador_creado = new Jugador(jugador, cant_fichas, num_jugador, canvas_context, x);
 	}
+
 	return jugador_creado;
 }

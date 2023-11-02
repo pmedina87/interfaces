@@ -5,6 +5,7 @@ export default class Ficha {
      * un movimiento invalido y tenga que volver 
      * a su posicion inicial
      */
+    console.log(context);
     this.posicionInicial = {x: x + context.canvas.offsetLeft, y: y + context.canvas.offsetTop}; 
     this.posicionActual = {x: x + context.canvas.offsetLeft, y: y + context.canvas.offsetTop}; 
     this.context = context;
