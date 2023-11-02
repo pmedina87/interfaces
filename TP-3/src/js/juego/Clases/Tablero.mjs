@@ -7,10 +7,8 @@ export default class Tablero {
 		this.posY = contexto.canvas.getAttribute("height") / 2;
 		this.contexto = contexto;
 		this.tipo = tipo;
-		
-		this.ancho = this.setAnchoTablero();
-		this.alto = this.setAltoTablero();
-		
+		this.ancho = 500;
+		this.alto = 400;
 		this.filas = this.setFilasTablero();
 		this.columnas = this.setColumnasTablero();
 		
@@ -18,58 +16,6 @@ export default class Tablero {
 		this.casilleros = [];
 		this.crearCasilleros();
 	}
-	
-	/**
-	 * Consultar con los chicos:
-	 * 
-	 * Si el ancho del tablero es siempre el mismo
-	 * ¿Por qué no lo setteamos directamente en el constructor?
-	 */
-	setAnchoTablero() {
-		if (this.tipo == "4") {
-			return 500;
-		}
-		if (this.tipo == "5") {
-			return 500;
-		}
-		if (this.tipo == "6") {
-			return 500;
-		}
-		if (this.tipo == "7") {
-			return 500;
-		}
-	}
-
-	/**
-	 * Consultar con los chicos:
-	 * 
-	 * Si el alto del tablero es siempre el mismo
-	 * ¿Por qué no lo setteamos directamente en el constructor?
-	 */
-	setAltoTablero() {
-		if (this.tipo == "4") {
-			return 400;
-		}
-		if (this.tipo == "5") {
-			return 400;
-		}
-		if (this.tipo == "6") {
-			return 400;
-		}
-		if (this.tipo == "7") {
-			return 400;
-		}
-	}
-
-	// setDimensionCasillero() {
-	// 	switch(this.tipo){
-	// 		case "4": return 70;
-	// 		case "5": return 60;
-	// 		case "6": return 50;
-	// 		case "7": return 45;
-	// 		default: return 70;	
-	// 	}
-	// }
 
 	setFilasTablero() {
 		switch(this.tipo){
@@ -114,11 +60,12 @@ export default class Tablero {
 		// Setteamos el borde superior izquierdo del primer casillero
 		let posXActual = this.getCoordenadasCentroTablero().x - ((this.columnas / 2) * ((this.ancho / this.columnas)));
 		let posYActual = this.getCoordenadasCentroTablero().y - ((this.filas / 2) * ((this.alto / this.filas)));
-		
+		let casillerocreado = null;
+
 		for (let fila = 0; fila < this.filas; fila++) {
 			for (let columna = 0; columna < this.columnas; columna++) {
 				// Creamos un casillero
-				let casillerocreado = new Casillero(null, (this.ancho / this.columnas), (this.alto / this.filas), this.contexto, posXActual, posYActual);
+				casillerocreado = new Casillero(null, (this.ancho / this.columnas), (this.alto / this.filas), this.contexto, posXActual, posYActual);
 				// Aumentamos la pos actual en X que usamos como pivote
 				posXActual += casillerocreado.getAncho();
 				// Agregamos la nueva casilla a la lista de casilleros

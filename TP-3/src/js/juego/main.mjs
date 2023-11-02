@@ -43,7 +43,7 @@ formulario.addEventListener("submit", (e) => {
 	}
 
 	// Creeamos un tablero centrado en el cambas
-	let tablero_juego = new Tablero(canvas_context, tablero);
+	const tablero_juego = new Tablero(canvas_context, tablero);
 	
 	tablero_juego.dibujar();
 
