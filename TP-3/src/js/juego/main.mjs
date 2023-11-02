@@ -11,14 +11,14 @@ let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
 
 // Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
-canvas.addEventListener("mousemove", (event) => {
-	console.log({x: event.offsetX, y: event.offsetY});
-})
+// canvas.addEventListener("mousemove", (event) => {
+// 	console.log({x: event.offsetX, y: event.offsetY});
+// });
 
 btn_jugar.addEventListener("click", () => {
 	opc_juego.removeAttribute("hidden");
   btn_jugar.classList.add("hidden");
-})
+});
 
 
 // tomo los datos del formulario para setear el juego (segun lo que crearon los usuario)
@@ -47,9 +47,10 @@ formulario.addEventListener("submit", (e) => {
 	
 	tablero_juego.dibujar();
 
-	let jug1 = crearJugador(jugador1);
-	let jug2 = crearJugador(jugador2);
+	let jug1 = crearJugador(jugador1, fichasJugador);
+	let jug2 = crearJugador(jugador2, fichasJugador);
 });
+
 
 function crearJugador(jugador) {
 	let jugador_creado;
