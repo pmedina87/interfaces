@@ -46,12 +46,15 @@ formulario.addEventListener("submit", (e) => {
 	}
 	
 
-	function deseleccionarFichas(){
+	function deseleccionarFichas(event){
 		botonIzquierdoClickeado = false;
 		// console.log("Mouse Up!" + botonIzquierdoClickeado);
 		tablero_juego.cambiarTurnoJugador();
 		// Se desclickean todas las fichas
 		for(let i = tablero_juego.fichas.length-1;i >= 0;i--){
+			if(tablero_juego.fichaEstaSiendoClickeada(i, event)){
+				tablero_juego.fichaEnControlador(event);
+			}
 			tablero_juego.setearFichaComoDesclickeada(i);
 		}
 	}

@@ -33,7 +33,10 @@ export default class Tablero {
 		this.timerJug2 = new Timer(this.canvas_context, this.jug2, 300);
 
 		// Variables logica del juego
-		this.posicionesIngreso = [];	
+		this.posicionesIngreso = [];
+		this.inicioYControladorFicha = 8; 		// Posicion Y de donde comienza el controlador que agrega fichas al tablero
+		this.altoDelControladorFicha = 40;		// Alto del controlador
+	
 		this.setearArregloEntradaFichas();	
 		this.turnoActual = this.setearPrimeroEnJugar();
 		
@@ -161,16 +164,27 @@ export default class Tablero {
 		);
 	}
 
+	/**
+	 * De ser posible, agrega una ficha al tablero
+	 */
+	fichaEnControlador(event){
+		let inicioXControlador = this.getCoordenadasCentroTablero().x - (this.columnas / 2) * (this.ancho / this.columnas);
+		console.log(this.ancho);
+		console.log(`x: ${event.offsetX} | y: ${event.offsetY}`);
+		// Verificamos que la ficha esté dentro del rango de Y del controlador
+		if((event.offsetY >= this.inicioYControladorFicha) && (event.offsetY <= (this.inicioYControladorFicha + this.altoDelControladorFicha)) && 
+		(event.offsetX >= inicioXControlador) && (event.offsetX <= (inicioXControlador + this.ancho))){
+			console.log("Está bien en X e Y");
+		}else{
+			console.log("Posicion no valida!!!");
+		}
+	}
+
 	dibujarReferenciaIngresoFicha() {
 		for (let index = 0; index < this.posicionesIngreso.length - 1; index++) {
-			const posXInicio = this.posicionesIngreso[index];
-			const posXFin =
-				typeof this.posicionesIngreso[index + 1] !== "undefined"
-					? this.posicionesIngreso[index + 1]
-					: this.ancho;
 			this.canvas_context.beginPath();
 			this.canvas_context.strokeStyle = "white";
-			this.canvas_context.rect(posXInicio, 8, this.ancho / this.columnas, 40);
+			this.canvas_context.rect(this.posicionesIngreso[index], this.inicioYControladorFicha, this.ancho / this.columnas, this.altoDelControladorFicha);
 			this.canvas_context.stroke();
 		}
 	}
@@ -259,12 +273,12 @@ export default class Tablero {
 	/////////////////////////////////////// LOGICA JUEGO ////////////////////////////////////////
 
 	setearArregloEntradaFichas() {
-		let posXActual =
+		let posXInicioTablero =
 			this.getCoordenadasCentroTablero().x -
 			(this.columnas / 2) * (this.ancho / this.columnas);
 
 		for (let index = 0; index <= this.columnas; index++) {
-			this.posicionesIngreso.push(posXActual + (this.ancho / this.columnas) * index);
+			this.posicionesIngreso.push(posXInicioTablero + (this.ancho / this.columnas) * index);
 		}
 	}
 
