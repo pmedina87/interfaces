@@ -12,7 +12,7 @@ let btn_jugar = document.querySelector("#btn-jugar");
 
 // Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
 canvas.addEventListener("mousemove", (event) => {
-	console.log({x: event.offsetX, y: event.offsetY});
+	// console.log({x: event.offsetX, y: event.offsetY});
 });
 
 btn_jugar.addEventListener("click", () => {
@@ -34,7 +34,6 @@ formulario.addEventListener("submit", (e) => {
 		
 		for(let i = tablero_juego.fichas.length-1;i >= 0;i--){
 			// Se clickea el boton del mouse y además este se está dentro de la ficha actual 
-			console.log((botonIzquierdoClickeado && tablero_juego.mouseDentroDeLaFicha(i, event) && tablero_juego.verificarFichaClickeadaEsJugadorTurnoActual(i)));
 			if(botonIzquierdoClickeado && tablero_juego.mouseDentroDeLaFicha(i, event) && tablero_juego.verificarFichaClickeadaEsJugadorTurnoActual(i)){
 				// Seteamos la ficha como clickeada
 				tablero_juego.setearFichaComoClickeada(i);
@@ -48,8 +47,8 @@ formulario.addEventListener("submit", (e) => {
 
 	function deseleccionarFichas(event){
 		botonIzquierdoClickeado = false;
+		tablero_juego.resetearAyudaVisualControladorTiroValido();
 		// console.log("Mouse Up!" + botonIzquierdoClickeado);
-		tablero_juego.cambiarTurnoJugador();
 		// Se desclickean todas las fichas
 		for(let i = tablero_juego.fichas.length-1;i >= 0;i--){
 			if(tablero_juego.fichaEstaSiendoClickeada(i, event)){
@@ -58,6 +57,8 @@ formulario.addEventListener("submit", (e) => {
 					if(indice != null){
 						if(tablero_juego.isColumnaConEspacio(indice)){
 							tablero_juego.agregarFicha(tablero_juego.fichas[i], indice);
+							// Si la ficha se logró poner exitosamente se cambia el turno del jugador
+							tablero_juego.cambiarTurnoJugador();							
 						}
 					}
 				}else{
@@ -75,6 +76,7 @@ formulario.addEventListener("submit", (e) => {
 			if(tablero_juego.fichaEstaSiendoClickeada(i, event)){
 				// Seteamos las nuevas coordenadas de la ficha
 				tablero_juego.setearNuevasCoordenadasAFicha(i, event.offsetX, event.offsetY);
+				tablero_juego.ayudaVisualControladorTiroValido(event.offsetX, event.offsetY);
 			}
 		}
 	}

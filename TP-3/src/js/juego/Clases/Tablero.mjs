@@ -3,9 +3,9 @@ import Casillero from "./Casillero.mjs";
 import Jugador from "./Jugador.mjs";
 import Ficha from "./Ficha.mjs";
 import Timer from "./Timer.mjs";
+import RectanguloIngreso from "./RectanguloIngreso.mjs";
 
 export default class Tablero {
-	
 	constructor(canvas_context, opctablero, desafio, jugador1, jugador2) {
 		this.canvas_context = canvas_context;
 		this.posX = canvas_context.canvas.getAttribute("width") / 2;
@@ -26,6 +26,7 @@ export default class Tablero {
 			this.canvas_context.canvas.height,
 			"rgb(224, 230, 230)"
 		);
+		// Casilleros de ayuda visual al jugador de donde se puede tirar una ficha
 		this.casilleros = [];
 		this.crearCasilleros();
 
@@ -34,10 +35,8 @@ export default class Tablero {
 
 		// Variables logica del juego
 		this.posicionesIngreso = [];
-		this.inicioYControladorFicha = 8; 		// Posicion Y de donde comienza el controlador que agrega fichas al tablero
-		this.altoDelControladorFicha = 40;		// Alto del controlador
-	
 		this.setearArregloEntradaFichas();	
+
 		this.turnoActual = this.setearPrimeroEnJugar();
 		
 		this.matriz = null;
@@ -168,20 +167,19 @@ export default class Tablero {
 	 * De ser posible, agrega una ficha al tablero
 	 */
 	fichaEnControlador(event){
-		let inicioXControlador = this.getCoordenadasCentroTablero().x - (this.columnas / 2) * (this.ancho / this.columnas);
-		// console.log(`x: ${event.offsetX} | y: ${event.offsetY}`);
-
-		// Verificamos que la ficha esté dentro del rango de Y del controlador
-		return ((event.offsetY >= this.inicioYControladorFicha) && (event.offsetY <= (this.inicioYControladorFicha + this.altoDelControladorFicha)) && 
-		(event.offsetX >= inicioXControlador) && (event.offsetX <= (inicioXControlador + this.ancho)));
+		for(let i=0;i<this.posicionesIngreso.length;i++){
+			if(this.posicionesIngreso[i].getIsMouseOver(event.offsetX, event.offsetY)){
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	getIndiceColumna(event){
-		console.log(`x: ${event.offsetX} | y: ${event.offsetY}`);
-		for(let i = 1;i<(this.posicionesIngreso).length;i++){
-			console.log(event.offsetX);
-			if(event.offsetX <= this.posicionesIngreso[i]){
-				return (i-1);
+		for(let i = 0;i<this.posicionesIngreso.length;i++){
+			if(event.offsetX <= this.posicionesIngreso[i].getLimiteXDerecha()){
+				return i;
 			}
 		}
 	}
@@ -191,12 +189,7 @@ export default class Tablero {
 	}
 
 	dibujarReferenciaIngresoFicha() {
-		for (let index = 0; index < this.posicionesIngreso.length - 1; index++) {
-			this.canvas_context.beginPath();
-			this.canvas_context.strokeStyle = "white";
-			this.canvas_context.rect(this.posicionesIngreso[index], this.inicioYControladorFicha, this.ancho / this.columnas, this.altoDelControladorFicha);
-			this.canvas_context.stroke();
-		}
+		this.posicionesIngreso.forEach(posIngreso => posIngreso.dibujar());
 	}
 
 	getCoordenadasCentroTablero() {
@@ -283,14 +276,35 @@ export default class Tablero {
 	/////////////////////////////////////// LOGICA JUEGO ////////////////////////////////////////
 
 	setearArregloEntradaFichas() {
-		let posXInicioTablero =
-			this.getCoordenadasCentroTablero().x -
-			(this.columnas / 2) * (this.ancho / this.columnas);
+		let inicioY = 8; 		// Posicion Y de donde comienza el controlador que agrega fichas al tablero
+		let alto = 40;			// Alto del controlador
+		let color_borde = "rgb(240, 240, 240)";
+		let color_hover = "rgb(20, 110, 76)";
 
-		for (let index = 0; index <= this.columnas; index++) {
-			this.posicionesIngreso.push(posXInicioTablero + (this.ancho / this.columnas) * index);
+		let ancho_columna = (this.ancho / this.columnas);
+		let posXInicioTablero = this.getCoordenadasCentroTablero().x - (this.columnas / 2) * ancho_columna;
+
+		for (let index = 0; index < this.columnas; index++) {
+			let rect = new RectanguloIngreso(this.canvas_context, posXInicioTablero + (ancho_columna * index), inicioY, ancho_columna, alto, color_borde, color_hover);
+			this.posicionesIngreso.push(rect);
 		}
 	}
+	resetearAyudaVisualControladorTiroValido(){
+		this.posicionesIngreso.forEach(posIngreso => posIngreso.setIsMouseOverFalse());
+		
+	}
+
+	ayudaVisualControladorTiroValido(pos_x_actual, pos_y_actual){
+		for (let index = 0; index < this.posicionesIngreso.length; index++) {
+			// En base a la posicion actual del mouse verificamos si estamos sobre el rectangulo de ingreso actual
+			if(this.posicionesIngreso[index].getIsMouseOver(pos_x_actual, pos_y_actual)){
+				this.posicionesIngreso[index].setIsMouseOverTrue();
+				console.log(`Tiro valido en la casilla ${index}`);
+			} else {
+				this.posicionesIngreso[index].setIsMouseOverFalse();
+			}
+		}
+	}	
 
 	setearPrimeroEnJugar() {
 		if (Math.random() > 0.5) {
@@ -379,11 +393,8 @@ export default class Tablero {
 		nuevaPosX += ((this.ancho / this.columnas) / 2);
 
 		let nuevaPosY = this.posY + (this.alto / 2);
-		console.log(`Indice fila ${indice_fila}`);
 		nuevaPosY -= (copia_indice_fila * (this.alto / this.filas));
 		nuevaPosY -= ((this.alto / this.filas) / 2);
-
-		console.log(nuevaPosY);
 
 		ficha.setearPlaced();
 		ficha.setearNuevasCoordenadas(nuevaPosX, nuevaPosY);
