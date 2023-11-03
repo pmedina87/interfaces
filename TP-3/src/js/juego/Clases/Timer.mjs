@@ -27,13 +27,16 @@ export default class Timer {
 		return this.tiempo_restante;
 	}
 
-	dibujar() {
-		if (!this.getIsPausado) {
-			setInterval(function () {
+	dibujar(color, posX, posY) {
+		if (!this.getIsPausado()) {
+			// setInterval(function () {                
 				this.tiempo_restante--;
-			}, 1000);
+			// }, 1000);
 		}
+        console.log(this.tiempo_restante);
 		this.canvas_context.font = "30px Arial";
-		this.canvas_context.fillText(this.tiempo_restante, 80, 50);
+        this.canvas_context.textAlign = "center";
+        this.canvas_context.strokeStyle = color;
+		this.canvas_context.strokeText(this.tiempo_restante, posX, posY);
 	}
 }

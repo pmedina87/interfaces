@@ -12,7 +12,7 @@ let btn_jugar = document.querySelector("#btn-jugar");
 
 // Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
 canvas.addEventListener("mousemove", (event) => {
-	console.log({x: event.offsetX, y: event.offsetY});
+	// console.log({x: event.offsetX, y: event.offsetY});
 });
 
 btn_jugar.addEventListener("click", () => {
@@ -34,7 +34,8 @@ formulario.addEventListener("submit", (e) => {
 		
 		for(let i = tablero_juego.fichas.length-1;i >= 0;i--){
 			// Se clickea el boton del mouse y además este se está dentro de la ficha actual 
-			if(botonIzquierdoClickeado && tablero_juego.mouseDentroDeLaFicha(i, event)){
+			console.log((botonIzquierdoClickeado && tablero_juego.mouseDentroDeLaFicha(i, event) && tablero_juego.verificarFichaClickeadaEsJugadorTurnoActual(i)));
+			if(botonIzquierdoClickeado && tablero_juego.mouseDentroDeLaFicha(i, event) && tablero_juego.verificarFichaClickeadaEsJugadorTurnoActual(i)){
 				// Seteamos la ficha como clickeada
 				tablero_juego.setearFichaComoClickeada(i);
 				// Le asignamos las nuevas coordenadas (centra la ficha con respecto al mouse)
@@ -48,7 +49,7 @@ formulario.addEventListener("submit", (e) => {
 	function deseleccionarFichas(){
 		botonIzquierdoClickeado = false;
 		// console.log("Mouse Up!" + botonIzquierdoClickeado);
-		
+		tablero_juego.cambiarTurnoJugador();
 		// Se desclickean todas las fichas
 		for(let i = tablero_juego.fichas.length-1;i >= 0;i--){
 			tablero_juego.setearFichaComoDesclickeada(i);
@@ -70,7 +71,7 @@ formulario.addEventListener("submit", (e) => {
 	canvas.addEventListener("mouseup", deseleccionarFichas);
 	
 	canvas.addEventListener("click", ()=>{
-		console.log("Click");
+		// console.log("Click");
 	});
 	
 	canvas.addEventListener("mouseleave", deseleccionarFichas);
@@ -98,7 +99,7 @@ formulario.addEventListener("submit", (e) => {
 
 	// Creeamos un tablero centrado en el cambas
 	const tablero_juego = new Tablero(canvas_context, opctablero, desafio, jugador1, jugador2);
-	
+	tablero_juego.iniciarTiempo();
 
 
 	function ejecutarJuego(){	
