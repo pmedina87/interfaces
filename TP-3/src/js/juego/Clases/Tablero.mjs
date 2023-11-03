@@ -312,7 +312,7 @@ export default class Tablero {
 	}
 
 	verificarFichaClickeadaEsJugadorTurnoActual(indice_ficha) {
-		return this.fichas[indice_ficha].getIsMismoJugador(this.turnoActual);
+		return this.fichas[indice_ficha].perteneceA(this.turnoActual);
 	}
 
 	iniciarTiempo() {
