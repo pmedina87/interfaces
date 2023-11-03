@@ -12,7 +12,7 @@ let btn_jugar = document.querySelector("#btn-jugar");
 
 // Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
 canvas.addEventListener("mousemove", (event) => {
-	console.log({x: event.offsetX, y: event.offsetY});
+	// console.log({x: event.offsetX, y: event.offsetY});
 });
 
 btn_jugar.addEventListener("click", () => {
