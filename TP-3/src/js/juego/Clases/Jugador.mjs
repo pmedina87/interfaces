@@ -1,5 +1,3 @@
-import Ficha from "./Ficha.mjs";
-
 export default class Jugador {
     constructor(nombre, num_jugador, canvas_context) {
         this.nombre = nombre;
