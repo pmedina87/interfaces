@@ -588,33 +588,33 @@ export default class Tablero {
 		let jug_actual = (this.matriz[indice_columna][indice_fila].perteneceA(this.jug1)) ? this.jug1 : this.jug2;
 		
 		if(this.verificarAbajo(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para abajo!!!`);	
 			return true; 
 		}
 		
 		if(this.verificarIzquierda(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para izquierda!!!!!!`);	
 			return true; 
 		}
 		
 		if(this.verificarDerecha(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para derecha!!!`);	
 			return true; 
 		}
 		if(this.verificarDiagonalInferiorIzquierda(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para diagonal inferior izquierda!!!`);	
 			return true; 
 		}
 		if(this.verificarDiagonalInferiorDerecha(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para diagonal inferior derecha!!!`);	
 			return true; 
 		}
 		if(this.verificarDiagonalSuperiorIzquierda(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para diagonal superior izquierda!!!`);	
 			return true; 
 		}
 		if(this.verificarDiagonalSuperiorDerecha(indice_columna, indice_fila, jug_actual)){ 
-			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			console.log(`Ganó el jugador ${jug_actual} para diagonal superior derecha!!!`);	
 			return true; 
 		}
 
