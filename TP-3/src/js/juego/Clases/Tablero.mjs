@@ -316,9 +316,11 @@ export default class Tablero {
 		if (this.turnoActual.num_jugador == 1) {
 			this.timerJug1.setIsPausado();
 			this.timerJug2.setIsPausado();
+			this.turnoActual = this.jug2;
 		} else {
 			this.timerJug2.setIsPausado();
 			this.timerJug1.setIsPausado();
+			this.turnoActual = this.jug1;
 		}
 	}
 
