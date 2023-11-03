@@ -32,9 +32,10 @@ export default class Timer {
 		const segundos = this.tiempo_restante % 60;
 		
 		if (!this.getIsPausado()) {
-			// setInterval(function () {                
-				this.tiempo_restante--;
-			// }, 1000);
+			setInterval(this.restarTiempo(), 1000);
+			// // setInterval(function () {                
+			// 	this.tiempo_restante--;
+			// // }, 1000);
 		}
 		
 		const minutosStr = minutos.toString().padStart(2, "0");
@@ -47,5 +48,9 @@ export default class Timer {
 		this.canvas_context.textAlign = "center";
 		this.canvas_context.strokeStyle = color;
 		this.canvas_context.strokeText(tiempo, posX, posY);
+	}
+
+	restarTiempo() {
+		this.tiempo_restante --;
 	}
 }

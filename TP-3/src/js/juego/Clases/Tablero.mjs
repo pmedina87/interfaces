@@ -29,8 +29,8 @@ export default class Tablero {
 		this.casilleros = [];
 		this.crearCasilleros();
 
-		this.timerJug1 = new Timer(this.canvas_context, this.jug1, 300);
-		this.timerJug2 = new Timer(this.canvas_context, this.jug2, 300);
+		this.timerJug1 = new Timer(this.canvas_context, this.jug1, 300000);
+		this.timerJug2 = new Timer(this.canvas_context, this.jug2, 300000);
 
 		// Variables logica del juego
 		this.posicionesIngreso = [];

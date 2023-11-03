@@ -98,7 +98,7 @@ formulario.addEventListener("submit", (e) => {
 	let jugador1 = dataForm.get("jugador1");
 	let jugador2 = dataForm.get("jugador2");
 
-  let fichasJugador = 0;
+  	let fichasJugador = 0;
 
 	// Asignamos cantidad de fichas x jugador en base al mood de juego seleccionado
 	switch(opctablero){
