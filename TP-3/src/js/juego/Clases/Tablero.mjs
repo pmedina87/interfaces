@@ -47,12 +47,41 @@ export default class Tablero {
 		this.timerJug2 = new Timer(this.canvas_context, this.jug2, 100000);
 
 		// Variables logica del juego
-		this.posicionesIngreso = [];
-		this.setearArregloEntradaFichas();
+		this.posicionesIngreso = [];	
+		this.setearArregloEntradaFichas();	
 		this.turnoActual = this.setearPrimeroEnJugar();
+		
+		this.matriz = null;
+		this.inicializarMatriz();
+
+		console.log(this.matriz);
+
+		// Primero siempre se tiene que verificar si la columna no está llena
+		if(this.isColumnaConEspacio(0)){
+			this.agregarFicha(this.fichas[0], 0);
+		}
+		if(this.isColumnaConEspacio(0)){
+			this.agregarFicha(this.fichas[1], 1);
+		}
+		if(this.isColumnaConEspacio(0)){
+			this.agregarFicha(this.fichas[2], 2);
+		}
+		if(this.isColumnaConEspacio(0)){
+			this.agregarFicha(this.fichas[3], 3);
+		}
+
+		// console.log(this.agregarFicha(this.fichas[1], 0));
+		// console.log(this.agregarFicha(this.fichas[2], 0));
+		// console.log(this.agregarFicha(this.fichas[3], 0));
+		
+		console.log(this.matriz);
 	}
 
-	crearFichas() {
+	crearTimmer() {
+		this.canvas_context.font = "30px Arial";
+	}
+
+	crearFichas(){
 		let cant_fichas = this.filas * this.columnas;
 		for (let i = 0; i < cant_fichas; i++) {
 			let color = "blue";
@@ -303,4 +332,286 @@ export default class Tablero {
 			this.timerJug1.setIsPausado();
 		}
 	}
+
+	inicializarMatriz(){
+		this.matriz = new Array(this.columnas);
+		
+		for(let i = 0;i<this.matriz.length;i++){
+			this.matriz[i] = new Array(this.filas);
+		}
+
+		for(let i = 0 ;i<this.matriz.length;i++){
+			for(let j = 0 ;j<this.matriz[0].length;j++){
+				this.matriz[i][j] = null;
+			}	
+		}
+	}
+
+	/**
+	 * Devuelve si una columna tiene espacio para agregar otra ficha
+	 * @param indice_columna a verificar
+	 * @returns boolean (t/f)
+	 */
+	isColumnaConEspacio(indice_columna){
+		if(indice_columna < 0 || indice_columna > (this.columnas - 1)){
+			throw new Error(`Solo se aceptan indices desde el 0 hasta el ${(this.columnas - 1)}`);
+		}
+
+		return this.matriz[indice_columna][0] == null;
+	}
+
+	/**
+	 * Devuelve el indice del array del primer lugar que no tenga ficha (de abajo hacia arriba)
+	 * @param indice_columna a verificar
+	 * @returns indice del tope
+	 */
+	primerIndiceDisponibe(indice_columna){
+		let columna = this.matriz[indice_columna];
+		for(let indice_fila = (columna.length - 1);indice_fila >= 0; indice_fila--){
+			if(columna[indice_fila] == null){ return indice_fila }
+		}
+
+	}
+
+	/**
+	 * Agrega una ficha a la logica del tablero
+	 * @param ficha a agregar
+	 * @param indice_columna donde se tiene que agregar la ficha
+	 */
+	agregarFicha(ficha, indice_columna){
+		let indice_fila = this.primerIndiceDisponibe(indice_columna);
+		this.matriz[indice_columna][indice_fila] = ficha;
+		if(this.isGanador(indice_columna, indice_fila)){
+			// Iluminar las fichas puestas del jugador ganador
+		}
+	}
+
+
+	//----------------------------------------------- VERIFICAR VICTORIAS -----------------------------------------------//
+	verificarAbajo(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas por debajo sea mayor o igual a la necesaria para ganar
+		if((this.matriz[indice_columna].length - indice_fila - 1) < (this.opctablero - 1)){
+			console.log("Es imposible ganar para abajo");
+			return false;
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna][indice_fila + i];
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion abajo: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion abajo: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(ficha_actual == null || !ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+	
+	verificarIzquierda(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas a la izquierda sea mayor o igual a la necesaria para ganar
+		if(indice_columna < (this.opctablero - 1)){ 
+			console.log("Es imposible ganar para la izquierda");
+			return false; 
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna - i][indice_fila];
+			if(ficha_actual == null) { return false; }
+
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion izq: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion izq: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(!ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+	
+	verificarDerecha(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas a la izquierda sea mayor o igual a la necesaria para ganar
+		if(indice_columna + (this.opctablero - 1) > this.columnas){ 
+			console.log("Es imposible ganar para la derecha");
+			return false; 
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna + i][indice_fila];
+			if(ficha_actual == null) { return false; }
+
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion der: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion der: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(!ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+
+	verificarDiagonalSuperiorIzquierda(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas a la izquierda y hacia arriba sea mayor o igual a la necesaria para ganar
+		if((indice_columna < (this.opctablero - 1)) || (indice_fila < (this.opctablero - 1))){ 
+			console.log("Es imposible ganar para la diagonal superior izquierda");
+			return false; 
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna - i][indice_fila - i];
+			if(ficha_actual == null) { return false; }
+
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion diagIzqSup: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion diagIzqSup: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(!ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+
+	verificarDiagonalSuperiorDerecha(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas a la derecha y hacia arriba sea mayor o igual a la necesaria para ganar
+		
+		if((indice_columna + (this.opctablero - 1)) > this.columnas || (indice_fila < (this.opctablero - 1))){ 
+			console.log("Es imposible ganar para la diagonal superior derecha");
+			return false; 
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna + i][indice_fila - i];
+			if(ficha_actual == null) { return false; }
+
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion diagDerSup: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion diagDerSup: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(!ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+
+	verificarDiagonalInferiorDerecha(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas a la derecha y hacia abajo sea mayor o igual a la necesaria para ganar
+		if((indice_columna + (this.opctablero - 1)) > this.columnas || ((this.matriz[indice_columna].length - indice_fila - 1) < (this.opctablero - 1))){ 
+			console.log("Es imposible ganar para la diagonal inferior derecha");
+			return false; 
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna + i][indice_fila + i];
+			if(ficha_actual == null) { return false; }
+
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion diagDerInf: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion diagDerInf: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(!ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+
+	verificarDiagonalInferiorIzquierda(indice_columna, indice_fila, jug_actual) {
+		// Primero se verifica que la cantidad de fichas a la izquierda y hacia abajo sea mayor o igual a la necesaria para ganar
+		if((indice_columna < (this.opctablero - 1)) || ((this.matriz[indice_columna].length - indice_fila - 1) < (this.opctablero - 1))){ 
+			console.log("Es imposible ganar para la diagonal inferior izquierda");
+			return false; 
+		}
+		
+		let ficha_actual = null;
+		
+		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
+		for(let i = 1;i<this.opctablero;i++){
+			ficha_actual = this.matriz[indice_columna - i][indice_fila + i];
+			if(ficha_actual == null) { return false; }
+
+			if(ficha_actual.perteneceA(jug_actual)){
+				console.log(`Validacion diagIzqInf: La ficha pertenece al MISMO jugador`);
+			}else{
+				console.log(`Validacion diagIzqInf: La ficha pertenece al OTRO jugador!`);
+			}
+			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
+			if(!ficha_actual.perteneceA(jug_actual)){ return false; }
+		}
+
+		// Si todo salió bien quiere decir que gano
+		return true;
+	}
+
+	isGanador(indice_columna, indice_fila) {
+		let jug_actual = (this.matriz[indice_columna][indice_fila].perteneceA(this.jug1)) ? this.jug1 : this.jug2;
+		
+		if(this.verificarAbajo(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+		
+		if(this.verificarIzquierda(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+		
+		if(this.verificarDerecha(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+		if(this.verificarDiagonalInferiorIzquierda(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+		if(this.verificarDiagonalInferiorDerecha(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+		if(this.verificarDiagonalSuperiorIzquierda(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+		if(this.verificarDiagonalSuperiorDerecha(indice_columna, indice_fila, jug_actual)){ 
+			console.log(`Ganó el jugador ${jug_actual}!!!`);	
+			return true; 
+		}
+
+		console.log("No ganó");
+		return false;
+	}
 }
+

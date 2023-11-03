@@ -16,8 +16,12 @@ export default class Ficha {
     this.jugador = jugador;
   }
 
-  getIsMismoJugador(jugador) {
+  perteneceA(jugador) {
     return this.jugador === jugador;
+  }
+
+  getJugador(){
+    return this.jugador;
   }
 
   dibujar(){
