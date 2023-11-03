@@ -169,15 +169,25 @@ export default class Tablero {
 	 */
 	fichaEnControlador(event){
 		let inicioXControlador = this.getCoordenadasCentroTablero().x - (this.columnas / 2) * (this.ancho / this.columnas);
-		console.log(this.ancho);
-		console.log(`x: ${event.offsetX} | y: ${event.offsetY}`);
+		// console.log(`x: ${event.offsetX} | y: ${event.offsetY}`);
+
 		// Verificamos que la ficha esté dentro del rango de Y del controlador
-		if((event.offsetY >= this.inicioYControladorFicha) && (event.offsetY <= (this.inicioYControladorFicha + this.altoDelControladorFicha)) && 
-		(event.offsetX >= inicioXControlador) && (event.offsetX <= (inicioXControlador + this.ancho))){
-			console.log("Está bien en X e Y");
-		}else{
-			console.log("Posicion no valida!!!");
+		return ((event.offsetY >= this.inicioYControladorFicha) && (event.offsetY <= (this.inicioYControladorFicha + this.altoDelControladorFicha)) && 
+		(event.offsetX >= inicioXControlador) && (event.offsetX <= (inicioXControlador + this.ancho)));
+	}
+
+	getIndiceColumna(event){
+		console.log(`x: ${event.offsetX} | y: ${event.offsetY}`);
+		for(let i = 1;i<(this.posicionesIngreso).length;i++){
+			console.log(event.offsetX);
+			if(event.offsetX <= this.posicionesIngreso[i]){
+				return (i-1);
+			}
 		}
+	}
+
+	devolverFichaPosOriginal(indice_ficha){
+		this.fichas[indice_ficha].volverPosicionInicial();
 	}
 
 	dibujarReferenciaIngresoFicha() {
@@ -346,8 +356,11 @@ export default class Tablero {
 	 */
 	primerIndiceDisponibe(indice_columna){
 		let columna = this.matriz[indice_columna];
+		console.log(columna);
 		for(let indice_fila = (columna.length - 1);indice_fila >= 0; indice_fila--){
-			if(columna[indice_fila] == null){ return indice_fila }
+			if(columna[indice_fila] == null){ 
+				return indice_fila 
+			}
 		}
 
 	}
@@ -359,7 +372,9 @@ export default class Tablero {
 	 */
 	agregarFicha(ficha, indice_columna){
 		let indice_fila = this.primerIndiceDisponibe(indice_columna);
+
 		this.matriz[indice_columna][indice_fila] = ficha;
+		
 		if(this.isGanador(indice_columna, indice_fila)){
 			// Iluminar las fichas puestas del jugador ganador
 		}

@@ -53,7 +53,16 @@ formulario.addEventListener("submit", (e) => {
 		// Se desclickean todas las fichas
 		for(let i = tablero_juego.fichas.length-1;i >= 0;i--){
 			if(tablero_juego.fichaEstaSiendoClickeada(i, event)){
-				tablero_juego.fichaEnControlador(event);
+				if(tablero_juego.fichaEnControlador(event)){
+					let indice = tablero_juego.getIndiceColumna(event);
+					if(indice){
+						if(tablero_juego.isColumnaConEspacio(indice)){
+							tablero_juego.agregarFicha(tablero_juego.fichas[i], indice);
+						}
+					}
+				}else{
+					tablero_juego.devolverFichaPosOriginal(i);
+				}
 			}
 			tablero_juego.setearFichaComoDesclickeada(i);
 		}

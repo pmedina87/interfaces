@@ -6,7 +6,7 @@ export default class Ficha {
      * a su posicion inicial
      */
     this.posicionInicial = {x: x + canvas_context.canvas.offsetLeft, y: y + canvas_context.canvas.offsetTop}; 
-    this.posicionActual = {x: x + canvas_context.canvas.offsetLeft, y: y + canvas_context.canvas.offsetTop}; 
+    this.posicionActual = this.posicionInicial; 
     this.canvas_context = canvas_context;
     this.radius = radius;
     this.background_color = background_color;
@@ -57,6 +57,9 @@ export default class Ficha {
     return this.isClickeada;
   }
 
+  volverPosicionInicial(){
+    this.posicionActual = this.posicionInicial;
+  }
   setearNuevasCoordenadas(x, y){
     this.posicionActual = {x: x, y: y}
   }
