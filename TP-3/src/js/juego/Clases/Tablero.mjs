@@ -356,7 +356,6 @@ export default class Tablero {
 	 */
 	primerIndiceDisponibe(indice_columna){
 		let columna = this.matriz[indice_columna];
-		console.log(columna);
 		for(let indice_fila = (columna.length - 1);indice_fila >= 0; indice_fila--){
 			if(columna[indice_fila] == null){ 
 				return indice_fila 
@@ -372,8 +371,23 @@ export default class Tablero {
 	 */
 	agregarFicha(ficha, indice_columna){
 		let indice_fila = this.primerIndiceDisponibe(indice_columna);
+		let copia_indice_fila = this.filas - indice_fila -1;
+		let nuevaPosX = this.getCoordenadasCentroTablero().x - (this.columnas / 2) * (this.ancho / this.columnas);
+		nuevaPosX += (indice_columna * (this.ancho / this.columnas));
+		nuevaPosX += ((this.ancho / this.columnas) / 2);
 
+		let nuevaPosY = this.posY + (this.alto / 2);
+		console.log(`Indice fila ${indice_fila}`);
+		nuevaPosY -= (copia_indice_fila * (this.alto / this.filas));
+		nuevaPosY -= ((this.alto / this.filas) / 2);
+
+		console.log(nuevaPosY);
+
+		ficha.setearPlaced();
+		ficha.setearNuevasCoordenadas(nuevaPosX, nuevaPosY);
 		this.matriz[indice_columna][indice_fila] = ficha;
+
+		
 		
 		if(this.isGanador(indice_columna, indice_fila)){
 			// Iluminar las fichas puestas del jugador ganador

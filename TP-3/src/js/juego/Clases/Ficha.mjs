@@ -41,6 +41,10 @@ export default class Ficha {
     
   }
 
+  setearPlaced(){
+    this.isPlaced = true;
+  }
+
   setearClickeada(){
     this.isClickeada = true;
   }

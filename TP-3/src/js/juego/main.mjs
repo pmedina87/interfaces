@@ -12,7 +12,7 @@ let btn_jugar = document.querySelector("#btn-jugar");
 
 // Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
 canvas.addEventListener("mousemove", (event) => {
-	// console.log({x: event.offsetX, y: event.offsetY});
+	console.log({x: event.offsetX, y: event.offsetY});
 });
 
 btn_jugar.addEventListener("click", () => {
@@ -55,7 +55,7 @@ formulario.addEventListener("submit", (e) => {
 			if(tablero_juego.fichaEstaSiendoClickeada(i, event)){
 				if(tablero_juego.fichaEnControlador(event)){
 					let indice = tablero_juego.getIndiceColumna(event);
-					if(indice){
+					if(indice != null){
 						if(tablero_juego.isColumnaConEspacio(indice)){
 							tablero_juego.agregarFicha(tablero_juego.fichas[i], indice);
 						}
