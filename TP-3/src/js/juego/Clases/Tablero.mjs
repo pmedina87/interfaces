@@ -399,7 +399,7 @@ export default class Tablero {
 		ficha.setearPlaced();
 		ficha.setearNuevasCoordenadas(nuevaPosX, nuevaPosY);
 		this.matriz[indice_columna][indice_fila] = ficha;
-		this.cantidadFichasMovidas ++; // contador de fichas movidas, para que a partir de ciertas fichas, comience a ver si hay ganador
+		this.cantidadFichasMovidas++; // contador de fichas movidas, para que a partir de ciertas fichas, comience a ver si hay ganador
 
 		if (this.cantidadFichasMovidas >= this.opctablero * 2 - 1) {
 			if (this.isGanador(indice_columna, indice_fila)) {
@@ -408,9 +408,8 @@ export default class Tablero {
 		}
 	}
 
-	
 	//----------------------------------------------- VERIFICAR VICTORIAS -----------------------------------------------//
-	
+
 	obtenerCantidadFichas(tipo, indice_columna, indice_fila, jug_actual) {
 		let cont = 1; // contador de fichas (arranca en uno porque cuenta la actual)
 		if (tipo === "H") {
@@ -498,7 +497,6 @@ export default class Tablero {
 		indice_fila,
 		jug_actual
 	) {
-
 		let cont = 0; // contador de fichas
 
 		// Verifico cuantas fichas del mismo jugador hay hacia la arriba y a la izquierda (diagonal)
@@ -569,7 +567,7 @@ export default class Tablero {
 		// }
 
 		// return cont;
-	}
+	} //ver que no se salga del rango
 
 	obtenerCantidadFichasDiagonalHaciaAbajoDerechaDesdeFicha(
 		indice_columna,
@@ -581,7 +579,7 @@ export default class Tablero {
 		// Verifico cuantas fichas del mismo jugador hay hacia abajo y a la derecha (diagonal)
 		let indice_col = indice_columna + 1;
 		let indice_fil = indice_fila + 1;
-		while (indice_col <= (this.columnas) && indice_fil <= this.filas) {
+		while (indice_col <= this.columnas && indice_fil <= this.filas) {
 			let fichaSig = this.matriz[indice_col][indice_fil];
 			//Si la siguiente ficha no es null
 			if (fichaSig != null) {
@@ -597,7 +595,7 @@ export default class Tablero {
 		}
 
 		return cont;
-	}
+	} //ver que no se salga del rango
 
 	obtenerCantidadFichasDiagonalHaciaAbajoIzquierdaDesdeFicha(
 		indice_columna,
@@ -625,7 +623,7 @@ export default class Tablero {
 		}
 
 		return cont;
-	}
+	} //ver que no se salga del rango
 
 	obtenerCantidadFichasDiagonalHaciaArribaDerechaDesdeFicha(
 		indice_columna,
@@ -653,7 +651,7 @@ export default class Tablero {
 		}
 
 		return cont;
-	}
+	} //ver que no se salga del rango
 
 	verificarHorizontal(indice_columna, indice_fila, jug_actual) {
 		let cont = 1;
@@ -965,7 +963,7 @@ export default class Tablero {
 		let jug_actual = this.matriz[indice_columna][indice_fila].perteneceA(this.jug1)
 			? this.jug1
 			: this.jug2;
-	
+
 		if (this.verificarHorizontal(indice_columna, indice_fila, jug_actual)) {
 			console.log(`Ganó el jugador ${jug_actual} en forma horizontal!!!`);
 			return true;
@@ -1023,8 +1021,6 @@ export default class Tablero {
 
 		console.log("No ganó");
 		return false;
-
-		
 	}
 }
 
