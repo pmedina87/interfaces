@@ -5,21 +5,7 @@ import Ficha from "./Ficha.mjs";
 import Timer from "./Timer.mjs";
 
 export default class Tablero {
-	// constructor(contexto, tipo) {
-	// 	this.posX = contexto.canvas.getAttribute("width") / 2;
-	// 	this.posY = contexto.canvas.getAttribute("height") / 2;
-	// 	this.contexto = contexto;
-	// 	this.tipo = tipo;
-	// 	this.ancho = 500;
-	// 	this.alto = 400;
-	// 	this.filas = this.setFilasTablero();
-	// 	this.columnas = this.setColumnasTablero();
-
-	// 	this.background = new Rectangle(this.contexto, this.contexto.canvas.width, this.contexto.canvas.height, "rgb(130, 20, 60)");
-	// 	this.casilleros = [];
-	// 	this.crearCasilleros();
-	// }
-
+	
 	constructor(canvas_context, opctablero, desafio, jugador1, jugador2) {
 		this.canvas_context = canvas_context;
 		this.posX = canvas_context.canvas.getAttribute("width") / 2;
@@ -54,27 +40,6 @@ export default class Tablero {
 		this.matriz = null;
 		this.inicializarMatriz();
 
-		console.log(this.matriz);
-
-		// Primero siempre se tiene que verificar si la columna no está llena
-		if(this.isColumnaConEspacio(0)){
-			this.agregarFicha(this.fichas[0], 0);
-		}
-		if(this.isColumnaConEspacio(0)){
-			this.agregarFicha(this.fichas[1], 1);
-		}
-		if(this.isColumnaConEspacio(0)){
-			this.agregarFicha(this.fichas[2], 2);
-		}
-		if(this.isColumnaConEspacio(0)){
-			this.agregarFicha(this.fichas[3], 3);
-		}
-
-		// console.log(this.agregarFicha(this.fichas[1], 0));
-		// console.log(this.agregarFicha(this.fichas[2], 0));
-		// console.log(this.agregarFicha(this.fichas[3], 0));
-		
-		console.log(this.matriz);
 	}
 
 	crearTimmer() {

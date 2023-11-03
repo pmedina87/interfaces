@@ -41,7 +41,6 @@ export default class Timer {
 		const segundosStr = segundos.toString().padStart(2, "0");
 		let tiempo = `${minutosStr}:${segundosStr}`;
 		if(this.tiempo_restante < 0) {
-			console.log(1);
 			tiempo = "Time out";
 		}
 		this.canvas_context.font = "30px Arial";
