@@ -1,5 +1,5 @@
 export default class Ficha {
-  constructor(canvas_context, x, y, radius, background_color, jugador){
+  constructor(canvas_context, x, y, radius, fondo_imagen, jugador){
     /**
      * Se guarda la posicion inicial en caso de que se haga 
      * un movimiento invalido y tenga que volver 
@@ -9,7 +9,9 @@ export default class Ficha {
     this.posicionActual = this.posicionInicial; 
     this.canvas_context = canvas_context;
     this.radius = radius;
-    this.background_color = background_color;
+    this.imagen = new Image(); // Asigna la ruta de la imagen al objeto Image
+		this.imagen.src = fondo_imagen; // Asigna la ruta de la imagen al objeto Image
+		this.imagen.onload = () => this.dibujar();
     this.isClickeada = false;   // Simula el efecto de drag
     this.isPlaced = false;      // Una vez que la ficha esté en el tablero necesitamos avisar que no se puede clickear
     this.isClickeable = true;
@@ -25,20 +27,33 @@ export default class Ficha {
   }
 
   dibujar(){
-    this.canvas_context.fillStyle = this.background_color;
-    
     if(this.isClickeada){
-      this.canvas_context.strokeStyle = "rgb(255, 255, 255)";
+      this.canvas_context.strokeStyle = "rgb(230, 0, 0)";
     }else{
-      this.canvas_context.strokeStyle = "rgb(0, 0, 0)";
+      this.canvas_context.strokeStyle = "rgb(255, 255, 255)";
     }
+    
+    const patrón = this.canvas_context.createPattern(this.imagen, 'repeat');
+    this.canvas_context.fillStyle = patrón;
 
     this.canvas_context.beginPath();
     this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
-    this.canvas_context.closePath();
+		this.canvas_context.closePath();
+
     this.canvas_context.fill();
+    this.canvas_context.beginPath();
+    this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
     this.canvas_context.stroke();
+  
+    // this.canvas_context.beginPath();
+    // this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radio, 0, Math.PI * 2);
+    // this.canvas_context.closePath();
     
+    // // Borde de la ficha (Ayuda visual por si es clickeado)
+    // this.canvas_context.beginPath();
+    // this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
+    // this.canvas_context.stroke();
+    // this.canvas_context.closePath();
   }
 
   setearPlaced(){

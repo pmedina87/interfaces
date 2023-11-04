@@ -58,8 +58,19 @@ export default class Tablero {
 			let posXInicioFicha = null;
 			let posYInicioFicha = null;
 
+			let fondo_ficha = null;
+
 			if (i < cant_fichas / 2) {
 				// desde 830 hasta 990px
+				switch(this.desafio){
+					case "batman_guason": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
+					case "milei_massa": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					case "boca_fluminense": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					case "homero_burns": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					// Por defecto elige la ficha de batman
+					default: fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
+				}
+
 				posXInicioFicha = 830 + Math.round(Math.random() * 160);
 				posYInicioFicha = 0 + Math.round(Math.random() * 200);
 				this.fichas.push(
@@ -68,22 +79,30 @@ export default class Tablero {
 						posXInicioFicha,
 						posYInicioFicha,
 						(this.ancho / this.columnas) * 0.4,
-						color,
+						fondo_ficha,
 						this.jug2
 					)
 				);
 			} else {
 				// Desde 40 hasta 200
+				
+				switch(this.desafio){
+					case "batman_guason": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
+					case "milei_massa": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					case "boca_fluminense": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					case "homero_burns": fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					// Por defecto elige la ficha de guason
+					default: fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
+				}
 				posXInicioFicha = 40 + Math.round(Math.random() * 160);
 				posYInicioFicha = 0 + Math.round(Math.random() * 200);
-				color = "red";
 				this.fichas.push(
 					new Ficha(
 						this.canvas_context,
 						posXInicioFicha,
 						posYInicioFicha,
 						(this.ancho / this.columnas) * 0.4,
-						color,
+						fondo_ficha,
 						this.jug1
 					)
 				);
@@ -209,11 +228,13 @@ export default class Tablero {
 			this.getCoordenadasCentroTablero().y - (this.filas / 2) * (this.alto / this.filas);
 		let casillerocreado = null;
 
+		let fondo_casilla = "../../../../../../TP-3/src/assets/img/juego/casillero.jpg";
+		
 		for (let fila = 0; fila < this.filas; fila++) {
 			for (let columna = 0; columna < this.columnas; columna++) {
 				// Creamos un casillero
 				casillerocreado = new Casillero(
-					null,
+					fondo_casilla, // url imagen fondo de la casilla
 					this.ancho / this.columnas,
 					this.alto / this.filas,
 					this.canvas_context,
