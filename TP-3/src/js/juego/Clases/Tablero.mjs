@@ -414,10 +414,51 @@ export default class Tablero {
 
 	//----------------------------------------------- VERIFICAR VICTORIAS -----------------------------------------------//
 
-	obtenerCantidadFichas(tipo, indice_columna, indice_fila, jug_actual) {
-		let cont = 1; // contador de fichas (arranca en uno porque cuenta la actual)
-		if (tipo === "H") {
-			// Verifico cuantas fichas del mismo jugador hay hacia la izquierda
+	// obtenerCantidadFichas(tipo, indice_columna, indice_fila, jug_actual) {
+	// 	let cont = 1; // contador de fichas (arranca en uno porque cuenta la actual)
+	// 	if (tipo === "H") {
+	// 		// Verifico cuantas fichas del mismo jugador hay hacia la izquierda
+	// 		let indice = indice_columna - 1;
+	// 		while (indice >= 0) {
+	// 			let fichaSig = this.matriz[indice][indice_fila];
+	// 			//Si la siguiente ficha no es null
+	// 			if (fichaSig != null) {
+	// 				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
+	// 				if (fichaSig.perteneceA(jug_actual)) {
+	// 					cont++;
+	// 				} else {
+	// 					break;
+	// 				}
+	// 			}
+	// 			indice--;
+	// 		}
+	// 		if (cont < this.opctablero) {
+	// 			// Verifico cuantas fichas del mismo jugador hay hacia la derecha
+	// 			indice = indice_columna + 1;
+	// 			while (indice <= this.columnas - 1) {
+	// 				let fichaSig = this.matriz[indice][indice_fila];
+	// 				if (fichaSig != null) {
+	// 					if (fichaSig.perteneceA(jug_actual)) {
+	// 						cont++;
+	// 					} else {
+	// 						break;
+	// 					}
+	// 				}
+	// 				indice++;
+	// 			}
+	// 		}
+
+	// 		return cont;
+	// 	}
+	// 	if (tipo === "D") {
+	// 	}
+	// }
+
+	obtenerCantidadFichasHaciaIzquierdaDesdeFicha(indice_columna, indice_fila, jug_actual) {
+		let cont = 0; // contador de fichas
+
+		// Verifico cuantas fichas del mismo jugador hay hacia la izquierda
+		if(indice_columna > 0){
 			let indice = indice_columna - 1;
 			while (indice >= 0) {
 				let fichaSig = this.matriz[indice][indice_fila];
@@ -432,45 +473,6 @@ export default class Tablero {
 				}
 				indice--;
 			}
-			if (cont < this.opctablero) {
-				// Verifico cuantas fichas del mismo jugador hay hacia la derecha
-				indice = indice_columna + 1;
-				while (indice <= this.columnas - 1) {
-					let fichaSig = this.matriz[indice][indice_fila];
-					if (fichaSig != null) {
-						if (fichaSig.perteneceA(jug_actual)) {
-							cont++;
-						} else {
-							break;
-						}
-					}
-					indice++;
-				}
-			}
-
-			return cont;
-		}
-		if (tipo === "D") {
-		}
-	}
-
-	obtenerCantidadFichasHaciaIzquierdaDesdeFicha(indice_columna, indice_fila, jug_actual) {
-		let cont = 0; // contador de fichas
-
-		// Verifico cuantas fichas del mismo jugador hay hacia la izquierda
-		let indice = indice_columna - 1;
-		while (indice >= 0) {
-			let fichaSig = this.matriz[indice][indice_fila];
-			//Si la siguiente ficha no es null
-			if (fichaSig != null) {
-				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
-				if (fichaSig.perteneceA(jug_actual)) {
-					cont++;
-				} else {
-					break;
-				}
-			}
-			indice--;
 		}
 
 		return cont;
@@ -480,17 +482,19 @@ export default class Tablero {
 		let cont = 0; // contador de fichas
 
 		// Verifico cuantas fichas del mismo jugador hay hacia la derecha
-		let indice = indice_columna + 1;
-		while (indice <= this.columnas - 1) {
-			let fichaSig = this.matriz[indice][indice_fila];
-			if (fichaSig != null) {
-				if (fichaSig.perteneceA(jug_actual)) {
-					cont++;
-				} else {
-					break;
+		if(indice_columna < this.columnas - 1){
+			let indice = indice_columna + 1;
+			while (indice <= this.columnas - 1) {
+				let fichaSig = this.matriz[indice][indice_fila];
+				if (fichaSig != null) {
+					if (fichaSig.perteneceA(jug_actual)) {
+						cont++;
+					} else {
+						break;
+					}
 				}
+				indice++;
 			}
-			indice++;
 		}
 
 		return cont;
@@ -504,21 +508,23 @@ export default class Tablero {
 		let cont = 0; // contador de fichas
 
 		// Verifico cuantas fichas del mismo jugador hay hacia la arriba y a la izquierda (diagonal)
-		let indice_col = indice_columna - 1;
-		let indice_fil = indice_fila + 1;
-		while (indice_col >= 0 && indice_fil >= 0) {
-			let fichaSig = this.matriz[indice_col][indice_fil];
-			//Si la siguiente ficha no es null
-			if (fichaSig != null) {
-				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
-				if (fichaSig.perteneceA(jug_actual)) {
-					cont++;
-				} else {
-					break;
+		if(indice_columna > 0 && indice_fila > 0) {
+			let indice_col = indice_columna - 1;
+			let indice_fil = indice_fila + 1;
+			while (indice_col >= 0 && indice_fil >= 0) {
+				let fichaSig = this.matriz[indice_col][indice_fil];
+				//Si la siguiente ficha no es null
+				if (fichaSig != null) {
+					// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
+					if (fichaSig.perteneceA(jug_actual)) {
+						cont++;
+					} else {
+						break;
+					}
 				}
+				indice_col--;
+				indice_fil++;
 			}
-			indice_col--;
-			indice_fil++;
 		}
 
 		return cont;
@@ -571,7 +577,7 @@ export default class Tablero {
 		// }
 
 		// return cont;
-	} //ver que no se salga del rango
+	} 
 
 	obtenerCantidadFichasDiagonalHaciaAbajoDerechaDesdeFicha(
 		indice_columna,
@@ -581,25 +587,28 @@ export default class Tablero {
 		let cont = 0; // contador de fichas
 
 		// Verifico cuantas fichas del mismo jugador hay hacia abajo y a la derecha (diagonal)
-		let indice_col = indice_columna + 1;
-		let indice_fil = indice_fila + 1;
-		while (indice_col <= this.columnas && indice_fil <= this.filas) {
-			let fichaSig = this.matriz[indice_col][indice_fil];
-			//Si la siguiente ficha no es null
-			if (fichaSig != null) {
-				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
-				if (fichaSig.perteneceA(jug_actual)) {
-					cont++;
-				} else {
-					break;
+		if (indice_columna < this.columnas - 1 && indice_fila < this.filas - 1) {
+			
+			let indice_col = indice_columna + 1;
+			let indice_fil = indice_fila + 1;
+			while (indice_col <= this.columnas && indice_fil <= this.filas) {
+				let fichaSig = this.matriz[indice_col][indice_fil];
+				//Si la siguiente ficha no es null
+				if (fichaSig != null) {
+					// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
+					if (fichaSig.perteneceA(jug_actual)) {
+						cont++;
+					} else {
+						break;
+					}
 				}
+				indice_col++;
+				indice_fil++;
 			}
-			indice_col++;
-			indice_fil++;
 		}
 
 		return cont;
-	} //ver que no se salga del rango
+	} 
 
 	obtenerCantidadFichasDiagonalHaciaAbajoIzquierdaDesdeFicha(
 		indice_columna,
@@ -609,25 +618,27 @@ export default class Tablero {
 		let cont = 0; // contador de fichas
 
 		// Verifico cuantas fichas del mismo jugador hay hacia abajo y a la izquierda (diagonal)
-		let indice_col = indice_columna - 1;
-		let indice_fil = indice_fila + 1;
-		while (indice_col >= 0 && indice_fil <= this.filas) {
-			let fichaSig = this.matriz[indice_col][indice_fil];
-			//Si la siguiente ficha no es null
-			if (fichaSig != null) {
-				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
-				if (fichaSig.perteneceA(jug_actual)) {
-					cont++;
-				} else {
-					break;
+		if (indice_columna > 0 && indice_fila < this.filas - 1) {
+			let indice_col = indice_columna - 1;
+			let indice_fil = indice_fila + 1;
+			while (indice_col >= 0 && indice_fil <= this.filas) {
+				let fichaSig = this.matriz[indice_col][indice_fil];
+				//Si la siguiente ficha no es null
+				if (fichaSig != null) {
+					// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
+					if (fichaSig.perteneceA(jug_actual)) {
+						cont++;
+					} else {
+						break;
+					}
 				}
+				indice_col--;
+				indice_fil++;
 			}
-			indice_col--;
-			indice_fil++;
 		}
 
 		return cont;
-	} //ver que no se salga del rango
+	}
 
 	obtenerCantidadFichasDiagonalHaciaArribaDerechaDesdeFicha(
 		indice_columna,
@@ -637,25 +648,28 @@ export default class Tablero {
 		let cont = 0; // contador de fichas
 
 		// Verifico cuantas fichas del mismo jugador hay hacia arriba y a la derecha (diagonal)
-		let indice_col = indice_columna + 1;
-		let indice_fil = indice_fila - 1;
-		while (indice_col <= this.columnas && indice_fil <= 0) {
-			let fichaSig = this.matriz[indice_col][indice_fil];
-			//Si la siguiente ficha no es null
-			if (fichaSig != null) {
-				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
-				if (fichaSig.perteneceA(jug_actual)) {
-					cont++;
-				} else {
-					break;
+		if (indice_columna < this.columnas - 1 && indice_fila < 0) {
+			
+			let indice_col = indice_columna + 1;
+			let indice_fil = indice_fila - 1;
+			while (indice_col <= this.columnas && indice_fil <= 0) {
+				let fichaSig = this.matriz[indice_col][indice_fil];
+				//Si la siguiente ficha no es null
+				if (fichaSig != null) {
+					// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
+					if (fichaSig.perteneceA(jug_actual)) {
+						cont++;
+					} else {
+						break;
+					}
 				}
+				indice_col++;
+				indice_fil--;
 			}
-			indice_col++;
-			indice_fil--;
 		}
 
 		return cont;
-	} //ver que no se salga del rango
+	}
 
 	verificarHorizontal(indice_columna, indice_fila, jug_actual) {
 		let cont = 1;
