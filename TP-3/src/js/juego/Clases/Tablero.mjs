@@ -48,10 +48,6 @@ export default class Tablero {
 		this.inicializarMatriz();
 	}
 
-	crearTimmer() {
-		this.canvas_context.font = "30px Arial";
-	}
-
 	crearFichas() {
 		let cant_fichas = this.filas * this.columnas;
 		for (let i = 0; i < cant_fichas; i++) {
@@ -131,6 +127,7 @@ export default class Tablero {
 	}
 
 	dibujar() {
+		
 		// Primero dibujamos el background de todo el canvas
 		this.color_fondo.draw();
 		// Luego iteramos por cada casillero para que se dibuje
@@ -149,6 +146,10 @@ export default class Tablero {
 			this.canvas_context.canvas.getAttribute("width") - 280 / 2,
 			80
 		);
+
+		if(this.ganadorJuego != null) {
+			this.dibujarCartelGanador();
+		}
 	}
 
 	setearNombresJugadores() {
@@ -194,6 +195,40 @@ export default class Tablero {
 
 	dibujarReferenciaIngresoFicha() {
 		this.posicionesIngreso.forEach(posIngreso => posIngreso.dibujar());
+	}
+
+	dibujarCartelGanador() {
+		// let posX = 0;
+		// let posY = 120;
+		// if(this.ganadorJuego.getNumeroJugador == 1) {
+		// 	console.log(1);
+		// 	// posX += (this.canvas_context.canvas.getAttribute("width") - this.ancho - 280) / 2;
+		// 	this.canvas_context.font = "30px Arial";
+		// 	this.canvas_context.textAlign = "center";
+		// 	this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
+		// 	this.canvas_context.strokeText("Winner!!!", 140, 120);
+		// }
+
+		// if(this.ganadorJuego.getNumeroJugador == 2) {
+		// 	console.log(2);
+		// 	// posX += this.canvas_context.canvas.getAttribute("width") - (280 / 2);
+		// 	// console.log(posX);
+		// 	this.canvas_context.font = "30px Arial";
+		// 	this.canvas_context.textAlign = "center";
+		// 	this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
+		// 	this.canvas_context.strokeText("Winner!!!", 920, 120);
+		// }
+	
+		// this.canvas_context.beginPath();
+		this.canvas_context.font = "30px Arial";
+		this.canvas_context.textAlign = "center";
+		this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
+		this.canvas_context.strokeText(
+			"Winner!!!",
+			this.canvas_context.canvas.getAttribute("width") / 2,
+			this.canvas_context.canvas.getAttribute("heigth") / 2
+		);
+		// this.canvas_context.closePath();
 	}
 
 	getCoordenadasCentroTablero() {
@@ -422,7 +457,7 @@ export default class Tablero {
 			if (this.isGanador(indice_columna, indice_fila)) {
 				this.pausarTimers();
 				// Iluminar las fichas puestas del jugador ganador
-				console.log("El ganador del juego es: " + this.ganadorJuego.getNombre());
+				
 			}
 		}
 	}

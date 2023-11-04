@@ -44,6 +44,7 @@ export default class Timer {
 		if(this.tiempo_restante < 0) {
 			tiempo = "Time out";
 		}
+
 		this.canvas_context.font = "30px Arial";
 		this.canvas_context.textAlign = "center";
 		this.canvas_context.strokeStyle = color;
