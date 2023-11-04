@@ -59,8 +59,8 @@ export default class Tablero {
 			let posYInicioFicha = null;
 
 			if (i < cant_fichas / 2) {
-				// desde 850 hasta 1000px
-				posXInicioFicha = 850 + Math.round(Math.random() * 150);
+				// desde 830 hasta 990px
+				posXInicioFicha = 830 + Math.round(Math.random() * 160);
 				posYInicioFicha = 0 + Math.round(Math.random() * 200);
 				this.fichas.push(
 					new Ficha(
@@ -73,8 +73,8 @@ export default class Tablero {
 					)
 				);
 			} else {
-				// Desde 0 hasta 210
-				posXInicioFicha = 50 + Math.round(Math.random() * 160);
+				// Desde 40 hasta 200
+				posXInicioFicha = 40 + Math.round(Math.random() * 160);
 				posYInicioFicha = 0 + Math.round(Math.random() * 200);
 				color = "red";
 				this.fichas.push(
