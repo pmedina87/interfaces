@@ -116,10 +116,14 @@ formulario.addEventListener("submit", (e) => {
 	tablero_juego.iniciarTiempo();
 
 
-	function ejecutarJuego(){	
-		tablero_juego.dibujar();
+	function ejecutarJuego(){
+		// if(tablero_juego.ganadorJuego == null) {
+			tablero_juego.dibujar();
+		// 	ejecutarJuego();
+		// }	
 	}
 
+	// ejecutarJuego();
 	setInterval(ejecutarJuego, 10);
 });
 

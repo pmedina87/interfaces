@@ -37,4 +37,8 @@ export default class Jugador {
     getNombre() {
         return this.nombre;
     }
+
+    getNumeroJugador() {
+        return this.num_jugador;
+    }
 }
