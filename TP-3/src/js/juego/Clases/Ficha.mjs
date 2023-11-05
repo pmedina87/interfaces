@@ -7,7 +7,7 @@ export default class Ficha {
      * un movimiento invalido y tenga que volver 
      * a su posicion inicial
      */
-    this.posicionInicial = {x: x + canvas_context.canvas.offsetLeft, y: y + canvas_context.canvas.offsetTop}; 
+    this.posicionInicial = { x: x, y: y }; 
     this.posicionActual = this.posicionInicial; 
     this.canvas_context = canvas_context;
     this.radius = radius;

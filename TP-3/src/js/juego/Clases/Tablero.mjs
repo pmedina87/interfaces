@@ -51,7 +51,6 @@ export default class Tablero {
 	crearFichas() {
 		let cant_fichas = this.filas * this.columnas;
 		for (let i = 0; i < cant_fichas; i++) {
-			let color = "blue";
 			let posXInicioFicha = null;
 			let posYInicioFicha = null;
 
@@ -69,7 +68,7 @@ export default class Tablero {
 				}
 
 				posXInicioFicha = 830 + Math.round(Math.random() * 160);
-				posYInicioFicha = 0 + Math.round(Math.random() * 200);
+				posYInicioFicha = (this.posY - 100) + Math.round(Math.random() * 200);
 				this.fichas.push(
 					new Ficha(
 						this.canvas_context,
@@ -92,7 +91,7 @@ export default class Tablero {
 					default: fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
 				}
 				posXInicioFicha = 40 + Math.round(Math.random() * 160);
-				posYInicioFicha = 0 + Math.round(Math.random() * 200);
+				posYInicioFicha = (this.posY - 100) + Math.round(Math.random() * 200);
 				this.fichas.push(
 					new Ficha(
 						this.canvas_context,
