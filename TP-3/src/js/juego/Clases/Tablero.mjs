@@ -479,9 +479,9 @@ export default class Tablero {
 
 		if (this.cantidadFichasMovidas >= this.opctablero * 2 - 1) {
 			if (this.isGanador(indice_columna, indice_fila)) {
+				this.bloquearFichas();
 				this.pausarTimers();
 				// Iluminar las fichas puestas del jugador ganador
-				
 			}
 		}
 
@@ -494,6 +494,10 @@ export default class Tablero {
 		if(!this.isColumnaConEspacio(indice_columna)){
 			this.posicionesIngreso[indice_columna].setColumnaLlena();
 		}
+	}
+
+	bloquearFichas(){
+		this.fichas.forEach(ficha => ficha.setNoClickeable())
 	}
 
 	//----------------------------------------------- VERIFICAR VICTORIAS -----------------------------------------------//

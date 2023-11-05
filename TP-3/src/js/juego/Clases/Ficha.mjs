@@ -21,6 +21,14 @@ export default class Ficha {
     this.jugador = jugador;
   }
 
+  setNoClickeable(){
+    this.isClickeable = false;
+  }
+
+  getIsClickeable(){
+    return this.isClickeable;
+  }
+
   perteneceA(jugador) {
     return this.jugador === jugador;
   }
@@ -91,6 +99,7 @@ export default class Ficha {
   isClickingInside(event){
     // En caso de que la ficha ya halla sido jugada, automaticamente devuelve false 
     if(this.isPlaced) { return false;}
+    if(!this.isClickeable) { return false;}
     
     // √((x2 - x1)² + (y2 - y1)²) < ficha.radius
     let distancia = Math.sqrt(Math.pow(this.posicionActual.x - event.offsetX, 2) + Math.pow(this.posicionActual.y - event.offsetY, 2));
