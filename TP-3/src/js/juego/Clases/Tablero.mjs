@@ -61,9 +61,9 @@ export default class Tablero {
 				// desde 830 hasta 990px
 				switch(this.desafio){
 					case "batman_guason": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
-					case "milei_massa": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
-					case "boca_fluminense": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
-					case "homero_burns": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					case "milei_massa": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/milei.webp"; break;
+					case "boca_river": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/boca.png"; break;
+					case "homero_burns": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/homero.jpg"; break;
 					// Por defecto elige la ficha de batman
 					default: fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
 				}
@@ -86,9 +86,9 @@ export default class Tablero {
 				
 				switch(this.desafio){
 					case "batman_guason": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
-					case "milei_massa": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
-					case "boca_fluminense": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
-					case "homero_burns": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/casillero.jpg"; break;
+					case "milei_massa": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/massa.webp"; break;
+					case "boca_river": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/river.jpg"; break;
+					case "homero_burns": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/burns.jpg"; break;
 					// Por defecto elige la ficha de guason
 					default: fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
 				}
