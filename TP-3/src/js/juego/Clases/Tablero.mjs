@@ -60,12 +60,12 @@ export default class Tablero {
 			if (i < cant_fichas / 2) {
 				// desde 830 hasta 990px
 				switch(this.desafio){
-					case "batman_guason": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
-					case "milei_massa": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/milei.webp"; break;
-					case "boca_river": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/boca.png"; break;
-					case "homero_burns": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/homero.jpg"; break;
+					case "batman_guason": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
+					case "milei_massa": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/milei.webp"; break;
+					case "boca_river": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/boca.png"; break;
+					case "homero_burns": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/homero.jpg"; break;
 					// Por defecto elige la ficha de batman
-					default: fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
+					default: fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
 				}
 				contorno_ficha = "rgb(0, 0, 240)";
 				posXInicioFicha = 830 + Math.round(Math.random() * 160);
@@ -85,12 +85,12 @@ export default class Tablero {
 				// Desde 40 hasta 200
 				
 				switch(this.desafio){
-					case "batman_guason": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
-					case "milei_massa": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/massa.webp"; break;
-					case "boca_river": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/river.jpg"; break;
-					case "homero_burns": fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/burns.jpg"; break;
+					case "batman_guason": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
+					case "milei_massa": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/massa.webp"; break;
+					case "boca_river": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/river.jpg"; break;
+					case "homero_burns": fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/burns.jpg"; break;
 					// Por defecto elige la ficha de guason
-					default: fondo_ficha = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
+					default: fondo_ficha = "./../../../../../../TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
 				}
 				contorno_ficha = "rgb(240, 0, 0)";
 				posXInicioFicha = 40 + Math.round(Math.random() * 160);
@@ -267,7 +267,7 @@ export default class Tablero {
 			this.getCoordenadasCentroTablero().y - (this.filas / 2) * (this.alto / this.filas);
 		let casillerocreado = null;
 
-		let fondo_casilla = "./../../../../../../../interfaces/TP-3/src/assets/img/juego/casillero.jpg";
+		let fondo_casilla = "./../../../../../../TP-3/src/assets/img/juego/casillero.jpg";
 		
 		for (let fila = 0; fila < this.filas; fila++) {
 			for (let columna = 0; columna < this.columnas; columna++) {
