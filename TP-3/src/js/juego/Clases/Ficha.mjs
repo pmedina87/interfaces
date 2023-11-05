@@ -1,3 +1,5 @@
+
+//linea invetada para hacer el push
 export default class Ficha {
   constructor(canvas_context, x, y, radius, fondo_imagen, jugador){
     /**
