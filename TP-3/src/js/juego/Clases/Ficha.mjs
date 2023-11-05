@@ -1,7 +1,7 @@
 
 //linea invetada para hacer el push
 export default class Ficha {
-  constructor(canvas_context, x, y, radius, fondo_imagen, jugador){
+  constructor(canvas_context, x, y, radius, fondo_imagen, contorno_ficha, jugador){
     /**
      * Se guarda la posicion inicial en caso de que se haga 
      * un movimiento invalido y tenga que volver 
@@ -11,6 +11,7 @@ export default class Ficha {
     this.posicionActual = this.posicionInicial; 
     this.canvas_context = canvas_context;
     this.radius = radius;
+    this.contorno_ficha = contorno_ficha;
     this.imagen = new Image(); // Asigna la ruta de la imagen al objeto Image
 		this.imagen.src = fondo_imagen; // Asigna la ruta de la imagen al objeto Image
 		this.imagen.onload = () => this.dibujar();
@@ -30,32 +31,34 @@ export default class Ficha {
 
   dibujar(){
     if(this.isClickeada){
-      this.canvas_context.strokeStyle = "rgb(230, 0, 0)";
+      this.canvas_context.strokeStyle = "rgb(22, 231, 4)";
     }else{
-      this.canvas_context.strokeStyle = "rgb(255, 255, 255)";
+      this.canvas_context.strokeStyle = this.contorno_ficha;
     }
     
-    const patrón = this.canvas_context.createPattern(this.imagen, 'repeat');
-    this.canvas_context.fillStyle = patrón;
-
+    // Primero creamos el circulo donde pondremos la imagen
     this.canvas_context.beginPath();
     this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
-		this.canvas_context.closePath();
+    this.canvas_context.closePath();
+    // Luego guardamos el estado actual del contexto del canvas
+    this.canvas_context.save();
+    // Realizamos un clip, al hacer esto, todo lo que esté fuera del circulo que acabamos de dibujar será borrado
+    this.canvas_context.clip()
+    /**
+     * Dibujamos la imagen de ancho y alto del diametro de la ficha,
+     * la imagen en si queda cuadrada, pero al haber utilizado la propiedad clip 
+     * parecerá que la imagen es un circulo
+     */
+    this.canvas_context.drawImage(this.imagen, this.posicionActual.x - this.radius, this.posicionActual.y - this.radius, this.radius * 2, this.radius * 2);
+    // Por ultimo, volvemos al estado que guardamos con el save(), restaurando el resto del canvas que fue omitido con el clip()
+    this.canvas_context.restore();
 
-    this.canvas_context.fill();
+    // Dibujamos otro circulo (contorno) de ayuda visual para cuando una ficha es clickeada/arrastrada
     this.canvas_context.beginPath();
     this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
     this.canvas_context.stroke();
-  
-    // this.canvas_context.beginPath();
-    // this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radio, 0, Math.PI * 2);
-    // this.canvas_context.closePath();
+    this.canvas_context.closePath();
     
-    // // Borde de la ficha (Ayuda visual por si es clickeado)
-    // this.canvas_context.beginPath();
-    // this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
-    // this.canvas_context.stroke();
-    // this.canvas_context.closePath();
   }
 
   setearPlaced(){

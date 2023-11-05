@@ -55,6 +55,7 @@ export default class Tablero {
 			let posYInicioFicha = null;
 
 			let fondo_ficha = null;
+			let contorno_ficha = null;
 
 			if (i < cant_fichas / 2) {
 				// desde 830 hasta 990px
@@ -66,7 +67,7 @@ export default class Tablero {
 					// Por defecto elige la ficha de batman
 					default: fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/batman.jpg"; break;
 				}
-
+				contorno_ficha = "rgb(0, 0, 240)";
 				posXInicioFicha = 830 + Math.round(Math.random() * 160);
 				posYInicioFicha = (this.posY - 100) + Math.round(Math.random() * 200);
 				this.fichas.push(
@@ -76,6 +77,7 @@ export default class Tablero {
 						posYInicioFicha,
 						(this.ancho / this.columnas) * 0.4,
 						fondo_ficha,
+						contorno_ficha,
 						this.jug2
 					)
 				);
@@ -90,6 +92,7 @@ export default class Tablero {
 					// Por defecto elige la ficha de guason
 					default: fondo_ficha = "../../../../../../TP-3/src/assets/img/juego/fondos_fichas/guason.jpg"; break;
 				}
+				contorno_ficha = "rgb(240, 0, 0)";
 				posXInicioFicha = 40 + Math.round(Math.random() * 160);
 				posYInicioFicha = (this.posY - 100) + Math.round(Math.random() * 200);
 				this.fichas.push(
@@ -99,6 +102,7 @@ export default class Tablero {
 						posYInicioFicha,
 						(this.ancho / this.columnas) * 0.4,
 						fondo_ficha,
+						contorno_ficha,
 						this.jug1
 					)
 				);
