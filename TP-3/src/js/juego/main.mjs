@@ -5,10 +5,19 @@ const CINCO_L = "5";
 const SEIS_L = "6";
 const SIETE_L = "7";
 
+
+
+
+
 let canvas = document.querySelector("#canvas_juego");
 let canvas_context = canvas.getContext("2d");
 let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
+let inicio=document.querySelector("#inicio")
+
+// Oculta el canvas inicialmente
+canvas.style.display = "none";
+
 
 // Imprimimos por consola las coordenadas actuales del mouse dentro del canvas
 canvas.addEventListener("mousemove", (event) => {
@@ -18,6 +27,7 @@ canvas.addEventListener("mousemove", (event) => {
 btn_jugar.addEventListener("click", () => {
 	opc_juego.removeAttribute("hidden");
   btn_jugar.classList.add("hidden");
+ 
 });
 
 
@@ -25,7 +35,8 @@ btn_jugar.addEventListener("click", () => {
 let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
-	
+	inicio.style.display="none";
+	canvas.style.display = "block";
 	let botonIzquierdoClickeado = false;
 	
 	function detectarClick(event){

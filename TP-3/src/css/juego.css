@@ -220,3 +220,25 @@
 .card_animation:hover{
   scale: 1.05;
 }
+
+#btn-jugar{
+  background-color: green;
+  width: 90px;
+  height: 60px;
+  border-radius: 25px;
+  margin-left: 50%;
+  font-size: 30px;
+}
+
+.boton-personalizado {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.boton-personalizado:hover {
+  background-color: #ff9933;
+}
