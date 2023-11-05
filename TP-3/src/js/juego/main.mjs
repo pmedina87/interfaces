@@ -59,6 +59,8 @@ formulario.addEventListener("submit", (e) => {
 							tablero_juego.agregarFicha(tablero_juego.fichas[i], indice);
 							// Si la ficha se logró poner exitosamente se cambia el turno del jugador
 							tablero_juego.cambiarTurnoJugador();							
+						}else{
+							tablero_juego.devolverFichaPosOriginal(i);		
 						}
 					}
 				}else{

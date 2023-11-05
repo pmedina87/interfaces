@@ -1,4 +1,4 @@
-export default class Rectangle {
+export default class RectanguloIngreso {
   constructor(canvas_context, x, y, width, height, borderColor, hoverColor){
     this.canvas_context = canvas_context;
     this.x = x;
@@ -8,6 +8,11 @@ export default class Rectangle {
     this.borderColor = borderColor;
     this.hoverColor = hoverColor;
     this.isMouseOver = false;
+    this.isColumnaLlena = false;
+  }
+
+  setColumnaLlena(){
+    this.isColumnaLlena = true;
   }
 
   setIsMouseOverTrue(){
@@ -38,18 +43,27 @@ export default class Rectangle {
   }
 
   dibujar(){
-    if(this.isMouseOver){
-      this.canvas_context.fillStyle = this.hoverColor;
+    if(this.isColumnaLlena){
+      this.canvas_context.fillStyle = "rgb(120, 120, 120)";
       this.canvas_context.beginPath();
       this.canvas_context.rect(this.x, this.y, (this.width), this.height);
       this.canvas_context.fill();
       this.canvas_context.stroke();
       this.canvas_context.closePath();
-
     }else{
-      this.canvas_context.beginPath();
-      this.canvas_context.rect(this.x, this.y, this.width, this.height);
-      this.canvas_context.stroke();
-    }    
+      if(this.isMouseOver){
+        this.canvas_context.fillStyle = this.hoverColor;
+        this.canvas_context.beginPath();
+        this.canvas_context.rect(this.x, this.y, (this.width), this.height);
+        this.canvas_context.fill();
+        this.canvas_context.stroke();
+        this.canvas_context.closePath();
+  
+      }else{
+        this.canvas_context.beginPath();
+        this.canvas_context.rect(this.x, this.y, this.width, this.height);
+        this.canvas_context.stroke();
+      }    
+    }
   }
 }

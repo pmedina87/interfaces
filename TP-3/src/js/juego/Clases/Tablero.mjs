@@ -484,6 +484,16 @@ export default class Tablero {
 				
 			}
 		}
+
+		/**
+		 * Cada vez que se agrega una ficha se verifica que al final de la accion tenga espacio 
+		 * la columna, en caso de que no tenga mas espacio se setea una propiedad al controlador 
+		 * de ingreso, proporcionando ayuda visual a una columna llena
+		 */
+		// 
+		if(!this.isColumnaConEspacio(indice_columna)){
+			this.posicionesIngreso[indice_columna].setColumnaLlena();
+		}
 	}
 
 	//----------------------------------------------- VERIFICAR VICTORIAS -----------------------------------------------//
