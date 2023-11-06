@@ -362,7 +362,6 @@ export default class Tablero {
 			// En base a la posicion actual del mouse verificamos si estamos sobre el rectangulo de ingreso actual
 			if(this.posicionesIngreso[index].getIsMouseOver(pos_x_actual, pos_y_actual)){
 				this.posicionesIngreso[index].setIsMouseOverTrue();
-				console.log(`Tiro valido en la casilla ${index}`);
 			} else {
 				this.posicionesIngreso[index].setIsMouseOverFalse();
 			}
@@ -481,6 +480,7 @@ export default class Tablero {
 			if (this.isGanador(indice_columna, indice_fila)) {
 				this.bloquearFichas();
 				this.pausarTimers();
+				console.log(`El ganador del juego es: ${this.ganadorJuego.getNombre()}`);
 				// Iluminar las fichas puestas del jugador ganador
 			}
 		}
@@ -792,7 +792,6 @@ export default class Tablero {
 	verificarVertical(indice_columna, indice_fila, jug_actual) {
 		// Primero se verifica que la cantidad de fichas por debajo sea mayor o igual a la necesaria para ganar
 		if (this.matriz[indice_columna].length - indice_fila - 1 < this.opctablero - 1) {
-			console.log("Es imposible ganar para abajo");
 			return false;
 		}
 
@@ -801,11 +800,7 @@ export default class Tablero {
 		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
 		for (let i = 1; i < this.opctablero; i++) {
 			ficha_actual = this.matriz[indice_columna][indice_fila + i];
-			if (ficha_actual.perteneceA(jug_actual)) {
-				console.log(`Validacion abajo: La ficha pertenece al MISMO jugador`);
-			} else {
-				console.log(`Validacion abajo: La ficha pertenece al OTRO jugador!`);
-			}
+			
 			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
 			if (ficha_actual == null || !ficha_actual.perteneceA(jug_actual)) {
 				return false;

@@ -223,11 +223,12 @@
 
 #btn-jugar{
   background-color: green;
-  width: 90px;
-  height: 60px;
   border-radius: 25px;
-  margin-left: 50%;
+  display: flex;
+  width: min-content;
+  align-self: center;
   font-size: 30px;
+  padding: .5rem 3rem;
 }
 
 .boton-personalizado, #reset{
