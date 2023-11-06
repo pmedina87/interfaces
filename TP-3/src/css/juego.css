@@ -230,15 +230,21 @@
   font-size: 30px;
 }
 
-.boton-personalizado {
+.boton-personalizado, #reset{
   background-color: #ff6600;
   color: white;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .boton-personalizado:hover {
   background-color: #ff9933;
+}
+
+.botones_juego{
+  display: flex;
+ 
 }

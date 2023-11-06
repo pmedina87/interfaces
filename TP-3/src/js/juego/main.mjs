@@ -15,6 +15,11 @@ let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
 let inicio = document.querySelector("#inicio")//variable del boton arrancar juego
 
+document.getElementById("reset").addEventListener("click", function() {
+	location.reload();
+  });
+  
+
 // Oculta el canvas inicialmente
 canvas.style.display = "none";
 
