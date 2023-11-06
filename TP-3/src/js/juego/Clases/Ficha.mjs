@@ -19,10 +19,19 @@ export default class Ficha {
     this.isPlaced = false;      // Una vez que la ficha esté en el tablero necesitamos avisar que no se puede clickear
     this.isClickeable = true;
     this.jugador = jugador;
+    this.isGanadora = false;
   }
 
   setNoClickeable(){
     this.isClickeable = false;
+  }
+
+  setearComoGanadora(){
+    this.isGanadora = true;
+  }
+
+  getIsGanadora(){
+    return this.isGanadora;
   }
 
   getIsClickeable(){
@@ -66,6 +75,16 @@ export default class Ficha {
     this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
     this.canvas_context.stroke();
     this.canvas_context.closePath();
+
+    if(this.isGanadora){
+      this.canvas_context.strokeStyle = "rgb(200, 200, 0)";
+      this.canvas_context.lineWidth = 4;
+      this.canvas_context.beginPath();
+      this.canvas_context.arc(this.posicionActual.x, this.posicionActual.y, this.radius, 0, Math.PI * 2);
+      this.canvas_context.stroke();
+      this.canvas_context.closePath();
+      this.canvas_context.lineWidth = 1;
+    }
     
   }
 

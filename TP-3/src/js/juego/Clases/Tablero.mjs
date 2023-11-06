@@ -32,6 +32,8 @@ export default class Tablero {
 		this.casilleros = [];
 		this.crearCasilleros();
 
+		this.fichasGanadoras = [];
+
 		this.timerJug1 = new Timer(this.canvas_context, this.jug1, 300000);
 		this.timerJug2 = new Timer(this.canvas_context, this.jug2, 300000);
 
@@ -170,6 +172,7 @@ export default class Tablero {
 		);
 
 		if(this.ganadorJuego != null) {
+			console.log("Entro");
 			this.dibujarCartelGanador();
 		}
 	}
@@ -220,37 +223,17 @@ export default class Tablero {
 	}
 
 	dibujarCartelGanador() {
-		// let posX = 0;
-		// let posY = 120;
-		// if(this.ganadorJuego.getNumeroJugador == 1) {
-		// 	console.log(1);
-		// 	// posX += (this.canvas_context.canvas.getAttribute("width") - this.ancho - 280) / 2;
-		// 	this.canvas_context.font = "30px Arial";
-		// 	this.canvas_context.textAlign = "center";
-		// 	this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
-		// 	this.canvas_context.strokeText("Winner!!!", 140, 120);
-		// }
-
-		// if(this.ganadorJuego.getNumeroJugador == 2) {
-		// 	console.log(2);
-		// 	// posX += this.canvas_context.canvas.getAttribute("width") - (280 / 2);
-		// 	// console.log(posX);
-		// 	this.canvas_context.font = "30px Arial";
-		// 	this.canvas_context.textAlign = "center";
-		// 	this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
-		// 	this.canvas_context.strokeText("Winner!!!", 920, 120);
-		// }
-	
-		// this.canvas_context.beginPath();
 		this.canvas_context.font = "30px Arial";
 		this.canvas_context.textAlign = "center";
 		this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
-		this.canvas_context.strokeText(
-			"Winner!!!",
-			this.canvas_context.canvas.getAttribute("width") / 2,
-			this.canvas_context.canvas.getAttribute("heigth") / 2
-		);
-		// this.canvas_context.closePath();
+		
+		if(this.ganadorJuego.getNumeroJugador() == 1) {
+			this.canvas_context.strokeText("Winner!!!", 140, 120);
+		}
+
+		if(this.ganadorJuego.getNumeroJugador() == 2) {
+			this.canvas_context.strokeText("Winner!!!", 920, 120);
+		}
 	}
 
 	getCoordenadasCentroTablero() {
@@ -480,8 +463,7 @@ export default class Tablero {
 			if (this.isGanador(indice_columna, indice_fila)) {
 				this.bloquearFichas();
 				this.pausarTimers();
-				console.log(`El ganador del juego es: ${this.ganadorJuego.getNombre()}`);
-				// Iluminar las fichas puestas del jugador ganador
+				this.iluminarFichasDelGanador();
 			}
 		}
 
@@ -496,51 +478,15 @@ export default class Tablero {
 		}
 	}
 
+	iluminarFichasDelGanador(){
+		this.fichasGanadoras.forEach(ficha => {
+			ficha.setearComoGanadora();
+		});
+	}
+
 	bloquearFichas(){
 		this.fichas.forEach(ficha => ficha.setNoClickeable())
 	}
-
-	//----------------------------------------------- VERIFICAR VICTORIAS -----------------------------------------------//
-
-	// obtenerCantidadFichas(tipo, indice_columna, indice_fila, jug_actual) {
-	// 	let cont = 1; // contador de fichas (arranca en uno porque cuenta la actual)
-	// 	if (tipo === "H") {
-	// 		// Verifico cuantas fichas del mismo jugador hay hacia la izquierda
-	// 		let indice = indice_columna - 1;
-	// 		while (indice >= 0) {
-	// 			let fichaSig = this.matriz[indice][indice_fila];
-	// 			//Si la siguiente ficha no es null
-	// 			if (fichaSig != null) {
-	// 				// Si el jugador actual es el mismo que el jugador al cual pertenece la ficha, sumamos uno al cont.
-	// 				if (fichaSig.perteneceA(jug_actual)) {
-	// 					cont++;
-	// 				} else {
-	// 					break;
-	// 				}
-	// 			}
-	// 			indice--;
-	// 		}
-	// 		if (cont < this.opctablero) {
-	// 			// Verifico cuantas fichas del mismo jugador hay hacia la derecha
-	// 			indice = indice_columna + 1;
-	// 			while (indice <= this.columnas - 1) {
-	// 				let fichaSig = this.matriz[indice][indice_fila];
-	// 				if (fichaSig != null) {
-	// 					if (fichaSig.perteneceA(jug_actual)) {
-	// 						cont++;
-	// 					} else {
-	// 						break;
-	// 					}
-	// 				}
-	// 				indice++;
-	// 			}
-	// 		}
-
-	// 		return cont;
-	// 	}
-	// 	if (tipo === "D") {
-	// 	}
-	// }
 
 	obtenerCantidadFichasHaciaIzquierdaDesdeFicha(indice_columna, indice_fila, jug_actual) {
 		let cont = 0; // contador de fichas
@@ -548,7 +494,7 @@ export default class Tablero {
 		// Verifico cuantas fichas del mismo jugador hay hacia la izquierda
 		if(indice_columna > 0){
 			let indice = indice_columna - 1;
-			while (indice >= 0) {
+			while (indice >= 0 && this.fichasGanadoras.length < this.opctablero) {
 				let fichaSig = this.matriz[indice][indice_fila];
 				//Si la siguiente ficha no es null
 				if (fichaSig != null) {
@@ -561,10 +507,11 @@ export default class Tablero {
 				} else {
 					break;
 				}
+				this.fichasGanadoras.push(fichaSig);
+
 				indice--;
 			}
 		}
-
 		return cont;
 	}
 
@@ -585,6 +532,7 @@ export default class Tablero {
 				} else {
 					break;
 				}
+				this.fichasGanadoras.push(fichaSig);
 				indice++;
 			}
 		}
@@ -603,7 +551,7 @@ export default class Tablero {
 		if(indice_columna > 0 && indice_fila > 0) {
 			let indice_col = indice_columna - 1;
 			let indice_fil = indice_fila - 1;
-			while (indice_col >= 0 && indice_fil >= 0) {
+			while (indice_col >= 0 && indice_fil >= 0 && this.fichasGanadoras.length < this.opctablero) {
 				let fichaSig = this.matriz[indice_col][indice_fil];
 				//Si la siguiente ficha no es null
 				if (fichaSig != null) {
@@ -616,61 +564,13 @@ export default class Tablero {
 				} else {
 					break;
 				}
+				this.fichasGanadoras.push(fichaSig);
 				indice_col--;
 				indice_fil--;
 			}
 		}
 
 		return cont;
-		// // Primero se verifica que la cantidad de fichas a la izquierda y hacia abajo sea mayor o igual a la necesaria para ganar
-		// if (
-		// 	indice_columna < this.opctablero - 1 ||
-		// 	this.matriz[indice_columna].length - indice_fila - 1 < this.opctablero - 1
-		// ) {
-		// 	console.log("Es imposible ganar para la diagonal inferior izquierda");
-		// 	return false;
-		// }
-
-		// let ficha_actual = null;
-
-		// // Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
-		// for (let i = 1; i < this.opctablero; i++) {
-		// 	ficha_actual = this.matriz[indice_columna - i][indice_fila + i];
-		// 	if (ficha_actual == null) {
-		// 		return false;
-		// 	}
-
-		// 	if (ficha_actual.perteneceA(jug_actual)) {
-		// 		console.log(`Validacion diagIzqInf: La ficha pertenece al MISMO jugador`);
-		// 	} else {
-		// 		console.log(`Validacion diagIzqInf: La ficha pertenece al OTRO jugador!`);
-		// 	}
-		// 	// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
-		// 	if (!ficha_actual.perteneceA(jug_actual)) {
-		// 		return false;
-		// 	}
-		// }
-
-		// // Si todo salió bien quiere decir que gano
-		// return true;
-
-		// let cont = 0; // contador de fichas
-
-		// // Verifico cuantas fichas del mismo jugador hay hacia la derecha
-		// indice = indice_columna + 1;
-		// while (indice <= this.columnas - 1) {
-		// 	let fichaSig = this.matriz[indice][indice_fila];
-		// 	if (fichaSig != null) {
-		// 		if (fichaSig.perteneceA(jug_actual)) {
-		// 			cont++;
-		// 		} else {
-		// 			break;
-		// 		}
-		// 	}
-		// 	indice++;
-		// }
-
-		// return cont;
 	} 
 
 	obtenerCantidadFichasDiagonalHaciaAbajoDerechaDesdeFicha(
@@ -685,7 +585,7 @@ export default class Tablero {
 			
 			let indice_col = indice_columna + 1;
 			let indice_fil = indice_fila + 1;
-			while (indice_col <= this.columnas - 1 && indice_fil <= this.filas - 1) {
+			while (indice_col <= this.columnas - 1 && indice_fil <= this.filas - 1 && this.fichasGanadoras.length < this.opctablero) {
 				let fichaSig = this.matriz[indice_col][indice_fil];
 				//Si la siguiente ficha no es null
 				if (fichaSig != null) {
@@ -698,6 +598,7 @@ export default class Tablero {
 				} else {
 					break;
 				}
+				this.fichasGanadoras.push(fichaSig);
 				indice_col++;
 				indice_fil++;
 			}
@@ -717,7 +618,7 @@ export default class Tablero {
 		if (indice_columna > 0 && indice_fila < this.filas - 1) {
 			let indice_col = indice_columna - 1;
 			let indice_fil = indice_fila + 1;
-			while (indice_col >= 0 && indice_fil <= this.filas - 1) {
+			while (indice_col >= 0 && indice_fil <= this.filas - 1 && this.fichasGanadoras.length < this.opctablero) {
 				let fichaSig = this.matriz[indice_col][indice_fil];
 				//Si la siguiente ficha no es null
 				if (fichaSig != null) {
@@ -730,6 +631,7 @@ export default class Tablero {
 				} else {
 					break;
 				}
+				this.fichasGanadoras.push(fichaSig);
 				indice_col--;
 				indice_fil++;
 			}
@@ -750,7 +652,7 @@ export default class Tablero {
 			
 			let indice_col = indice_columna + 1;
 			let indice_fil = indice_fila - 1;
-			while (indice_col <= this.columnas - 1 && indice_fil >= 0) {
+			while (indice_col <= this.columnas - 1 && indice_fil >= 0 && this.fichasGanadoras.length < this.opctablero) {
 				let fichaSig = this.matriz[indice_col][indice_fil];
 				//Si la siguiente ficha no es null
 				if (fichaSig != null) {
@@ -763,6 +665,7 @@ export default class Tablero {
 				} else {
 					break;
 				}
+				
 				indice_col++;
 				indice_fil--;
 			}
@@ -800,14 +703,14 @@ export default class Tablero {
 		// Verificamos que a partir de la posicion actual haya (opctablero - 1) fichas pertenecientes al mismo jugador
 		for (let i = 1; i < this.opctablero; i++) {
 			ficha_actual = this.matriz[indice_columna][indice_fila + i];
-			
 			// Si la casilla esta vacia o la ficha presente no pertenece al jugador que acaba de ingresar la ficha tira false
-			if (ficha_actual == null || !ficha_actual.perteneceA(jug_actual)) {
+			if (ficha_actual != null && ficha_actual.perteneceA(jug_actual)) {
+				this.fichasGanadoras.push(ficha_actual);
+			}else{
 				return false;
 			}
 		}
 
-		// Si todo salió bien quiere decir que gano
 		return true;
 	}
 
@@ -850,27 +753,30 @@ export default class Tablero {
 		let jug_actual = this.matriz[indice_columna][indice_fila].perteneceA(this.jug1)
 			? this.jug1
 			: this.jug2;
-
+		this.fichasGanadoras.push(this.matriz[indice_columna][indice_fila]);
 		if (this.verificarHorizontal(indice_columna, indice_fila, jug_actual)) {
 			this.ganadorJuego = jug_actual;
 			return true;
 		}
-
+		this.fichasGanadoras = [];
+		this.fichasGanadoras.push(this.matriz[indice_columna][indice_fila]);
 		if (this.verificarVertical(indice_columna, indice_fila, jug_actual)) {
 			this.ganadorJuego = jug_actual;
 			return true;
 		}
-
+		this.fichasGanadoras = [];
+		this.fichasGanadoras.push(this.matriz[indice_columna][indice_fila]);
 		if (this.verificarDiagonalA(indice_columna, indice_fila, jug_actual)) {
 			this.ganadorJuego = jug_actual;
 			return true;
 		}
-
+		this.fichasGanadoras = [];
+		this.fichasGanadoras.push(this.matriz[indice_columna][indice_fila]);
 		if (this.verificarDiagonalB(indice_columna, indice_fila, jug_actual)) {
 			this.ganadorJuego = jug_actual;
 			return true;
 		}
-
+		this.fichasGanadoras = [];
 		return false;
 	}
 }

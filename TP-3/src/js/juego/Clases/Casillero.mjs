@@ -25,6 +25,5 @@ export default class Casillero {
     this.canvas_context.strokeStyle = "black";
 		this.canvas_context.drawImage(this.imagen, this.posX, this.posY, this.ancho, this.alto)
     this.canvas_context.stroke();
-    // this.contexto.drawImage(this.imagen, this.posX, this.posY);
 	}
 }
