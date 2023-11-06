@@ -240,7 +240,7 @@
   margin-right: 10px;
 }
 
-.boton-personalizado:hover {
+.boton-personalizado:hover,#reset:hover {
   background-color: #ff9933;
 }
 
