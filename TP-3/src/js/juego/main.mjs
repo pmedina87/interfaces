@@ -13,7 +13,7 @@ let canvas = document.querySelector("#canvas_juego");
 let canvas_context = canvas.getContext("2d");
 let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
-let inicio=document.querySelector("#inicio")
+let inicio = document.querySelector("#inicio")//variable del boton arrancar juego
 
 // Oculta el canvas inicialmente
 canvas.style.display = "none";
@@ -35,8 +35,8 @@ btn_jugar.addEventListener("click", () => {
 let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
-	inicio.style.display="none";
-	canvas.style.display = "block";
+	inicio.style.display="none";//oculto la imagen de inicio
+	canvas.style.display = "block";//"levanto" el canvas
 	let botonIzquierdoClickeado = false;
 	
 	function detectarClick(event){
