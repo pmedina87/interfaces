@@ -178,15 +178,27 @@ export default class Tablero {
 	}
 
 	setearNombresJugadores() {
-		this.canvas_context.strokeStyle = "red";
+		// this.canvas_context.strokeStyle = "red";
+		this.canvas_context.fillStyle = "red";
 		this.canvas_context.textAlign = "center";
-		this.canvas_context.strokeText(
+		// this.canvas_context.strokeText(
+		// 	this.jug1.getNombre(),
+		// 	(this.canvas_context.canvas.getAttribute("width") - this.ancho - 280) / 2,
+		// 	40
+		// );
+		this.canvas_context.fillText(
 			this.jug1.getNombre(),
 			(this.canvas_context.canvas.getAttribute("width") - this.ancho - 280) / 2,
 			40
 		);
-		this.canvas_context.strokeStyle = "blue";
-		this.canvas_context.strokeText(
+		// this.canvas_context.strokeStyle = "blue";
+		this.canvas_context.fillStyle = "blue";
+		// this.canvas_context.strokeText(
+		// 	this.jug2.getNombre(),
+		// 	this.canvas_context.canvas.getAttribute("width") - 280 / 2,
+		// 	40
+		// );
+		this.canvas_context.fillText(
 			this.jug2.getNombre(),
 			this.canvas_context.canvas.getAttribute("width") - 280 / 2,
 			40
@@ -225,14 +237,17 @@ export default class Tablero {
 	dibujarCartelGanador() {
 		this.canvas_context.font = "30px Arial";
 		this.canvas_context.textAlign = "center";
-		this.canvas_context.strokeStyle = "rgb(19, 122, 6)";
+		// this.canvas_context.strokeStyle = "rgb(19, 122, 6)";
+		this.canvas_context.fillStyle = "rgb(19, 122, 6)";
 		
 		if(this.ganadorJuego.getNumeroJugador() == 1) {
-			this.canvas_context.strokeText("Winner!!!", 140, 120);
+			// this.canvas_context.strokeText("Winner!!!", 140, 120);
+			this.canvas_context.fillText("Winner!!!", 140, 120);
 		}
 
 		if(this.ganadorJuego.getNumeroJugador() == 2) {
-			this.canvas_context.strokeText("Winner!!!", 920, 120);
+			// this.canvas_context.strokeText("Winner!!!", 920, 120);
+			this.canvas_context.fillText("Winner!!!", 920, 120);
 		}
 	}
 
