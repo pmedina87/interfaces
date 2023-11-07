@@ -13,7 +13,12 @@ let canvas = document.querySelector("#canvas_juego");
 let canvas_context = canvas.getContext("2d");
 let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
-let inicio=document.querySelector("#inicio")
+let inicio = document.querySelector("#inicio")//variable del boton arrancar juego
+
+document.getElementById("reset").addEventListener("click", function() {
+	location.reload();
+  });
+  
 
 // Oculta el canvas inicialmente
 canvas.style.display = "none";
@@ -30,15 +35,47 @@ btn_jugar.addEventListener("click", () => {
  
 });
 
+let tablero_juego = null;
 
 // tomo los datos del formulario para setear el juego (segun lo que crearon los usuario)
 let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
-	inicio.style.display="none";
-	canvas.style.display = "block";
+	inicio.style.display="none";//oculto la imagen de inicio
+	canvas.style.display = "block";//"levanto" el canvas
 	let botonIzquierdoClickeado = false;
 	
+	const dataForm = new FormData(formulario);
+
+	let opctablero = dataForm.get("tablero");
+	let desafio = dataForm.get("desafio");
+	let jugador1 = dataForm.get("jugador1");
+	let jugador2 = dataForm.get("jugador2");
+
+  let fichasJugador = 0;
+
+	// Asignamos cantidad de fichas x jugador en base al mood de juego seleccionado
+	switch(opctablero){
+		case CUATRO_L: fichasJugador = 21 ;break;
+		case CINCO_L: fichasJugador = 28 ;break;
+		case SEIS_L: fichasJugador = 36 ;break;
+		case SIETE_L: fichasJugador = 45 ;break;
+		default: fichasJugador = 21;
+	}
+
+	// Creeamos un tablero centrado en el cambas
+	
+	tablero_juego = new Tablero(canvas_context, opctablero, desafio, jugador1, jugador2);
+	tablero_juego.iniciarTiempo();
+	
+	// ejecutarJuego();
+	setInterval(ejecutarJuego, 10);
+
+	canvas.addEventListener("mousedown", detectarClick);
+	canvas.addEventListener("mouseup", deseleccionarFichas);
+	canvas.addEventListener("mouseleave", deseleccionarFichas);
+	canvas.addEventListener("mousemove", moverFicha);
+
 	function detectarClick(event){
 		botonIzquierdoClickeado = true;
 		// console.log("Mouse Down!" + botonIzquierdoClickeado);
@@ -93,41 +130,6 @@ formulario.addEventListener("submit", (e) => {
 			}
 		}
 	}
-	
-	canvas.addEventListener("mousedown", detectarClick);
-	canvas.addEventListener("mouseup", deseleccionarFichas);
-	
-	canvas.addEventListener("click", ()=>{
-		// console.log("Click");
-	});
-	
-	canvas.addEventListener("mouseleave", deseleccionarFichas);
-	canvas.addEventListener("mousemove", moverFicha);
-
-
-
-	const dataForm = new FormData(formulario);
-
-	let opctablero = dataForm.get("tablero");
-	let desafio = dataForm.get("desafio");
-	let jugador1 = dataForm.get("jugador1");
-	let jugador2 = dataForm.get("jugador2");
-
-  	let fichasJugador = 0;
-
-	// Asignamos cantidad de fichas x jugador en base al mood de juego seleccionado
-	switch(opctablero){
-		case CUATRO_L: fichasJugador = 21 ;break;
-		case CINCO_L: fichasJugador = 28 ;break;
-		case SEIS_L: fichasJugador = 36 ;break;
-		case SIETE_L: fichasJugador = 45 ;break;
-		default: fichasJugador = 21;
-	}
-
-	// Creeamos un tablero centrado en el cambas
-	const tablero_juego = new Tablero(canvas_context, opctablero, desafio, jugador1, jugador2);
-	tablero_juego.iniciarTiempo();
-
 
 	function ejecutarJuego(){
 		// if(tablero_juego.ganadorJuego == null) {
@@ -136,8 +138,6 @@ formulario.addEventListener("submit", (e) => {
 		// }	
 	}
 
-	// ejecutarJuego();
-	setInterval(ejecutarJuego, 10);
 });
 
 

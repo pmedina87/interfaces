@@ -223,22 +223,29 @@
 
 #btn-jugar{
   background-color: green;
-  width: 90px;
-  height: 60px;
   border-radius: 25px;
-  margin-left: 50%;
+  display: flex;
+  width: min-content;
+  align-self: center;
   font-size: 30px;
+  padding: .5rem 3rem;
 }
 
-.boton-personalizado {
+.boton-personalizado, #reset{
   background-color: #ff6600;
   color: white;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
-.boton-personalizado:hover {
+.boton-personalizado:hover,#reset:hover {
   background-color: #ff9933;
+}
+
+.botones_juego{
+  display: flex;
+ 
 }

@@ -16,7 +16,7 @@ function cargarPagina() {
 			barra.setAttribute("value", progreso);
 			porcentaje.textContent = progreso + "%";
 		}
-	}, 1); // 50 * 100 = 5000 ms
+	}, 50); // 50 * 100 = 5000 ms
 
 	cargado = true;
 }

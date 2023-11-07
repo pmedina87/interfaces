@@ -19,10 +19,6 @@ export default class Timer {
 		this.is_pausado = !this.is_pausado;
 	}
 
-	// setTiempoRestante(t_tiempo) {
-	// 	this.tiempo_restante = t_tiempo;
-	// }
-
 	getTiempoRestante() {
 		return this.tiempo_restante;
 	}
@@ -33,9 +29,6 @@ export default class Timer {
 		
 		if (!this.getIsPausado()) {
 			setInterval(this.restarTiempo(), 1000);
-			// // setInterval(function () {                
-			// 	this.tiempo_restante--;
-			// // }, 1000);
 		}
 		
 		const minutosStr = minutos.toString().padStart(2, "0");
