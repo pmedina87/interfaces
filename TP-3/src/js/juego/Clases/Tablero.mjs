@@ -26,7 +26,7 @@ export default class Tablero {
 			this.canvas_context,
 			this.canvas_context.canvas.width,
 			this.canvas_context.canvas.height,
-			"rgb(224, 230, 230)"
+			"rgb(240, 255, 255, 0.77)" // 224, 230, 230
 		);
 		// Casilleros de ayuda visual al jugador de donde se puede tirar una ficha
 		this.casilleros = [];
