@@ -247,5 +247,6 @@
 
 .botones_juego{
   display: flex;
+  margin-top: 15px;
  
 }
