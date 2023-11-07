@@ -40,10 +40,8 @@ export default class Timer {
 
 		this.canvas_context.font = "30px Arial";
 		this.canvas_context.textAlign = "center";
-		// this.canvas_context.strokeStyle = color;
-		this.canvas_context.fillStyle = color;
-		// this.canvas_context.strokeText(tiempo, posX, posY);
-		this.canvas_context.fillText(tiempo, posX, posY);
+		this.canvas_context.strokeStyle = color;
+		this.canvas_context.strokeText(tiempo, posX, posY);
 	}
 
 	restarTiempo() {

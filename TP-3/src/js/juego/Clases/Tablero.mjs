@@ -26,7 +26,7 @@ export default class Tablero {
 			this.canvas_context,
 			this.canvas_context.canvas.width,
 			this.canvas_context.canvas.height,
-			"rgb(240, 255, 255, 0.77)" // 224, 230, 230
+			"rgb(240, 255, 255, 0.77)"
 		);
 		// Casilleros de ayuda visual al jugador de donde se puede tirar una ficha
 		this.casilleros = [];
@@ -225,7 +225,7 @@ export default class Tablero {
 	dibujarCartelGanador() {
 		this.canvas_context.font = "30px Arial";
 		this.canvas_context.textAlign = "center";
-		this.canvas_context.strokeStyle = "rgb(255, 225, 0)";
+		this.canvas_context.strokeStyle = "rgb(19, 122, 6)";
 		
 		if(this.ganadorJuego.getNumeroJugador() == 1) {
 			this.canvas_context.strokeText("Winner!!!", 140, 120);
