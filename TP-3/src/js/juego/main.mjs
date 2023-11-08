@@ -6,18 +6,18 @@ const SEIS_L = "6";
 const SIETE_L = "7";
 
 
-
-
-
 let canvas = document.querySelector("#canvas_juego");
 let canvas_context = canvas.getContext("2d");
 let opc_juego = document.querySelector("#opciones-juego");
 let btn_jugar = document.querySelector("#btn-jugar");
+let btn_arrancar = document.querySelector("#btnArrancar");
 let inicio = document.querySelector("#inicio")//variable del boton arrancar juego
+// let popup = document.querySelector("#popup");
 
 document.getElementById("reset").addEventListener("click", function() {
+	// popup.classList.toggle('hidden');
 	location.reload();
-  });
+});
   
 
 // Oculta el canvas inicialmente
@@ -31,9 +31,9 @@ canvas.addEventListener("mousemove", (event) => {
 
 btn_jugar.addEventListener("click", () => {
 	opc_juego.removeAttribute("hidden");
-  btn_jugar.classList.add("hidden");
+  	btn_jugar.classList.add("hidden");
  
-});
+});	
 
 let tablero_juego = null;
 
@@ -41,6 +41,9 @@ let tablero_juego = null;
 let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
+
+	btn_arrancar.classList.toggle('hidden');
+
 	inicio.style.display="none";//oculto la imagen de inicio
 	canvas.style.display = "block";//"levanto" el canvas
 	let botonIzquierdoClickeado = false;
