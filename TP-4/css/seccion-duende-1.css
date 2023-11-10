@@ -1,0 +1,24 @@
+.background-duende-1 {
+  background-color: var(--color-background-duende);
+  padding-top: 20rem;
+  padding-bottom: 36rem;
+  z-index: 300;
+  margin-bottom: -10%;
+  color: var(--color-background-primario);
+  border: solid 1px blue;
+  position: relative;
+}
+
+.background-duende-1 .info{
+  max-width: 55%;
+}
+
+.contenedor-imagen-inclinada {
+  position: absolute;
+  bottom: 0%;
+  transform: rotate(-2.22deg);
+  border-radius: 26px;
+  outline: var(--color-background-primario) solid 9px;
+  outline-offset: -9px;
+  overflow: hidden;
+}

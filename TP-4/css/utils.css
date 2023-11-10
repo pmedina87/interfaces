@@ -1,0 +1,35 @@
+/* Limita que ciertos contenedores sobrepasen un width */
+.custom-max-width{
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin-inline: auto ;
+  border-left: solid 1px red;
+  border-right: solid 1px red;
+}
+
+/* Display flex justify-content space-between */
+.d-flex-jc-between{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Agrega un shadow box sutil al elemento */
+.drop-shadow-suave{
+  box-shadow: 3px 6px 8px 4px var(--color-shadow-box-1); 
+}
+
+.drop-shadow-fuerte{
+  box-shadow: 4px 5px 0 0 var(--color-acento--drop-shadow); 
+}
+
+/* Especifica el tamaño de letra para los encabezados */
+.titulo{
+  font-size: 60px;
+}
+
+/* Especifica el tamaño de letra para los subtitulos */
+.subtitulo{
+  font-size: 40px;
+}

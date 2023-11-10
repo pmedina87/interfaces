@@ -1,0 +1,32 @@
+.seccion-descripciones{
+  background-color: var(--color-background-primario);
+  position: relative;
+  padding-block: 63.5rem;
+}
+
+.seccion-descripciones>div:first-child{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.seccion-descripciones .contenedor-imagenes{
+  position: sticky;
+  height: 19.3rem;
+  top: 30%;
+}
+.seccion-descripciones img{
+  position: absolute;
+}
+
+.contenedor-descripciones{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  row-gap: 16rem;
+}
+
+.descripcion{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}

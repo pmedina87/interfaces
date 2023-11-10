@@ -1,0 +1,32 @@
+.background-ghost-spider{
+  background-image: url(./../assets/imgs/ghostSpider-inclinada.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contenedor-screenshots-flotantes{
+  height: 35.5rem;
+  position: relative;
+}
+
+.background-ghost-spider img{
+  position: absolute;
+  left: 0;
+}
+
+.background-ghost-spider img:first-child{
+  transform: rotate(-13deg);
+  top: -17%;
+}
+
+
+.background-ghost-spider img:nth-child(2){
+  transform: rotate(-26.5deg);
+  top: 15%;
+}
+
+
+.background-ghost-spider img:last-child{
+  transform: rotate(-36deg);
+  top: 50%;
+}

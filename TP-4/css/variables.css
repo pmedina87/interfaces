@@ -1,0 +1,18 @@
+:root{
+  /* Variables relacionadas a los colores */
+  --color-background-primario: #FFFFFF;
+  --color-background-secundario: #FFE901;
+  --color-background-duende: #8F6AA6;
+  --color-background-oscuro: #000000;
+  --color-acento: #2982FF;
+  --color-acento--drop-shadow: #02187E;
+  --color-background-footer-1: #242424;
+  --color-background-footer-2: #5E5E5D;
+  --color-shadow-box-1: #00000015;
+  
+  /* Variables relacionadas a la letra */
+  --custom-font-family: 'Lato', sans-serif;
+  --custom-font-weight-regular: 400;
+  --custom-font-weight-medium: 700;
+  --custom-font-weight-high: 900;
+}

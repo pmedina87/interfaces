@@ -1,0 +1,19 @@
+footer>div:first-child{
+  background-color: var(--color-background-footer-1);
+}
+
+footer>div:last-child{
+  background-color: var(--color-background-footer-2);
+  color: var(--color-background-primario);
+  padding: 2.4rem 0 7.5rem 0;
+}
+
+footer .contenedor-botones{
+  display: flex;
+  column-gap: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+footer .info{
+  width: 76%;
+}

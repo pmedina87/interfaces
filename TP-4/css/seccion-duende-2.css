@@ -1,0 +1,23 @@
+.background-duende-2{
+  background-color: var(--color-background-primario);
+  position: relative;
+  z-index: 100;
+  color: var(--color-background-oscuro);
+  padding-top: 20rem;
+  padding-bottom: 10rem;
+  border: solid 1px green;
+}
+
+.background-duende-2 .grid{
+  display: grid;
+  column-gap: 40.56px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid .card img{
+  border-radius: 26px;
+  outline: var(--color-acento) solid 9px;
+  outline-offset: -9px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
