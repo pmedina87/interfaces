@@ -1,0 +1,75 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+}
+
+/* Cielo */
+.hero img:first-child {
+  width: 100%;
+  min-height: 45rem;
+  object-fit: cover;
+}
+
+/* Edificio del fondo centrado */
+.hero img:nth-child(2) {
+  width: 543.5px;
+  height: 213.5px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 3%);
+}
+
+/* Edificio de la izquierda */
+.hero img:nth-child(3) {
+  width: 452px;
+  height: 720px;
+  left: 0;
+  transform: translate(-15%, 4%);
+  bottom: 0;
+  /* background-color: red; */
+}
+
+/* Edificio de la derecha */
+.hero img:nth-child(4) {
+  width: 452px;
+  height: 720px;
+  right: 0;
+  transform: translate(10%, 4%);
+  bottom: 0;
+}
+
+/* Spiderman blanco */
+.hero img:nth-child(5) {
+  width: 460px;
+  height: 444px;
+  left: 50%;
+  z-index: 4000;
+  transform: translateX(-130%);
+  bottom: 2%;
+}
+
+/* Spiderman negro */
+.hero img:nth-child(6) {
+  width: 393px;
+  height: 393px;
+  left: 50%;
+  transform: translateX(20%);
+  bottom: 15%;
+  z-index: 4000;
+}
+
+/* Spiderman original */
+.hero img:nth-child(7) {
+  width: 465px;
+  height: 465px;
+  left: 50%;
+  z-index: 4000;
+  transform: translateX(-50%);
+  bottom: 0%;
+}
