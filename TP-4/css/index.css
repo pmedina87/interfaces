@@ -1,0 +1,45 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+p{
+  color: white;
+  font-size: 50px;
+}
+
+
+.progress-bar-container {
+  width: 250px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  border-radius: 5px;
+  background-color: #3498db;
+  width: 0;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+#spider{
+  width:41px;
+  height: 115px;
+  background:url(./../assets/imgs/arania-climb.png) repeat-x;
+  animation: fight 1s steps(9) infinite;
+ 
+}
+
+@keyframes fight{
+  0%{background-position: 0;}
+  100%{background-position: -368px;}
+}
