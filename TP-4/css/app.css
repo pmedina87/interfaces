@@ -1,9 +1,11 @@
 @import './variables.css';
 @import './boilerplate.css';
 @import './utils.css';
+@import './parallaxHero.css';
 @import './seccion-duende-1.css';
 @import './seccion-duende-2.css';
 @import './seccion-ghost-spider.css';
 @import './descripciones.css';
+@import './seccion-negra.css';
 @import './footer.css';
 

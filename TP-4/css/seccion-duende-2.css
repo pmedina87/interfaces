@@ -1,11 +1,12 @@
 .background-duende-2{
-  background-color: var(--color-background-primario);
+  background-image: url(./../assets/imgs/backgrounds/fondo-blanco.png);
   position: relative;
-  z-index: 100;
   color: var(--color-background-oscuro);
-  padding-top: 20rem;
-  padding-bottom: 10rem;
   border: solid 1px green;
+  margin-top: -10rem;
+  padding: 20rem 0 20rem 0;
+  z-index: 1000;
+  margin-bottom: -10rem;
 }
 
 .background-duende-2 .grid{

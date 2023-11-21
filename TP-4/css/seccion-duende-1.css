@@ -1,9 +1,11 @@
 .background-duende-1 {
-  background-color: var(--color-background-duende);
-  padding-top: 20rem;
-  padding-bottom: 36rem;
-  z-index: 300;
-  margin-bottom: -10%;
+  background-image: url(./../assets/imgs/backgrounds/fondo-duende.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20rem 0 35rem 0;
+  z-index: 2000;
+  margin-top: -6rem;
   color: var(--color-background-primario);
   border: solid 1px blue;
   position: relative;

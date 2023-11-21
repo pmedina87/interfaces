@@ -1,11 +1,14 @@
 .background-ghost-spider{
-  background-image: url(./../assets/imgs/ghostSpider-inclinada.png);
+  background-image: url(./../assets/imgs/backgrounds/fondo-spiderman-blanco.png);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: 3000;
+  /* background-size: cover; */
 }
 
 .contenedor-screenshots-flotantes{
-  height: 35.5rem;
+  height: 36.5rem;
   position: relative;
 }
 
@@ -28,5 +31,5 @@
 
 .background-ghost-spider img:last-child{
   transform: rotate(-36deg);
-  top: 50%;
+  top: 54%;
 }
