@@ -1,7 +1,10 @@
+
 .paralax-container{
   position: relative;
   height: 33rem;
   width: 100%;
+  z-index: 3000;
+  box-shadow: 5px 5px 50px 1px rgb(0, 0,0);
 }
 
 .paralax-container img{

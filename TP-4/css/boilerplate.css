@@ -11,7 +11,7 @@ button {
 
 html{
   background-color: var(--color-background-oscuro);
-  font-family: var(--ff);
+  font-family: var(--custom-font-family);
 }
 
 p{

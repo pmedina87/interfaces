@@ -1,0 +1,29 @@
+.info-spiderman{
+  background-image: url(./../assets/imgs/infoSpidermans/background-fondo.svg);
+  min-height: 45rem;
+  position: relative;
+}
+
+/* spiderman blanco */
+.info-spiderman img:nth-child(1){
+  position: absolute;
+  left: 50%;
+  bottom: 16%;
+  transform: translate(-160%, 0);
+}
+
+/* spiderman original */
+.info-spiderman img:nth-child(2){
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+}
+
+/* spiderman blanco */
+.info-spiderman img:nth-child(3){
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  transform: translate(60%, 0);
+}

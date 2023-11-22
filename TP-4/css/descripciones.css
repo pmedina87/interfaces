@@ -1,7 +1,10 @@
 .seccion-descripciones{
-  background-color: var(--color-background-primario);
+  background-image: url(./../assets/imgs/backgrounds/fondo-blanco.png);
+  background-size: cover;
   position: relative;
-  padding-block: 63.5rem;
+  padding: 23rem 0 13rem 0;
+  z-index: 2000;
+  margin-top: -9rem;
 }
 
 .seccion-descripciones>div:first-child{

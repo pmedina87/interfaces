@@ -1,0 +1,8 @@
+.franja-negra{
+  padding-block: 2rem;
+}
+
+.franja-negra h2{
+  color: var(--color-background-primario);
+  width: 80%;
+}
