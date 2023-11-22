@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
       // Oculta la barra de carga
       document.querySelector(".loader-container").style.display = "none";
       // Muestra el contenido de la página
-      document.querySelector(".content").style.display = "block";
-  }, 7000); // 2000 milisegundos (2 segundos)
+      document.getElementById("content").style.display = "block";
+  }, 1000); // 2000 milisegundos (2 segundos)
 
   // Simula el progreso de carga de 0 a 100
   let progressBar = document.getElementById("progress-bar");
@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", function() {
           // Cambia el color de la barra a medida que avanza el progreso
           progressBar.style.backgroundColor = `hsl(${width}, 50%, 50%)`;
       }
-  }, 50); // Puedes ajustar la velocidad del progreso aquí
+  }, 1); // Puedes ajustar la velocidad del progreso aquí
 });

@@ -6,11 +6,10 @@
   height: 100vh;
 }
 
-p{
-  color: white;
+.loader-container p{
+  color: var(--color-background-primario);
   font-size: 50px;
 }
-
 
 .progress-bar-container {
   width: 250px;
@@ -24,11 +23,6 @@ p{
   border-radius: 5px;
   background-color: #3498db;
   width: 0;
-}
-
-.content {
-  text-align: center;
-  padding: 20px;
 }
 
 #spider{
