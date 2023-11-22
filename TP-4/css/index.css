@@ -6,10 +6,6 @@
   height: 100vh;
 }
 
-.loader-container p{
-  color: var(--color-background-primario);
-  font-size: 50px;
-}
 
 .progress-bar-container {
   width: 250px;
@@ -37,3 +33,6 @@
   0%{background-position: 0;}
   100%{background-position: -368px;}
 }
+
+
+
