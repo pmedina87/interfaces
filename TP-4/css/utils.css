@@ -15,6 +15,14 @@
   justify-content: space-between;
 }
 
+/* Da un borde azul y redondeado */
+.bordeada{
+  border-radius: 26px;
+  outline: var(--color-acento) solid 9px;
+  outline-offset: -9px;
+  overflow: hidden;
+}
+
 /* Agrega un shadow box sutil al elemento */
 .drop-shadow-suave{
   box-shadow: 3px 6px 8px 4px var(--color-shadow-box-1); 

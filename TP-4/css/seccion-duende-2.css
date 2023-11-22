@@ -15,10 +15,7 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+
 .grid .card img{
-  border-radius: 26px;
-  outline: var(--color-acento) solid 9px;
-  outline-offset: -9px;
-  overflow: hidden;
   margin-bottom: 1.5rem;
 }
