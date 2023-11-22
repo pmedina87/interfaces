@@ -32,6 +32,15 @@
   box-shadow: 4px 5px 0 0 var(--color-acento--drop-shadow); 
 }
 
+.btn-cta {
+  background-color: var(--color-background-secundario);
+  color: var(--color-acento--drop-shadow);
+  padding: 1rem 2.75rem;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 11%;
+}
+
 /* Especifica el tamaño de letra para los encabezados */
 .titulo{
   font-size: 60px;
