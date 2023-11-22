@@ -1,0 +1,27 @@
+.paralax-container{
+  position: relative;
+  height: 33rem;
+  width: 100%;
+}
+
+.paralax-container img{
+  position: absolute;
+}
+
+/* personaje izquierda */
+.paralax-container img:nth-child(3){
+  transform: translate(5%, -14%); 
+}
+
+/* personaje derecha */
+.paralax-container img:nth-child(4){
+  right: 0;
+  bottom: 0;
+  transform: translate(15%, 15%);
+}
+/* personaje centro */
+.paralax-container img:nth-child(5){
+  left: 50%;
+  top: 0;
+  transform: translate(-20%, -40%);
+}
