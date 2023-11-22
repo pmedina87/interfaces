@@ -15,6 +15,14 @@
   justify-content: space-between;
 }
 
+/* Da un borde azul y redondeado */
+.bordeada{
+  border-radius: 26px;
+  outline: var(--color-acento) solid 9px;
+  outline-offset: -9px;
+  overflow: hidden;
+}
+
 /* Agrega un shadow box sutil al elemento */
 .drop-shadow-suave{
   box-shadow: 3px 6px 8px 4px var(--color-shadow-box-1); 
@@ -22,6 +30,15 @@
 
 .drop-shadow-fuerte{
   box-shadow: 4px 5px 0 0 var(--color-acento--drop-shadow); 
+}
+
+.btn-cta {
+  background-color: var(--color-background-secundario);
+  color: var(--color-acento--drop-shadow);
+  padding: 1rem 2.75rem;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 11%;
 }
 
 /* Especifica el tamaño de letra para los encabezados */

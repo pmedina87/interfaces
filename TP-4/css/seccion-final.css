@@ -1,0 +1,59 @@
+.seccion-final{
+  background-image: url(./../assets/imgs/backgrounds/fondo-final.png);
+  height: 81rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seccion-final .titulo{
+  padding-top: 6rem;
+  text-align: center;
+  max-width: 51rem;
+}
+
+.seccion-final .subrayado{
+  text-decoration: underline;
+}
+
+.seccion-final form{
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: 3fr 1fr;
+  background-color: red;
+  margin-top: 2.85rem;
+  margin-bottom: 2.5rem;
+  border-radius: 5rem;
+}
+
+.seccion-final form input{
+  padding-left: 4rem;
+  font-size: 20px;
+}
+
+.seccion-final form input::placeholder{
+  font-size: 20px;
+  letter-spacing: 11%;
+  color: rgba(0, 0, 0, .4);
+}
+
+.seccion-final form button{
+  padding: 2rem 3rem;
+  outline: var(--color-acento) solid 9px;
+}
+
+.seccion-final div:last-child{
+  width: 600px;
+}
+
+.seccion-final div:last-child p{
+  max-width: 578px;
+  margin-bottom: 2rem;
+}
+
+.seccion-final > img{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
