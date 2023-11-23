@@ -1,8 +1,14 @@
-
 .paralax-container{
   position: relative;
   height: 33rem;
   width: 100%;
+  /* El orden de las capas es inverso... */
+  background-image: 
+    url(./../assets/imgs/segundoParallax/background-arboles.svg),
+    url(./../assets/imgs/segundoParallax/background-cielo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
   z-index: 3000;
   box-shadow: 5px 5px 50px 1px rgb(0, 0,0);
 }
@@ -12,19 +18,18 @@
 }
 
 /* personaje izquierda */
-.paralax-container img:nth-child(3){
-  transform: translate(5%, -14%); 
+.paralax-container img:nth-child(1){
+  left: 3%;
+  bottom: -10%;  
 }
 
 /* personaje derecha */
-.paralax-container img:nth-child(4){
-  right: 0;
-  bottom: 0;
-  transform: translate(15%, 15%);
+.paralax-container img:nth-child(2){
+  right: -5%;
+  bottom: -12%;
 }
 /* personaje centro */
-.paralax-container img:nth-child(5){
-  left: 50%;
-  top: 0;
-  transform: translate(-20%, -40%);
+.paralax-container img:nth-child(3){
+  left: 42%;
+  top: -48%;
 }

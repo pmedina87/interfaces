@@ -1,12 +1,28 @@
 .info-spiderman{
-  background-image: url(./../assets/imgs/infoSpidermans/background-fondo.svg);
-  min-height: 45rem;
+  background-image: url(./../assets/imgs/infoSpidermans/fondo-blanco-spidermans.png);
+  min-height: 53rem;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
+}
+
+.info-spiderman img{
+  position: absolute;
+  transition: 
+    filter 200ms ease-in,
+    scale 200ms ease-in;
+}
+
+.blur{
+  filter: blur(5px);
+}
+
+.agrandar{
+  scale: 1.1;
 }
 
 /* spiderman blanco */
 .info-spiderman img:nth-child(1){
-  position: absolute;
   left: 50%;
   bottom: 16%;
   transform: translate(-160%, 0);
@@ -14,7 +30,6 @@
 
 /* spiderman original */
 .info-spiderman img:nth-child(2){
-  position: absolute;
   left: 50%;
   bottom: 10%;
   transform: translate(-50%, 0);
@@ -22,8 +37,8 @@
 
 /* spiderman blanco */
 .info-spiderman img:nth-child(3){
-  position: absolute;
   left: 50%;
   bottom: 18%;
   transform: translate(60%, 0);
 }
+
