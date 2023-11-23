@@ -44,14 +44,9 @@
               <li><a href="#">Item 4</a></li>
             </ul>
           </div>
-        </header>
-
-      
-      
-      
-      <section class="hero">
-       
-       
+      </header>
+         
+      <section class="hero">    
         <img src="./assets/imgs/hero/cielo.svg" alt="">
         <img src="./assets/imgs/hero/edificio-fondo.svg" alt="">
         <img src="./assets/imgs/hero/edificio-izquierdo.svg" alt="">
@@ -65,6 +60,7 @@
         <img src="./assets/imgs/image 5 1.svg"  alt="">
       
       </section>
+
       <section class="background-duende-1">
         <div class="custom-max-width">
           <div class="info">
@@ -79,6 +75,7 @@
           </div>
         </div>
       </section>
+
       <section class="background-duende-2">
         <div class="grid custom-max-width">
           <div class="card">
@@ -106,6 +103,7 @@
           </div>
         </div>
       </section>
+
       <section class="background-ghost-spider">
         <div class="custom-max-width contenedor-screenshots-flotantes">
           <img src="./assets/imgs/screenshots-flotantes/gameplay1.png" alt="">
@@ -113,78 +111,101 @@
           <img src="./assets/imgs/screenshots-flotantes/gameplay3.png" alt="">
         </div>
       </section>
+
       <section class="seccion-negra">
-      <div class="custom-max-width">
-        <h2 class="titulo">Los vengadores acompañando tu aventura</h2>
-        <div class="paralax-container">
-          <img src="./assets/imgs/segundoParallax/background-cielo.svg" alt="">
-          <img src="./assets/imgs/segundoParallax/background-arboles.svg" alt="">
-          <img src="./assets/imgs/segundoParallax/personajeIzquierda.svg" alt="">
-          <img src="./assets/imgs/segundoParallax/personajeDerecha.svg" alt="">
-          <img src="./assets/imgs/segundoParallax/perconajeCentro.svg" alt="">
-          <img src="./assets/imgs/segundoParallax/background-pasto.svg" alt="">
+        <div class="custom-max-width">
+          <h2 class="titulo">Los vengadores acompañando tu aventura</h2>
+          <div class="paralax-container">
+            <img src="./assets/imgs/segundoParallax/background-cielo.svg" alt="">
+            <img src="./assets/imgs/segundoParallax/background-arboles.svg" alt="">
+            <img src="./assets/imgs/segundoParallax/personajeIzquierda.svg" alt="">
+            <img src="./assets/imgs/segundoParallax/personajeDerecha.svg" alt="">
+            <img src="./assets/imgs/segundoParallax/perconajeCentro.svg" alt="">
+            <img src="./assets/imgs/segundoParallax/background-pasto.svg" alt="">
+          </div>
         </div>
-      </div>
       </section>
+
       <section class="seccion-descripciones">
         <div class="custom-max-width">
           <!-- Las imagenes ya están, faltaria controlar con js que cuando se scrollee se vayan cambiando las imagenes con un fade -->
           <div class="contenedor-imagenes">
-            <img src="./assets/imgs/fade/primera.png" alt="">
-            <img src="./assets/imgs/fade/segunda.png" alt="">
-            <img src="./assets/imgs/fade/tercera.png" alt="">
-            <img src="./assets/imgs/fade/ultima.png" alt="">
+            <img id="imgA" src="./assets/imgs/fade/primera.png" alt="">
+            <img id="imgB" src="./assets/imgs/fade/segunda.png" alt="">
+            <img id="imgC" src="./assets/imgs/fade/tercera.png" alt="">
+            <img id="imgD" src="./assets/imgs/fade/ultima.png" alt="">
           </div>
           <div class="contenedor-descripciones">
             <div class="descripcion">
-              <h3 class="subtitulo">Mas de 100 misiones para que juegues sin parar!</h3>
-              <p>Tus padres, contentos. Explora el emocionante mundo de Spider-Man con más de 100 misiones que te
+              <h3 id="tituloA" class="subtitulo">
+                Mas de 100 misiones para que juegues sin parar!
+              </h3>
+              <p id="textoA">
+                Tus padres, contentos. Explora el emocionante mundo de Spider-Man con más de 100 misiones que te
                 mantendrán en constante acción y adrenalina. Enfréntate a desafíos únicos, desentraña misterios, y ayuda a
                 Spider-Man a mantener la paz en la ciudad mientras te sumerges en la piel del héroe arácnido. ¿Tienes lo
-                que se necesita para superar todas las misiones y convertirte en el auténtico Spider-Man?</p>
+                que se necesita para superar todas las misiones y convertirte en el auténtico Spider-Man?
+              </p>
             </div>
             <div class="descripcion">
-              <h3 class="subtitulo">Escenas deslumbrantes que te sorprenderán</h3>
-              <p>Sumérgete en un universo de maravillas visuales con 'Spider-Man: [nombre del juego]'. Nuestro juego te
+              <h3 id="tituloB" class="subtitulo">
+                Escenas deslumbrantes que te sorprenderán
+              </h3>
+              <p id="textoB">
+                Sumérgete en un universo de maravillas visuales con 'Spider-Man: [nombre del juego]'. Nuestro juego te
                 llevará a través de escenas deslumbrantes que te dejarán sin aliento. Desde los rascacielos de Nueva York
                 hasta los intrincados detalles de la vida de Peter Parker, cada rincón de este mundo te sorprenderá.
                 Prepárate para una experiencia única que desafiará tus expectativas y te transportará a un asombroso viaje
-                con el Hombre Araña.</p>
+                con el Hombre Araña.
+              </p>
             </div>
             <div class="descripcion">
-              <h3 class="subtitulo">Cada misión te dará puntos que no sirven para nada! </h3>
-              <p>Cada misión es una oportunidad para vivir la emocionante vida del Hombre Araña, y aunque los puntos que
+              <h3 id="tituloC" class="subtitulo">
+                Cada misión te dará puntos que no sirven para nada! 
+              </h3>
+              <p id="textoC">
+                Cada misión es una oportunidad para vivir la emocionante vida del Hombre Araña, y aunque los puntos que
                 ganarás no tengan un propósito específico, la verdadera recompensa está en la diversión y la inmersión que
                 experimentarás en cada desafío. No necesitas acumular puntos para sentirte como un auténtico superhéroe,
                 ya que la adrenalina de salvar la ciudad y la emoción de las acrobacias en el aire son más que
                 suficientes. ¡Así que prepárate para sumergirte en la acción y la aventura, sin preocuparte por los
-                puntos, y vive la experiencia definitiva de Spider-Man!</p>
+                puntos, y vive la experiencia definitiva de Spider-Man!
+              </p>
             </div>
             <div class="descripcion">
-              <h3 class="subtitulo">Derrota a los villanos y diviértete</h3>
-              <p>la diversión está asegurada mientras te enfrentas a los infames villanos de la ciudad de Nueva York.
+              <h3 id="tituloD" class="subtitulo">
+                Derrota a los villanos y diviértete
+              </h3>
+              <p id="textoD">
+                La diversión está asegurada mientras te enfrentas a los infames villanos de la ciudad de Nueva York.
                 Enfréntate a desafíos épicos, combate a tus enemigos más temibles y disfruta de una experiencia llena de
                 acción y emoción. Cada encuentro con los villanos te sumergirá en una batalla trepidante y te llevará más
                 cerca de convertirte en el auténtico Hombre Araña. Así que, ¿estás listo para derrotar a los villanos y
-                sumergirte en la aventura definitiva de Spider-Man?"</p>
+                sumergirte en la aventura definitiva de Spider-Man?"
+              </p>
             </div>
           </div>
         </div>
       </section>
+
       <section class="franja-negra">
         <div class="custom-max-width">
           <h2 class="titulo">"un gran poder conlleva una gran responsabilidad"</h2>
           <button class="drop-shadow-fuerte bordeada btn-cta">COMPRAR AHORA</button>
         </div>
       </section>
+
       <section class="info-spiderman">
         <img src="./assets/imgs/infoSpidermans/spidermanBlanco.svg" alt="">
         <img src="./assets/imgs/infoSpidermans/spidermanOriginal.svg" alt="">
         <img src="./assets/imgs/infoSpidermans/spidermanNegro.svg" alt="">
       </section>
+
       <section class="seccion-final">
         <img src="./assets/imgs/backgrounds/fondo-final-edificios.png" alt="">
-        <h2 class="titulo">Lo último de SPIDEY Y SUS AMIGOS en tu buzón de correo electrónico</h2>
+        <h2 class="titulo">
+          Lo último de SPIDEY Y SUS AMIGOS en tu buzón de correo electrónico
+        </h2>
         <form class="drop-shadow-fuerte bordeada">
           <input type="text" placeholder="Ingresa aquí tu correo">
           <button type="submit" class="btn-cta">SUSCRIBIRSE</button>
@@ -194,6 +215,7 @@
           <img src="./assets/imgs/clasificacionJuego.png" alt="">
         </div>
       </section>
+
       <footer>
         <div>
           <div class="custom-max-width">
@@ -223,8 +245,10 @@
           </div>
         </div>
       </footer>
+
     </div> 
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/seccion_descripciones.js"></script>
 </body>
 
 </html>
