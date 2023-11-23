@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let imgC = document.querySelector("#imgC");
 	let imgD = document.querySelector("#imgD");
 
-    let arrImg = [imgA, imgB, imgC, img4];
+    let arrImg = [imgA, imgB, imgC, imgD];
 
 	const observador = new IntersectionObserver((entries) => {
 		//itera x cada entrada, por cada texto

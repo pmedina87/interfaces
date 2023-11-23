@@ -3,10 +3,12 @@ const sm_blanco = document.getElementById("spiderman-blanco");
 const sm_original = document.getElementById("spiderman-original");
 const sm_negro = document.getElementById("spiderman-negro");
 
-const url_fondo_blanco = "url(./assets/imgs/infoSpidermans/fondo-blanco-spidermans.png)";
-const url_fondo_spiderman_blanco = "url(./assets/imgs/infoSpidermans/fondo-spiderman-blanco.png)";
-const url_fondo_spiderman_original = "url(./assets/imgs/infoSpidermans/fondo-spiderman-original.png)";
-const url_fondo_spiderman_negro = "url(./assets/imgs/infoSpidermans/fondo-spiderman-negro.png)";
+const url_fondo_blanco = "url(./../assets/imgs/infoSpidermans/fondo-blanco-spidermans.png)";
+const url_fondo_spiderman_blanco =
+	"url(./../assets/imgs/infoSpidermans/fondo-spiderman-blanco.png)";
+const url_fondo_spiderman_original =
+	"url(./../assets/imgs/infoSpidermans/fondo-spiderman-original.png)";
+const url_fondo_spiderman_negro = "url(./../assets/imgs/infoSpidermans/fondo-spiderman-negro.png)";
 
 // Creamos un arreglo para poder reutilizar funcionalidades 
 // a traves de las funciones de anbajo 
