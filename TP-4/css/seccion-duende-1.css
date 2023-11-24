@@ -3,7 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20rem 0 35rem 0;
+  padding: 20rem 0 29rem 0;
   z-index: 2000;
   margin-top: -6.5rem;
   color: var(--color-background-primario);
@@ -15,6 +15,10 @@
   max-width: 55%;
 }
 
+.background-duende-1 h2{
+  margin-bottom: 1.5rem;
+}
+
 .contenedor-imagen-inclinada {
   position: absolute;
   bottom: 0%;
@@ -23,4 +27,12 @@
   outline: var(--color-background-primario) solid 9px;
   outline-offset: -9px;
   overflow: hidden;
+  z-index: 200;
+}
+
+#imagen-duende {
+  position: absolute;
+  left: 50%;
+  top: 5rem;
+  z-index: 500;
 }
