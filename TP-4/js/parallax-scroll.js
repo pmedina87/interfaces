@@ -13,11 +13,11 @@ const titulo = document.getElementById("titulo");
 document.onscroll = () => { 
   let y = window.scrollY;
   if(y == 0){
-    titulo.remove("achicar");
+    titulo.classList.remove("achicar");
   }else if(y > 0){
-    titulo.add("achicar");
+    titulo.classList.add("achicar");
   }
-  
+
   edificio_fondo.style.bottom = `${0 - (y * 0.07)}px`; 
   edificio_izquierdo.style.bottom = `${0 - (y * 0.09)}px`; 
   edificio_derecho.style.bottom = `${0 - (y * 0.09)}px`; 
