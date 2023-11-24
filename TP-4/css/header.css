@@ -32,3 +32,34 @@
   scale: .2;
   transform: translate(-200%, -250%) !important;
 }
+
+#btn-hamburguesa{
+  width: 2.5rem;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+}
+
+#btn-hamburguesa:before,
+#btn-hamburguesa:after,
+#btn-hamburguesa div {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+
+.btn-click:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.btn-click:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.btn-click div {
+  transform: scale(0);
+}
