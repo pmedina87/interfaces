@@ -19,11 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				// Ajustamos la opacidad de todas las imágenes y contenedores a 0, 
 				// para que solo esten visiblse los que yo quiero
-				descripciones.forEach(desc => desc.style.opacity = 0);
 				imagenes.forEach(img => img.style.opacity = 0);
 				
 				// Hacemos visible la imagen y contenedor de descripcion visible al usuario
-				descripciones[index].style.opacity = 1;
 				imagenes[index].style.opacity = 1;
 			}
 		});
