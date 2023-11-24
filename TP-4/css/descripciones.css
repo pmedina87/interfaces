@@ -11,6 +11,11 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
 }
+.seccion-descripciones img,
+.seccion-descripciones h3,
+.seccion-descripciones p{
+  transition: opacity 500ms ease-out;
+}
 
 .seccion-descripciones .contenedor-imagenes{
   position: sticky;
