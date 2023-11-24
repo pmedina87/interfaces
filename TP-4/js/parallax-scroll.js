@@ -11,14 +11,13 @@ const duende = document.getElementById("imagen-duende");
 // asi que lo aplicamos directamente en el document
 document.onscroll = () => { 
   let y = window.scrollY;
-  console.log(`El scrollTop es: ${y}`);
   edificio_fondo.style.bottom = `${0 - (y * 0.07)}px`; 
   edificio_izquierdo.style.bottom = `${0 - (y * 0.09)}px`; 
   edificio_derecho.style.bottom = `${0 - (y * 0.09)}px`; 
-  sm_blanco.style.bottom = `${0 - (y * 0.11)}px`; 
-  sm_negro.style.bottom = `${0 - (y * 0.12)}px`; 
-  sm_original.style.bottom = `${0 - (y * 0.12)}px`;
-  telaraña_derecha.style.bottom = `${0 - (y * 0.12)}px`;
+  sm_blanco.style.bottom = `${0 + (y * 0.11)}px`; 
+  sm_negro.style.bottom = `${0 + (y * 0.12)}px`; 
+  sm_original.style.bottom = `${0 + (y * 0.12)}px`;
+  telaraña_derecha.style.bottom = `${0 + (y * 0.12)}px`;
    
   duende.style.top = `${100 + (y * 0.1)}px`;
 }
