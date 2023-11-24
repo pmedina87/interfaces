@@ -22,6 +22,11 @@ p{
   font-size: 20px;
 }
 
+ul, ol{
+  list-style: none;
+}
+
 a{
   color: inherit;
+  text-decoration: none;
 }

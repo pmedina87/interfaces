@@ -1,0 +1,22 @@
+#navbar{
+  position: absolute;
+  background-color: green;
+  width: 10rem;
+  top: 91.2px;
+}
+
+#navbar li{
+  background-color: blue;
+  transform: translateX(-110%);
+  transition: transform 300ms ease-out;
+}
+
+#navbar li a {
+  display: block;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
+.showElement {
+  transform: translateX(0) !important;
+}

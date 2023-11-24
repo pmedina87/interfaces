@@ -5,7 +5,7 @@
   background-image: url(./../assets/imgs/header-background-top.png);
 }
 
-.container-pagina>div{
+.container-pagina > div:first-child{
   padding: 1rem 0;
 }
 
@@ -56,6 +56,10 @@
   height: 3rem;
   border: none;
   background-color: transparent;
+}
+
+#btn-hamburguesa:hover{
+  cursor: pointer;
 }
 
 #btn-hamburguesa:before,
