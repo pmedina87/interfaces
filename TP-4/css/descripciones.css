@@ -41,7 +41,6 @@
 }
 
 /* Empiezan los ocultos */
-.seccion-descripciones img,
-.seccion-descripciones .descripcion{
+.seccion-descripciones img {
   opacity: 0;
 }
