@@ -17,11 +17,15 @@
   opacity: 1;
 }
 
-.header #titulo-header {
-  width: 100px;
+.header #titulo{ 
   position: absolute;
+  width: 590px;
+  height: 310px;
+  z-index: 8000;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 300ms linear;
+  bottom: -300%;
 }
 
 .btn-comprar:hover {
@@ -39,4 +43,41 @@
   to {
     text-shadow: 0 0 20px #ff4400, 0 0 30px #ff4400, 0 0 40px #ff4400;
   }
+ 
+}
+
+.achicar{
+  scale: .2;
+  transform: translate(-200%, -250%) !important;
+}
+
+#btn-hamburguesa{
+  width: 2.5rem;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+}
+
+#btn-hamburguesa:before,
+#btn-hamburguesa:after,
+#btn-hamburguesa div {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+
+.btn-click:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.btn-click:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.btn-click div {
+  transform: scale(0);
 }

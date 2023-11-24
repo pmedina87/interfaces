@@ -81,19 +81,3 @@
   z-index: 4500;
   bottom: 0;
 }
-
-.hero img:nth-child(9){ 
-  width: 590px;
-  height: 310px;
-  z-index: 8000;
-  left: 50%;
-  transform: translateX(-50%); 
-  transition: all 300ms linear; 
-}
-
-.achicar{
-  position: sticky;
-  top: 0;
-  scale: .0;
-  translate: -50%;
-}
