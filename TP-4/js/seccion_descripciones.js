@@ -1,4 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
+	// Obtenemos las imagenes
+	const imagenes = []; 
+	document.querySelectorAll(".seccion-descripciones img").forEach(img => imagenes.push(img));
+
+	// Obtenemos los contenedores de cada descripcion
+	const descripciones = []; 
+	document.querySelectorAll(".seccion-descripciones .descripcion").forEach(desc => descripciones.push(desc));
+	
+	const observador = new IntersectionObserver(entries => {
+		//itera x cada entrada, por cada contenedor de descripcion
+		entries.forEach(entry => {
+			//esta visible?
+			if (entry.intersectionRatio) {
+				//indice del contenedor actual del arreglo descripciones, asi se ve cual descripcion es el visible
+				//entry.target(me devuelve el obj), indexof el indice de ese obj en arrglo
+
+				const index = descripciones.indexOf(entry.target);
+
+				// Ajustamos la opacidad de todas las imágenes y contenedores a 0, 
+				// para que solo esten visiblse los que yo quiero
+				descripciones.forEach(desc => desc.style.opacity = 0);
+				imagenes.forEach(img => img.style.opacity = 0);
+				
+				// Hacemos visible la imagen y contenedor de descripcion visible al usuario
+				descripciones[index].style.opacity = 1;
+				imagenes[index].style.opacity = 1;
+			}
+		});
+	});
+
+	//Observa cada texto individual, que este en el arrgelo
+	descripciones.forEach(desc => {
+		observador.observe(desc);
+	});
+
+	/*
 	// obtenemos los titulos y sus respectivos textos
 	let tituloA = document.querySelector("#tituloA");
 	let tituloB = document.querySelector("#tituloB");
@@ -48,4 +84,5 @@ document.addEventListener("DOMContentLoaded", function () {
 	arrTextos.forEach((text) => {
 		observador.observe(text);
 	});
+	*/
 });

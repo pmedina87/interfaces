@@ -11,9 +11,8 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
 }
-.seccion-descripciones img,
-.seccion-descripciones h3,
-.seccion-descripciones p{
+.seccion-descripciones .descripcion,
+.seccion-descripciones img {
   transition: opacity 500ms ease-out;
 }
 
@@ -37,4 +36,10 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+}
+
+/* Empiezan los ocultos */
+.seccion-descripciones img,
+.seccion-descripciones .descripcion{
+  opacity: 0;
 }
