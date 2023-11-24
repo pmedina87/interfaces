@@ -20,8 +20,3 @@ wrapper.addEventListener("mousemove", (e) =>{
   images.item(1).style.transform = `translate(${desplazamiento_personajes[0]}, ${desplazamiento_personajes[1]})`;
   images.item(2).style.transform = `translate(${desplazamiento_personajes[0]}, ${desplazamiento_personajes[1]})`;
 });
-
-function cambiarPorcentajeDeTransform(imagen, event){
-
-}
-
