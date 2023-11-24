@@ -17,9 +17,18 @@
   opacity: 1;
 }
 
-.header #titulo-header {
-  width: 100px;
+.header #titulo{ 
   position: absolute;
+  width: 590px;
+  height: 310px;
+  z-index: 8000;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); 
+  transition: all 300ms linear; 
+  bottom: -300%;
+}
+
+.achicar{
+  scale: .2;
+  transform: translate(-200%, -250%) !important;
 }

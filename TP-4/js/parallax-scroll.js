@@ -7,7 +7,6 @@ const sm_original = document.getElementById("hero-spiderman-original");
 const telaraña_derecha = document.getElementById("hero-telaraña-derecha");
 const duende = document.getElementById("imagen-duende");
 const titulo = document.getElementById("titulo");
-const titulo_header = document.getElementById("titulo-header");
 
 // Por alguna razon no reconocia el scrollTop del body, 
 // asi que lo aplicamos directamente en el document
@@ -15,15 +14,8 @@ document.onscroll = () => {
   let y = window.scrollY;
   if(y == 0){
     titulo.classList.remove("achicar");
-    titulo_header.classList.add("transparente");
-    titulo_header.classList.remove("visible");
-    titulo.classList.remove("transparente");
   }else if(y > 0){
-    
-    titulo_header.classList.remove("transparente");
-    titulo_header.classList.add("visible");
     titulo.classList.add("achicar");
-    titulo.classList.add("transparente");
   }
 
   edificio_fondo.style.bottom = `${0 - (y * 0.07)}px`; 
