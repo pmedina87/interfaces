@@ -33,6 +33,6 @@
 #imagen-duende {
   position: absolute;
   left: 50%;
-  top: 5rem;
   z-index: 500;
+  top: 100px;
 }

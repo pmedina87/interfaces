@@ -1,12 +1,7 @@
-
-
-
-
 .hero {
   position: relative;
   height: 45rem;
   width: 100%;
-  overflow: hidden;
 }
 
 .hero img {
@@ -16,6 +11,7 @@
 /* Cielo */
 .hero img:first-child {
   width: 100%;
+  height: 720px;
   object-fit: cover;
 }
 
@@ -24,8 +20,8 @@
   width: 543.5px;
   height: 213.5px;
   left: 50%;
-  bottom: 0;
   transform: translate(-50%, 3%);
+  bottom: 0;
 }
 
 /* Edificio de la izquierda */
@@ -35,7 +31,6 @@
   left: 0;
   transform: translate(-15%, 4%);
   bottom: 0;
-  /* background-color: red; */
 }
 
 /* Edificio de la derecha */
@@ -53,8 +48,8 @@
   height: 444px;
   left: 50%;
   z-index: 4000;
-  transform: translateX(-130%);
-  bottom: 2%;
+  transform: translate(-130%, -2%);
+  bottom: 0;
 }
 
 /* Spiderman negro */
@@ -62,9 +57,9 @@
   width: 393px;
   height: 393px;
   left: 50%;
-  transform: translateX(20%);
-  bottom: 15%;
   z-index: 4000;
+  transform: translate(20%, -35%);
+  bottom: 0;
 }
 
 /* Spiderman original */
@@ -77,8 +72,30 @@
   bottom: 0%;
 }
 
-.hero img:nth-child(8){ 
-  width: 900px;
+/* Telaraña izquierda */
+.hero img:nth-child(8) {
+  width: 465px;
+  height: 465px;
+  left: 50%;
+  transform: translate(-110%, 18%);
+  z-index: 4500;
+  bottom: 0;
+}
+
+/* Telaraña derecha */
+.hero img:nth-child(9) {
+  width: 465px;
+  height: 465px;
+  left: 50%;
+  transform: translate(77%, -12%);
+  z-index: 4500;
+  bottom: 0;
+}
+
+.hero img:nth-child(10){ 
+  width: 590px;
   height: 310px;
-  left: 25%;  
- }
+  z-index: 8000;
+  left: 50%;
+  transform: translateX(-50%);  
+}
