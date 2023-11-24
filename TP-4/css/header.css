@@ -1,10 +1,25 @@
 .header{
-  background-color: blue;
   position: sticky;
   top: 0;
   z-index: 5000;
+  background-image: url(./../assets/imgs/header-background-top.png);
 }
 
 .container-pagina>div{
   padding: 1rem 0;
+}
+
+.transparente {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.header #titulo-header {
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

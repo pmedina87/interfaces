@@ -94,7 +94,6 @@
 .achicar{
   position: sticky;
   top: 0;
-  scale: .25;
-  transform: translateX(0%);
-  translate: -12.5% 0%;
+  scale: .0;
+  translate: -50%;
 }
