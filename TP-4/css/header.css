@@ -53,10 +53,10 @@
 }
 
 .btn-click:before {
-  transform: translateY(12px) rotate(135deg);
+  transform: translateY(14px) rotate(135deg);
 }
 
-.btn-click:hover:after {
+.btn-click:after {
   transform: translateY(-12px) rotate(-135deg);
 }
 
