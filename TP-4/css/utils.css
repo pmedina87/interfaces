@@ -36,6 +36,7 @@
   background-color: var(--color-background-secundario);
   color: var(--color-acento--drop-shadow);
   padding: 1rem 2.75rem;
+  font-family: var(--custom-font-family);
   font-weight: 900;
   font-size: 20px;
   letter-spacing: 11%;
