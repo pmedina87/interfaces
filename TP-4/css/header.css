@@ -4,3 +4,7 @@
   top: 0;
   z-index: 5000;
 }
+
+.container-pagina>div{
+  padding: 1rem 0;
+}

@@ -64,26 +64,16 @@
 
 /* Spiderman original */
 .hero img:nth-child(7) {
-  width: 465px;
-  height: 465px;
+  width: 1052px;
+  height: 671px;
   left: 50%;
   z-index: 4000;
-  transform: translateX(-50%);
+  transform: translate(-80%, 23%);
   bottom: 0%;
 }
 
-/* Telaraña izquierda */
-.hero img:nth-child(8) {
-  width: 465px;
-  height: 465px;
-  left: 50%;
-  transform: translate(-117%, 18%);
-  z-index: 4500;
-  bottom: 0;
-}
-
 /* Telaraña derecha */
-.hero img:nth-child(9) {
+.hero img:nth-child(8) {
   width: 465px;
   height: 465px;
   left: 50%;
@@ -92,10 +82,15 @@
   bottom: 0;
 }
 
-.hero img:nth-child(10){ 
+.hero img:nth-child(9){ 
   width: 590px;
   height: 310px;
   z-index: 8000;
   left: 50%;
-  transform: translateX(-50%);  
+  transform: translateX(-50%); 
+  transition: scale 300ms linear; 
+}
+
+.achicar{
+  scale: .3;
 }

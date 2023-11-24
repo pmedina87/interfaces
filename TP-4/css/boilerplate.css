@@ -14,9 +14,9 @@ html{
   font-family: var(--custom-font-family);
 }
 
-body{
+/* body{
   overflow-x: hidden;
-}
+} */
 
 p{
   font-size: 20px;
