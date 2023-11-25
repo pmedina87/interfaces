@@ -9,48 +9,24 @@
   padding: 1rem 0;
 }
 
-.transparente {
-  opacity: 0;
-}
-
-.visible {
-  opacity: 1;
-}
-
+/* Animacion al titulo */
 .header #titulo{ 
   position: absolute;
   width: 590px;
   height: 310px;
-  z-index: 8000;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0%);
   transition: all 300ms linear;
   bottom: -300%;
 }
 
-.btn-comprar:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-  animation: neon-glow 1.5s ease-in-out infinite alternate;
-  transform: scale(1.1);
+.header #titulo.achicar{
+  width: 150px;
+  transform: translate(-50%, -53%);
 }
+/* Animacion al titulo */
 
-@keyframes neon-glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-  }
-
-  to {
-    text-shadow: 0 0 20px #ff4400, 0 0 30px #ff4400, 0 0 40px #ff4400;
-  }
- 
-}
-
-.achicar{
-  scale: .2;
-  transform: translate(-200%, -250%) !important;
-}
-
+/* Animaciones al boton hambueguesa */
 #btn-hamburguesa{
   width: 2.5rem;
   height: 3rem;
@@ -85,3 +61,22 @@
 .btn-click div {
   transform: scale(0);
 }
+/* Animaciones al boton hambueguesa */
+
+/* Animaciones al botón comprar */
+.btn-comprar:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+  transform: scale(1.1);
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff4400, 0 0 30px #ff4400, 0 0 40px #ff4400;
+  }
+}
+/* Animaciones al botón comprar */
