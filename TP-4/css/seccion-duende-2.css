@@ -2,7 +2,6 @@
   background-image: url(./../assets/imgs/backgrounds/fondo-blanco.png);
   position: relative;
   color: var(--color-background-oscuro);
-  border: solid 1px green;
   margin-top: -10rem;
   padding: 20rem 0 20rem 0;
   z-index: 1000;

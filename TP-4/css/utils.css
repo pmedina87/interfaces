@@ -3,9 +3,7 @@
   display: flex;
   flex-direction: column;
   max-width: 1080px;
-  margin-inline: auto ;
-  border-left: solid 1px red;
-  border-right: solid 1px red;
+  margin-inline: auto;
 }
 
 /* Display flex justify-content space-between */

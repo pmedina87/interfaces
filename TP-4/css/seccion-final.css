@@ -17,11 +17,14 @@
   text-decoration: underline;
 }
 
+.seccion-final .subrayado:hover{
+  cursor: pointer;;
+}
+
 .seccion-final form{
   display: grid;
   max-width: 800px;
   grid-template-columns: 3fr 1fr;
-  background-color: red;
   margin-top: 2.85rem;
   margin-bottom: 2.5rem;
   border-radius: 5rem;

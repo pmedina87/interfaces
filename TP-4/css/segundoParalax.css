@@ -10,7 +10,7 @@
   background-position: center;
   background-position: 50% 50%;
   z-index: 3000;
-  box-shadow: 5px 5px 50px 1px rgb(0, 0,0);
+  box-shadow: 5px 5px 50px 1px var(--color-background-oscuro);
 }
 
 .paralax-container img{

@@ -41,7 +41,7 @@
 #btn-hamburguesa:before,
 #btn-hamburguesa:after,
 #btn-hamburguesa div {
-  background: #fff;
+  background: var(--color-background-primario);
   content: "";
   display: block;
   height: 6px;
