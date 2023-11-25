@@ -7,6 +7,7 @@
 
 .container-pagina > div:first-child{
   padding: 1rem 0;
+  align-items: center;
 }
 
 /* Animacion al titulo */
@@ -28,8 +29,8 @@
 
 /* Animaciones al boton hambueguesa */
 #btn-hamburguesa{
-  width: 2.5rem;
-  height: 3rem;
+  width: 34px;
+  height: fit-content;
   border: none;
   background-color: transparent;
 }
@@ -38,27 +39,30 @@
   cursor: pointer;
 }
 
-#btn-hamburguesa:before,
-#btn-hamburguesa:after,
 #btn-hamburguesa div {
-  background: var(--color-background-primario);
-  content: "";
+  background: var(--color-background-secundario);
   display: block;
-  height: 6px;
+  height: 4px;
   border-radius: 3px;
+  outline: solid 4px var(--color-acento);
   margin: 7px 0;
   transition: 0.5s;
+  box-shadow: 3px 5px 0 4px var(--color-acento--drop-shadow); 
 }
 
-.btn-click:before {
-  transform: translateY(14px) rotate(135deg);
+#btn-hamburguesa.btn-click div:first-child {
+  transform: translateY(7px) rotate(135deg);
+  box-shadow: unset;
+  box-shadow: 0px -1px 0 4px var(--color-acento--drop-shadow);
 }
 
-.btn-click:after {
-  transform: translateY(-12px) rotate(-135deg);
-}
-
-.btn-click div {
+.btn-click div:nth-child(2) {
   transform: scale(0);
+}
+
+#btn-hamburguesa.btn-click div:last-child {
+  transform: translateY(-15px) rotate(-135deg);
+  box-shadow: unset;
+  box-shadow: -1px -1px 0 4px var(--color-acento--drop-shadow);
 }
 /* Animaciones al boton hambueguesa */
