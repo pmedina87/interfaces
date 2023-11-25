@@ -1,20 +1,37 @@
 #navbar{
   position: absolute;
   /* background-color: green; */
-  width: 10rem;
   top: 91.2px;
 }
 
-#navbar li{
-  background-color: blue;
-  transform: translateX(-110%);
-  transition: transform 300ms ease-out;
+#navbar ul{
+  /* border-radius: 0px 0 10px 0; */
+  overflow: hidden;
 }
 
+#navbar li{
+  background-color: var(--color-background-secundario);
+  transform: translateX(-110%);
+  transition: transform 300ms ease-out;
+  border-right: 6px solid var(--color-acento);
+  border-bottom: 6px solid var(--color-acento);
+}
+
+#navbar li:first-child{
+  border-top: 6px solid var(--color-acento);
+}
+
+#navbar li:last-child{
+  border-radius: 0px 0 10px 0;
+}
 #navbar li a {
   display: block;
   padding-inline: 1rem;
   padding-block: 1rem;
+}
+
+#navbar i{
+  padding-right: 1rem;
 }
 
 .showElement {

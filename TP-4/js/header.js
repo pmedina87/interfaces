@@ -10,10 +10,13 @@ const elementos_nav = document.querySelectorAll("#navbar li").forEach(elem => {
 boton.addEventListener("click", () => {
   boton.classList.toggle("btn-click");
   if(elems1.length > 0){
+    // Hacemos una copia antes de que elems1 quede vacio
     elems1.map(elem => elems2.push(elem));
     toggleClass(elems1);
   }else{
+    // Hacemos una copia antes de que elems2 quede vacio
     elems2.map(elem => elems1.push(elem));
+    // Revertimos el orden para que el efecto se vea al reves
     elems2.reverse();
     toggleClass(elems2);
   }
@@ -25,13 +28,13 @@ function toggleClass(lista){
   if(lista.length <= 0){ return ;}
 
   // Creamos una promesa
-  let a = new Promise((resolve, reject) => {
-    // Luego de 300ms agregara/quitará la clase
+  let a = new Promise(resolve => {
+    // Luego de 50ms agregara/quitará la clase al elemento actual
     setTimeout(() => {
       lista.shift().classList.toggle("showElement");
       // Damos como terminada la promesa
       resolve();
-    }, 300);
+    }, 50);
   });
   
   // Una vez la promesa este resuelta ejecutamos lo siguiente 
