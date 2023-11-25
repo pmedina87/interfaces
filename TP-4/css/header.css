@@ -62,21 +62,3 @@
   transform: scale(0);
 }
 /* Animaciones al boton hambueguesa */
-
-/* Animaciones al botón comprar */
-.btn-comprar:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-  animation: neon-glow 1.5s ease-in-out infinite alternate;
-  transform: scale(1.1);
-}
-
-@keyframes neon-glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-  }
-  to {
-    text-shadow: 0 0 20px #ff4400, 0 0 30px #ff4400, 0 0 40px #ff4400;
-  }
-}
-/* Animaciones al botón comprar */

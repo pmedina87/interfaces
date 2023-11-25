@@ -42,6 +42,24 @@
   letter-spacing: 11%;
 }
 
+/* Animaciones al botón comprar */
+.btn-cta:hover {
+  color: var(--color-background-primario);
+  animation: neon-glow 1500ms ease-in-out infinite alternate;
+  transform: scale(1.02);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 2px var(--color-acento), 0 0 4px var(--color-acento), 0 0 5px var(--color-acento);
+  }
+  to {
+    text-shadow: 0 0 8px var(--color-acento), 0 0 12px var(--color-acento), 0 0 16px var(--color-acento);
+  }
+}
+/* Animaciones al botón comprar */
 /* Especifica el tamaño de letra para los encabezados */
 .titulo{
   font-size: 60px;
