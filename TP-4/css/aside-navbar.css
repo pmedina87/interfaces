@@ -34,6 +34,6 @@
   padding-right: 1rem;
 }
 
-.showElement {
-  transform: translateX(0) !important;
+#navbar li.showElement {
+  transform: translateX(0);
 }

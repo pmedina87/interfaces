@@ -21,6 +21,17 @@
   flex-direction: column;
   align-items: center;
   max-width: 600px;
+  opacity: 0;
+  transform: translateY(30%);
+  transition: 
+    transform 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    opacity 1600ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+
+.background-duende-2 .card.visible{
+  opacity: 1;
+  transform: translateY(0%);
 }
 
 .grid .card img{
@@ -33,4 +44,16 @@
     column-gap: 40.56px;
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  .background-duende-2 .card:nth-child(1){
+    transition-delay: 100ms;
+  } 
+  
+  .background-duende-2 .card:nth-child(2){
+    transition-delay: 200ms
+  } 
+  
+  .background-duende-2 .card:nth-child(3){
+    transition-delay: 300ms
+  } 
 }

@@ -1,3 +1,6 @@
+// Le quitamos la posibilidad al usuario de arrastrar imagenes y que salga una copia transparente
+document.querySelectorAll("img").forEach(img => img.setAttribute("draggable", false));
+
 const boton = document.getElementById("btn-hamburguesa");
 const raya_centro = document.querySelector("#btn-hamburguesa div");
 const elems1 = [];

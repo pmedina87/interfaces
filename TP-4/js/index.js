@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Simula un retraso de carga de 2 segundos (puedes cambiar este valor)
+    // Simula un retraso de carga de 2 segundos (puedes cambiar este valor)
   setTimeout(function() {
       // Oculta la barra de carga
       document.querySelector(".loader-container").style.display = "none";
