@@ -27,15 +27,15 @@
 
 .background-ghost-spider img:first-child{
   rotate: -13deg;
-  translate: 0 -30%;
+  translate: 0 -115%;
 }
 
 .background-ghost-spider img:nth-child(2){
   rotate: -26.5deg;
-  translate: 0 25%;
+  translate: 0 -60%;
 }
 
 .background-ghost-spider img:last-child{
   rotate: -36deg;
-  translate: 0 97%;
+  translate: 0 -8%;
 }

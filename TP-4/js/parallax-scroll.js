@@ -7,6 +7,7 @@ const sm_original = document.getElementById("hero-spiderman-original");
 const telaraña_derecha = document.getElementById("hero-telaraña-derecha");
 const duende = document.getElementById("imagen-duende");
 const titulo = document.getElementById("titulo");
+const cards_flotantes = document.querySelectorAll(".contenedor-screenshots-flotantes img");
 
 // Por alguna razon no reconocia el scrollTop del body, 
 // asi que lo aplicamos directamente en el document
@@ -27,5 +28,7 @@ document.onscroll = () => {
   telaraña_derecha.style.bottom = `${0 + (y * 0.12)}px`;
    
   duende.style.top = `${100 + (y * 0.1)}px`;
+
+  cards_flotantes.forEach(card => card.style.top = `${0 + (y * 0.12)}px`);
 }
 
