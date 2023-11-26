@@ -9,6 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const url_fondo_spiderman_original = "url(./assets/imgs/infoSpidermans/fondo-spiderman-original.png)";
   const url_fondo_spiderman_negro = "url(./assets/imgs/infoSpidermans/fondo-spiderman-negro.png)";
   
+  const botones_cerrar_descripciones = document.querySelectorAll(".info-spiderman .info-personaje button");
+
+  botones_cerrar_descripciones.forEach(boton =>{
+    boton.addEventListener("click", ()=>{
+      boton.parentElement.classList.remove("active");
+    });
+
+  });
+
+  sm_blanco.addEventListener("click", ()=> botones_cerrar_descripciones.item(0).parentElement.classList.add("active"));
+  sm_original.addEventListener("click", ()=> botones_cerrar_descripciones.item(1).parentElement.classList.add("active"));
+  sm_negro.addEventListener("click", ()=> botones_cerrar_descripciones.item(2).parentElement.classList.add("active"));
+  
   // Creamos un arreglo para poder reutilizar funcionalidades 
   // a traves de las funciones de anbajo 
   const imagenes = [sm_blanco, sm_original, sm_negro];

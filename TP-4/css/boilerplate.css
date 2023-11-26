@@ -22,8 +22,12 @@ p{
   font-size: 20px;
 }
 
-ul, ol{
+ul{
   list-style: none;
+}
+ol, ul, li{
+  font-family: inherit;
+  font-size: inherit;
 }
 
 a{
