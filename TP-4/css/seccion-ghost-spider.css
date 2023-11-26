@@ -14,21 +14,28 @@
 .background-ghost-spider img{
   position: absolute;
   left: 0;
+  transition: 
+    transform 1000ms ease-out,
+    filter 200ms ease-out;
+}
+
+.background-ghost-spider img:hover{
+  transform: skew(-7.5deg, 2.5deg);
+  filter: drop-shadow(0 10px 10px #ececec);
+  z-index: 1000;
 }
 
 .background-ghost-spider img:first-child{
-  transform: rotate(-13deg);
-  top: -17%;
+  rotate: -13deg;
+  translate: 0 -30%;
 }
-
 
 .background-ghost-spider img:nth-child(2){
-  transform: rotate(-26.5deg);
-  top: 15%;
+  rotate: -26.5deg;
+  translate: 0 25%;
 }
 
-
 .background-ghost-spider img:last-child{
-  transform: rotate(-36deg);
-  top: 54%;
+  rotate: -36deg;
+  translate: 0 97%;
 }
