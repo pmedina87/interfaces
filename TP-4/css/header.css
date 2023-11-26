@@ -72,3 +72,9 @@
   box-shadow: -1px -1px 0 4px var(--color-acento--drop-shadow);
 }
 /* Animaciones al boton hambueguesa */
+
+@media screen and (max-width: 1120px){ 
+  .container-pagina > div:first-child {
+    padding-inline: 2rem;
+  }
+}
