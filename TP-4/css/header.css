@@ -22,8 +22,9 @@
 }
 
 .header #titulo.achicar{
-  width: 150px;
-  transform: translate(-50%, -53%);
+  height: 91px;
+  width: fit-content;
+  bottom: 0;
 }
 /* Animacion al titulo */
 
