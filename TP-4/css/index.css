@@ -42,3 +42,29 @@
   padding-top: 100px;
   padding-bottom: 50px;
 }
+
+#blackSpider{
+  width:97px;
+  height: 89px;
+  background:url(./../assets/imgs/blackSpider.png);
+  margin-left: -790px;
+  margin-bottom: 72px;
+  z-index: 1000;
+}
+
+
+#spiderMove{ 
+  width:45px;
+  height: 59px;
+  background:url(./../assets/imgs/araniaMove-removebg-preview.png) repeat-x;
+  margin-left: 790px;
+  margin-bottom: 250px;
+  z-index: 1000;
+
+  animation: mov 2s steps(10) infinite;
+}
+@keyframes mov{
+  0%{background-position: 0;}
+  100%{background-position: -450px;}
+  
+}
