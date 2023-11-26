@@ -38,7 +38,12 @@
 
 #btn-hamburguesa:hover{
   cursor: pointer;
+  color: var(--color-background-primario);
+  transform: scale(1.2);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
 }
+
 
 #btn-hamburguesa div {
   background: var(--color-background-secundario);
