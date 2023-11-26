@@ -1,17 +1,12 @@
 #navbar{
   position: absolute;
-  /* background-color: green; */
   top: 91.2px;
-}
-
-#navbar ul{
-  /* border-radius: 0px 0 10px 0; */
-  overflow: hidden;
+  transform: translateX(-110%);
 }
 
 #navbar li{
   background-color: var(--color-background-secundario);
-  transform: translateX(-110%);
+  transform: translateX(0%);
   transition: transform 300ms ease-out;
   border-right: 6px solid var(--color-acento);
   border-bottom: 6px solid var(--color-acento);
@@ -37,7 +32,7 @@
 
 
 /* Transicion mostrar/ocultar items */
-#navbar li.showElement { transform: translateX(0); }
+#navbar li.showElement { transform: translateX(110%); }
 /* Transiciones ocultar items */
 #navbar li:nth-child(1) { transition-delay: 250ms; }
 #navbar li:nth-child(2) { transition-delay: 200ms; }
