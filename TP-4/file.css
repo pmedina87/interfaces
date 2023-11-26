@@ -1,0 +1,15 @@
+.franja-negra{
+  position: relative;
+  z-index: 2000;
+}
+
+.franja-negra h2{
+  color: var(--color-background-primario);
+  width: 80%;
+  margin-bottom: 2.75rem;
+}
+
+.franja-negra button{
+  position: absolute;
+  bottom: -30%;
+}
