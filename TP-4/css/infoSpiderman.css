@@ -18,27 +18,27 @@
 }
 
 .agrandar{
-  scale: 1.1;
+  scale: 1.2;
 }
 
 /* spiderman blanco */
 .info-spiderman img:nth-child(1){
   left: 50%;
-  bottom: 16%;
+  bottom: 35%;
   transform: translate(-160%, 0);
 }
 
 /* spiderman original */
 .info-spiderman img:nth-child(2){
   left: 50%;
-  bottom: 10%;
+  bottom: 30%;
   transform: translate(-50%, 0);
 }
 
 /* spiderman blanco */
 .info-spiderman img:nth-child(3){
   left: 50%;
-  bottom: 18%;
+  bottom: 35%;
   transform: translate(60%, 0);
 }
 

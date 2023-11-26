@@ -34,5 +34,11 @@
   100%{background-position: -368px;}
 }
 
-
-
+ #mas_amigos{
+  font-size: 60px;
+  font-weight: 600;
+  margin-left: 130px;
+  position: absolute;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
