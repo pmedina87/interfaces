@@ -1,10 +1,10 @@
 .seccion-final{
   background-image: url(./../assets/imgs/backgrounds/fondo-final.png);
   height: 81rem;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .seccion-final .titulo{
@@ -46,16 +46,12 @@
   outline: var(--color-acento) solid 9px;
 }
 
-.seccion-final div:last-child{
-  width: 600px;
-}
-
-.seccion-final div:last-child p{
+.seccion-final>div:last-of-type {
   max-width: 578px;
   margin-bottom: 2rem;
 }
 
-.seccion-final > img{
+.seccion-final>img:first-child{
   position: absolute;
   width: 100%;
   bottom: 0;

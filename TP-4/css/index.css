@@ -6,7 +6,6 @@
   height: 100vh;
 }
 
-
 .progress-bar-container {
   width: 250px;
   background-color: var(--color-background-primario);
@@ -22,9 +21,9 @@
 }
 
 #spider{
-  width:41px;
+  width: 41px;
   height: 115px;
-  background:url(./../assets/imgs/arania-climb.png) repeat-x;
+  background: url(./../assets/imgs/arania-climb.png) repeat-x;
   animation: fight 1s steps(9) infinite;
  
 }
@@ -44,27 +43,26 @@
 }
 
 #blackSpider{
-  width:97px;
+  position: absolute;
+  width: 97px;
   height: 89px;
-  background:url(./../assets/imgs/blackSpider.png);
-  margin-left: -790px;
-  margin-bottom: 72px;
+  background: url(./../assets/imgs/blackSpider.png);
   z-index: 1000;
 }
 
 
 #spiderMove{ 
-  width:45px;
+  position: absolute;
+  width: 45px;
   height: 59px;
-  background:url(./../assets/imgs/araniaMove-removebg-preview.png) repeat-x;
-  margin-left: 790px;
-  margin-bottom: 250px;
+  background: url(./../assets/imgs/araniaMove-removebg-preview.png) repeat-x;
   z-index: 1000;
-
-  animation: mov 2s steps(10) infinite;
+  animation: mov 10s steps(10) infinite;
+  left: 80%;
+  bottom: 18.5vw;
 }
+
 @keyframes mov{
   0%{background-position: 0;}
-  100%{background-position: -450px;}
-  
+  100%{background-position: -450px;} 
 }
