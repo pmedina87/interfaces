@@ -38,6 +38,7 @@
   font-weight: 900;
   font-size: 20px;
   letter-spacing: 11%;
+  z-index: 5000;
 }
 
 /* Animaciones al botón comprar */
@@ -47,6 +48,7 @@
   transform: scale(1.02);
   transition: all 300ms ease-in-out;
   cursor: pointer;
+  
 }
 
 @keyframes neon-glow {
