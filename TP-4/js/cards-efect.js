@@ -1,6 +1,13 @@
+/**
+ * Archivo js el cual se encarga de que en la seccion de los cards de los 3 personajes, 
+ * cada card aparezca flotado con fade-in  
+ */
+
+// Primero obtenemos las cards
 const cards = [];
 document.querySelectorAll(".card").forEach(card => cards.push(card));
 
+// Instanciamos un observador el cual va a verificar si las "entries" aparecen en pantalla.
 const observador = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     //indice del contenedor actual del arreglo card, asi se ve cual card es la visible
@@ -25,5 +32,5 @@ const observador = new IntersectionObserver(entries => {
   });
 });
 
-//Observa cada imagen x individual (debido a que es responsive...)
+//Le indicamos al observador que checkee cada imagen x individual (debido a que es responsive...)
 cards.forEach(card => observador.observe(card));
