@@ -22,7 +22,7 @@
 .paralax-container img:nth-child(1){
   left: 3%;
   bottom: -10%;
-  transform: translate(-30vw, -10vh); 
+  transform: translate(-50vw, -10vh); /* TODO: Al realizar las animaciones con keyframe acordarse de settearlo a -50vw */
   /* transition-delay: 200ms; */
 }
 /* personaje derecha */
