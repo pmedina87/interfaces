@@ -75,12 +75,22 @@
   animation: mov 2s steps(10) infinite;
   left: 77%;
   bottom: 420px
-  
- 
-
 }
 
 @keyframes mov{
   0%{background-position: 0;}
   100%{background-position: -940px;} 
+}
+
+#spiderMedio{
+  background-image: url(./../assets/imgs/sprite-spiderman-del-medio.png);
+  position: absolute;
+  width: 67px;
+  height: 50px;
+  animation: movimiento-sm-centro  1000ms steps(6) infinite;
+}
+
+@keyframes movimiento-sm-centro {
+  0%{background-position: 0;}
+  100%{background-position: -405px;} 
 }
