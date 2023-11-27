@@ -35,16 +35,15 @@ document.onscroll = () => {
     titulo.classList.add("achicar");
   }
 
-  // edificio_fondo.style.bottom = `${0 - (y * 0.01)}px`; 
+  
   edificio_fondo.style.transform = `translateY(${y * -0.1}px) translateX(${y * -0.3}px) `; 
   edificio_izquierdo.style.left = `${0 - (y * 0.2)}px`; 
   edificio_derecho.style.top = `${0 - (y * 0.15)}px`; 
   sm_blanco.style.bottom = `${0 + (y * 0.11)}px`; 
   sm_negro.style.bottom = `${20 + (y * 0.12)}px`; 
-  // sm_original.style.bottom = `${0 + (y * 0.12)}px`;
+  
   sm_original.style.scale = 1 + (y / 1000);
-  // sm_original.style.left = `${40 + y * 0.12}%`;
-  // sm_original.style.transform = `translateY(${y * 0.5}px)`;
+
   if(y < 100) {
     
     sm_original.style.transform = `translateY(${20 + y * 0.05}%) translateX(${-80 + y * 0.05}%) `;
