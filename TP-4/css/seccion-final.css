@@ -53,6 +53,6 @@
 
 .seccion-final>img:first-child{
   position: absolute;
- 
+  width: 100%;
   bottom: 0;
 }
