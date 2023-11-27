@@ -49,15 +49,24 @@
   height: 89px;
   background: url(./../assets/imgs/blackSpider.png);
   z-index: 1000;
-  left: 18%;
-  bottom: 10vw;
-  opacity: 0;
+  left: 16%;
+  bottom: -662vw;
+ 
   
   
 }
 
 
-
+#chicaArania{
+  position: absolute;
+  width: 55px;
+  height: 64px;
+  background: url(./../assets/imgs/chicaArania.png);
+  z-index: 1000;
+  left: 42%;
+  bottom: -655vw;
+ 
+}
 
 
 #spiderMove{ 
