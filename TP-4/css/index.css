@@ -71,12 +71,12 @@
 
 #spiderMove{ 
   position: absolute;
-  width: 43px;
-  height: 59px;
-  background: url(./../assets/imgs/araniaMove-removebg-preview.png) repeat-x;
+  width: 88px;
+  height: 88px;
+  background: url(./../assets/imgs/araniaMove-removebg-preview-removebg-preview.png) repeat-x;
   z-index: 1000;
   animation: mov 2s steps(10) infinite;
-  left: 80%;
+  left: 78%;
   bottom: -650vw;
  
 
@@ -84,5 +84,5 @@
 
 @keyframes mov{
   0%{background-position: 0;}
-  100%{background-position: -450px;} 
+  100%{background-position: -940px;} 
 }
