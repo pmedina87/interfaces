@@ -1,16 +1,37 @@
+/**
+ * Archivo js el cual se encarga de los eventos por precionar el boton hamburguesa
+ */ 
+
 // Le quitamos la posibilidad al usuario de arrastrar imagenes y que salga una copia transparente
 document.querySelectorAll("img").forEach(img => img.setAttribute("draggable", false));
 
+// Seleccionamos los elementos
 const boton = document.getElementById("btn-hamburguesa");
 const elementos_nav = document.querySelectorAll("#navbar li");
 
+// Cuando el usuario clickee el boton hamburguesa
 boton.addEventListener("click", () => {
+  // Agregamos/quitamos la clase "btn-click" 
+  // la cual permite realizar la transicion de las barras del boton hamburguesa 
   boton.classList.toggle("btn-click");
    
+  // Por cada elemento agregamos/quitamos la clase "showElement" 
+  // que realiza la transicion de mover en el eje x cada item
   elementos_nav.forEach(elemento => elemento.classList.toggle("showElement"));
 });
 
-
+/**
+ * Primero optamos por realizar el desplazamiento con promesas 
+ * (para que el timing de aparicion de cada opcion sea diferente).
+ * 
+ * Esta opcion anda, el problema es que como es un llamado asincrono, 
+ * si el usuario clickea repetidas veces el boton hamburguesa se genera 
+ * una lista de espera, tambien intentamos settear el disable del boton 
+ * pero igual se podia seguir buggeando. 
+ * 
+ * Finalmente nos cayó la ficha de hacer el mismo efecto con css utilizando 
+ * transition-delay... 
+ */
 
 // const elems1 = [];
 // const elems2 = [];

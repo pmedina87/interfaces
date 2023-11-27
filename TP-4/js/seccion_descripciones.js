@@ -1,3 +1,8 @@
+/**
+ * Archivo js el cual se encarga de detectar cuando cada bloque descriptivo de la seccion del "punto 4" 
+ * para que cuando el texto de cada fila entre a la vista, se muestre una nueva imagen y se oculte la antes visible. 
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
 	// Obtenemos las imagenes
 	const imagenes = []; 
@@ -14,20 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (entry.intersectionRatio) {
 				//indice del contenedor actual del arreglo descripciones, asi se ve cual descripcion es el visible
 				//entry.target(me devuelve el obj), indexof el indice de ese obj en arrglo
-
 				const index = descripciones.indexOf(entry.target);
 
-				// Ajustamos la opacidad de todas las imágenes y contenedores a 0, 
-				// para que solo esten visiblse los que yo quiero
+				// Ajustamos la opacidad de todas las imágenes a 0, 
+				// para que solo este visible la que nosotros queremos
 				imagenes.forEach(img => img.style.opacity = 0);
 				
-				// Hacemos visible la imagen y contenedor de descripcion visible al usuario
+				// Hacemos visible la imagen acorde al parrafo
 				imagenes[index].style.opacity = 1;
 			}
 		});
 	});
 
-	//Observa cada texto individual, que este en el arrgelo
+	//Observa cada parrafo individual, que este en el arreglo
 	descripciones.forEach(desc => {
 		observador.observe(desc);
 	});
