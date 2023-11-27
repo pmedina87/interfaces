@@ -1,3 +1,4 @@
+/* ------------------ Loader ------------------ */
 .loader-container {
   display: flex;
   flex-direction: column;
@@ -32,8 +33,9 @@
   0%{background-position: 0;}
   100%{background-position: -368px;}
 }
+/* ------------------ Loader ------------------ */
 
- #mas_amigos{
+#mas_amigos{
   font-size: 60px;
   font-weight: 600;
   margin-left: 130px;
@@ -42,39 +44,23 @@
   padding-bottom: 50px;
 }
 
-#blackSpider{
-  
+/* Animaciones con SpriteSheet del footer */
+.paralax-container-abajo {
   position: relative;
-  width: 97px;
-  height: 89px;
-  background: url(./../assets/imgs/blackSpider.png);
-  left: 200px;
-  bottom: 175px;
- 
-  
-  
+  width: 100%;
+  bottom: 0;
+  margin-top: auto; /* Empuja el elemento al final del contenedor */
 }
 
-
-#chicaArania{
+#spiderDerecha { 
   position: relative;
-  width: 55px;
-  height: 64px;
-  background: url(./../assets/imgs/chicaArania.png);
-  left: 35%;
-  bottom: 250px;
- 
-}
-
-
-#spiderMove{ 
- position: relative;
+  bottom: 0;
   width: 88px;
   height: 88px;
   background: url(./../assets/imgs/araniaMove-removebg-preview-removebg-preview.png) repeat-x;
-  animation: mov 2s steps(10) infinite;
-  left: 77%;
-  bottom: 420px
+  animation: mov 3000ms steps(10) infinite;
+  left: 75%;
+  transform: translateY(-265%);
 }
 
 @keyframes mov{
@@ -85,12 +71,32 @@
 #spiderMedio{
   background-image: url(./../assets/imgs/sprite-spiderman-del-medio.png);
   position: absolute;
-  width: 67px;
+  bottom: 0;
+  width: 65px;
   height: 50px;
-  animation: movimiento-sm-centro  1000ms steps(6) infinite;
+  animation: movimiento-sm-centro 1000ms steps(6) infinite;
+  left: 45%;
+  transform: translateY(-350%);
 }
 
 @keyframes movimiento-sm-centro {
   0%{background-position: 0;}
   100%{background-position: -405px;} 
 }
+
+#spiderIzquierda{
+  background-image: url(./../assets/imgs/blackSpiderTiraSpriteSheet.png);
+  position: absolute;
+  bottom: 0;
+  width: 115px;
+  height: 80px;
+  animation: movimiento-sm-izquierda 1500ms steps(11) infinite;
+  left: 18%;
+  transform: translateY(-140%);
+}
+
+@keyframes movimiento-sm-izquierda {
+  0% { background-position: 0; }
+  100% { background-position: -1468px; } 
+}
+/* Animaciones con SpriteSheet del footer */

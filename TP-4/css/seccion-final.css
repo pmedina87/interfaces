@@ -46,12 +46,12 @@
   outline: var(--color-acento) solid 9px;
 }
 
-.seccion-final>div:last-of-type {
+.seccion-final .info-politica-seguridad {
   max-width: 578px;
   margin-bottom: 2rem;
 }
 
-.seccion-final>div:last-of-type img{
+.seccion-final .info-politica-seguridad img{
   padding-top: 2rem;
 }
 
