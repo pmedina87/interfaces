@@ -1,0 +1,256 @@
+[33mcommit e6d0e765933616b110995638ffb7904aa0ca2055[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2683019 246f373
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Mon Nov 27 14:44:47 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit 2683019092dd3c8c1c291872a9adbc973a7a08ca[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Mon Nov 27 14:44:40 2023 -0300
+
+    REFACTOR: Transicion personajes parallax mouse
+
+[33mcommit 246f3736dc3b57bd66c6200829da9616c17c3720[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Mon Nov 27 09:41:44 2023 -0300
+
+    cambio de tamanio a araniaMove
+
+[33mcommit ced1b0a9767075ff02d35d69d9c212e61de63f2f[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Mon Nov 27 09:20:16 2023 -0300
+
+    agrego a Gwen
+
+[33mcommit 14342769835ddfa6876632942b847afdf05cd88b[m
+Merge: 24408c6 4ed981b
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Mon Nov 27 01:03:24 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit 24408c60e7700c6b7442fb7f657da08a113340e4[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Mon Nov 27 00:59:06 2023 -0300
+
+    ADD: Transicion provisoria de personajes en el segundo parallax
+
+[33mcommit 4ed981b550b0bd10c8c409f85fbecf03b6a35ae7[m
+Merge: f806681 c071e18
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Sun Nov 26 22:46:19 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit f8066815d190df47b37c6c7e9fb6ee5a715217d1[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Sun Nov 26 22:46:01 2023 -0300
+
+    agrego el spider negro
+
+[33mcommit c071e18867395eea3b4949b804e72668a738dcee[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 22:10:02 2023 -0300
+
+    ADD: Comentarios a los archivos js
+
+[33mcommit 9a4ba2175e44de85acea30421153091e69811430[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 20:39:13 2023 -0300
+
+    Nuevo posicionamiento al spiderman derecho en spritesheet
+
+[33mcommit 471f51922e388a85168e6d494b31a7fb9f226ac4[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 18:34:17 2023 -0300
+
+    REFACTOR: padding del header
+
+[33mcommit 4115936c93515343ceb334e173b2ee0cc753c74d[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 18:28:40 2023 -0300
+
+    BUGFIX: El elemento ul del nav denegaba acciones :hover
+
+[33mcommit 40d47f667a781ad972269e38fe70497b04e13091[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 18:18:36 2023 -0300
+
+    ADD: Cruz a los botones de salida
+
+[33mcommit 9c9d8c87ad1c7a0ff27bc02fb60fa4680a9fc1ae[m
+Merge: 0d4c5e9 5861e9a
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 17:55:37 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit 0d4c5e906845ab19964eb1d7031e402459a633e3[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 17:55:10 2023 -0300
+
+    ADD: Info sobre los spidermans civiles
+
+[33mcommit 5861e9a0812f0fcd4a2a3cac7841b032cc4f06cf[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Sun Nov 26 16:46:18 2023 -0300
+
+    agrego movimento al spider
+
+[33mcommit 99247082c9d5c53fc3fefde48a69bccc8e8c33c9[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Sun Nov 26 14:45:33 2023 -0300
+
+    agrego scale al hamburguesa
+
+[33mcommit cbeecf69639ced2193773a33b2b0a5f8ed9e5040[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 12:41:51 2023 -0300
+
+    Eliminando comentarios innecesarios
+
+[33mcommit c56892f895727ad2d7bd7aace981b4cf015a3472[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Sun Nov 26 12:31:49 2023 -0300
+
+    hover boton comprar ahora
+
+[33mcommit 8470e65df2ad88bb1b99ec3a3539bbbdcac18ee2[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 12:08:37 2023 -0300
+
+    ADD: Lazy loading a las imagenes
+
+[33mcommit 245257717fdb238fcc0dfa7148ff50db91d19851[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sun Nov 26 11:46:19 2023 -0300
+
+    REFACTOR: transicion mostrar nav
+
+[33mcommit 5cb0997a45ff22263cb85610de827dd6755fcac5[m
+Merge: cf6c19c 5909013
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sat Nov 25 23:53:05 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit cf6c19cf749ee6b059e9deddca6546dc3596b1a6[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sat Nov 25 23:52:51 2023 -0300
+
+    BUGFIX: Hipervinculo del titulo cuando es chico
+
+[33mcommit d8cd7bee8933aabed445394ae5188fd3a4c95ed6[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sat Nov 25 23:45:25 2023 -0300
+
+    ADD: Scroll alterado a las cards de ghost spiderman
+
+[33mcommit 4b369bed63b8f3875b1f74b912ecb0bd8e1d782e[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sat Nov 25 23:22:41 2023 -0300
+
+    ADD: skew a las cards de ghost spiderman
+
+[33mcommit 5909013d733c72b9474c937ae950a015a76ea7d4[m
+Author: IVAN A. LAVAYEN <ivanalejolavayen@gmail.com>
+Date:   Sat Nov 25 21:22:12 2023 -0300
+
+    agrego titulo mas amigos
+
+[33mcommit 468c364cf00a13ab0c1b56b2630722d5b396fa8c[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Sat Nov 25 20:26:28 2023 -0300
+
+    ADD: Borde al menu hamburguesa
+
+[33mcommit 077e967ea8f316bb644c799095e1213d67c53850[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 22:58:48 2023 -0300
+
+    Quitando bordes que usamos como guia
+
+[33mcommit 90c8a0311b4289fb86644bd37825ac9b415b971a[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 22:45:32 2023 -0300
+
+    ADD: Efecto aparecer a las cards
+
+[33mcommit 637ba0ff82646025ca2ac4a88204fca6f8c42d61[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 21:47:42 2023 -0300
+
+    ADD estilo hover al resto de botones call to action
+
+[33mcommit 491ff84f68211ce27794a70df7d52b655fbb8429[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 21:31:57 2023 -0300
+
+    REFACTOR transicion del titulo al scrollear
+
+[33mcommit 71f1caa0cecefdec1e6d2e58218b8b6aad9a3f46[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 21:21:09 2023 -0300
+
+    Navbar terminado
+
+[33mcommit 37f92589f1ea209851ea3ac2f6cd8390ea3f03f1[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 18:55:19 2023 -0300
+
+    Efecto menu cerrar
+
+[33mcommit f7d0e7497939c9ba7baab31dbceb6eb414f73818[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 18:44:57 2023 -0300
+
+    Efecto menu abrir
+
+[33mcommit e8a87093a87104b5cdb69a0c2fba5284ffc1f3ff[m
+Merge: 0adf9bf df106b5
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 17:29:35 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit 0adf9bf1cc3eb8351e2a680850677957bcce1635[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 17:29:25 2023 -0300
+
+    FIX: boton hamburguesa
+
+[33mcommit df106b583c1c1f5cf5ee41c70ec32d5768d5709e[m
+Merge: cdb80fe 5a6497d
+Author: Pedro Medina <pedrohugomedina@gmail.com>
+Date:   Fri Nov 24 17:26:07 2023 -0300
+
+    Merge branch 'main' of https://github.com/pmedina87/interfaces
+
+[33mcommit cdb80feb1ab5b3238af791e0844fc93dfd14734c[m
+Author: Pedro Medina <pedrohugomedina@gmail.com>
+Date:   Fri Nov 24 17:24:25 2023 -0300
+
+    Animacion boton comprar
+
+[33mcommit 5a6497d7ba1f1cf09d0b4e9b4020e788ff66ffaa[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 17:23:37 2023 -0300
+
+    Animacion boton hamburguesa
+
+[33mcommit 1c5880d711821ef891c6bd29229e14bb23a0d98b[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 17:00:25 2023 -0300
+
+    ADD titulo moviendose al header
+
+[33mcommit 83295a84dca4653d21a5c46505303a214ee9e7e5[m
+Author: Pedro Medina <pedrohugomedina@gmail.com>
+Date:   Fri Nov 24 16:48:01 2023 -0300
+
+    Mejorando header
+
+[33mcommit dd803f331c82358070ccec6a0c7377c693b6e9a6[m
+Author: renzo-guerra <renzoguerralatt@gmail.com>
+Date:   Fri Nov 24 16:44:13 2023 -03
