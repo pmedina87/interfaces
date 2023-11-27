@@ -15,26 +15,36 @@
 
 .paralax-container img{
   position: absolute;
+  transition: transform 800ms ease-out;
 }
 
 /* personaje izquierda */
 .paralax-container img:nth-child(1){
   left: 3%;
-  bottom: -10%;  
+  bottom: -10%;
+  transform: translate(-30vw, -10vh); 
+  /* transition-delay: 200ms; */
 }
-
 /* personaje derecha */
 .paralax-container img:nth-child(2){
   right: -5%;
   bottom: -12%;
+  transform: translate(30vw, -10vh);
+  /* transition-delay: 600ms; */
 }
 /* personaje centro */
 .paralax-container img:nth-child(3){
   left: 42%;
   top: -48%;
+  transform: translate(60vw, 10vh);
+  /* transition-delay: 400ms; */
 }
-
+/* Pasto */
 .paralax-container img:nth-child(4){
   width: 100%;
   bottom: 0;
+}
+
+.paralax-container.visible img {
+  transform: translate(0%);
 }
