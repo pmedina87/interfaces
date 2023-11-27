@@ -29,8 +29,19 @@
   width: 452px;
   height: 720px;
   left: 0;
-  transform: translate(-15%, 4%);
+  /* transform: translate(-15%, 4%); */
   bottom: 0;
+  animation: animacion_edificio_izquierda 0.5s ease-in forwards;
+}
+
+@keyframes animacion_edificio_izquierda {
+  0% {
+    transform: translate(-500%, -320%);
+  }
+
+  100% {
+    transform: translate(-15%, 4%);
+  }
 }
 
 /* Edificio de la derecha */
@@ -38,8 +49,19 @@
   width: 452px;
   height: 720px;
   right: 0;
-  transform: translate(10%, 4%);
+  /* transform: translate(10%, 4%); */
+  animation: animacion_edificio_derecha 0.5s ease-in forwards;
   bottom: 0;
+}
+
+@keyframes animacion_edificio_derecha {
+  0% {
+    transform: translate(-500%, -320%);
+  }
+
+  100% {
+    transform: translate(10%, 4%);
+  }
 }
 
 /* Spiderman blanco */
@@ -57,12 +79,7 @@
   0% {
     transform: translate(-500%, -320%);
   }
-  85% {
-    transform: translate(-140%, -20%);
-  }
-  85% {
-    transform: translate(-135%, -12%);
-  }
+
   100% {
     transform: translate(-130%, -2%);
   }
@@ -84,14 +101,6 @@
     transform: translate(-500%, -320%);
   }
 
-  85% {
-    transform: translate(-70%, -100%);
-  }
-
-  85% {
-    transform: translate(-50%, -85%);
-  }
-
   100% {
     transform: translate(20%, -35%);
   }
@@ -102,9 +111,24 @@
   width: 465px;
   height: 465px;
   left: 50%;
-  transform: translate(77%, -12%);
+  transform: translate(77%, -12%) scale(0%);
   z-index: 4500;
   bottom: 0;
+  /* opacity: 0; */
+  animation: animacion_tela_araña 0.01s ease-in forwards 2s;
+}
+
+@keyframes animacion_tela_araña {
+  0% {
+    /* opacity: 0; */
+    transform: translate(77%, -12%) scale(0%);
+  }
+
+  100% {
+    /* opacity: 1; */
+    transform: translate(77%, -12%) scale(100%);
+    
+  }
 }
 
 /* Spiderman original */
@@ -113,8 +137,21 @@
   height: 671px;
   left: 50%;
   z-index: 4000;
-  transform: translate(-80%, 23%);
+  /* transform: translate(-80%, 23%); */
   bottom: 0%;
+  animation: animacion_sm_original 1s ease-in forwards;
+}
+
+@keyframes animacion_sm_original {
+  0% {
+    /* opacity: 0; */
+    transform: translate(150%, -12%);
+  }
+
+  100% {
+    transform: translate(-80%, 23%);
+
+  }
 }
 
 
