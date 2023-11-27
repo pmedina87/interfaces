@@ -43,23 +43,34 @@
 }
 
 #blackSpider{
+  
   position: absolute;
   width: 97px;
   height: 89px;
   background: url(./../assets/imgs/blackSpider.png);
   z-index: 1000;
+  left: 18%;
+  bottom: 10vw;
+  opacity: 0;
+  
+  
 }
+
+
+
 
 
 #spiderMove{ 
   position: absolute;
-  width: 45px;
+  width: 43px;
   height: 59px;
   background: url(./../assets/imgs/araniaMove-removebg-preview.png) repeat-x;
   z-index: 1000;
-  animation: mov 10s steps(10) infinite;
+  animation: mov 2s steps(10) infinite;
   left: 80%;
-  bottom: 18.5vw;
+  bottom: -650vw;
+ 
+
 }
 
 @keyframes mov{
