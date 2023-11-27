@@ -44,13 +44,12 @@
 
 #blackSpider{
   
-  position: absolute;
+  position: relative;
   width: 97px;
   height: 89px;
   background: url(./../assets/imgs/blackSpider.png);
-  z-index: 1000;
-  left: 17%;
-  bottom: -480vw;
+  left: 200px;
+  bottom: 175px;
  
   
   
@@ -58,26 +57,25 @@
 
 
 #chicaArania{
-  position: absolute;
+  position: relative;
   width: 55px;
   height: 64px;
   background: url(./../assets/imgs/chicaArania.png);
-  z-index: 1000;
-  left: 42%;
-  bottom: -475vw;
+  left: 35%;
+  bottom: 250px;
  
 }
 
 
 #spiderMove{ 
-  position: absolute;
+ position: relative;
   width: 88px;
   height: 88px;
   background: url(./../assets/imgs/araniaMove-removebg-preview-removebg-preview.png) repeat-x;
-  z-index: 1000;
   animation: mov 2s steps(10) infinite;
-  left: 78%;
-  bottom: -469vw;
+  left: 77%;
+  bottom: 420px
+  
  
 
 }
