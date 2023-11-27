@@ -52,24 +52,35 @@
   margin-top: auto; /* Empuja el elemento al final del contenedor */
 }
 
+/* Spiderman derecha */
 #spiderDerecha { 
   position: relative;
   bottom: 0;
   width: 88px;
   height: 88px;
   background: url(./../assets/imgs/araniaMove-removebg-preview-removebg-preview.png) repeat-x;
-  animation: mov 3000ms steps(10) infinite;
+  animation: movimiento-sm-derecha 3000ms steps(10) infinite;
   left: 75%;
   transform: translateY(-265%);
 }
 
-@keyframes mov{
+@keyframes movimiento-sm-derecha {
   0%{background-position: 0;}
   100%{background-position: -940px;} 
 }
 
-#spiderMedio{
+#spiderDerecha:hover {
   background-image: url(./../assets/imgs/sprite-spiderman-del-medio.png);
+  width: 65px;
+  height: 50px;
+  transform: translateY(-500%);
+  animation: movimiento-sm-centro 1000ms steps(6) infinite;
+}
+/* Spiderman derecha */
+
+/* Spiderman medio */
+#spiderMedio{
+  background: url(./../assets/imgs/sprite-spiderman-del-medio.png) repeat-x;
   position: absolute;
   bottom: 0;
   width: 65px;
@@ -83,6 +94,15 @@
   0%{background-position: 0;}
   100%{background-position: -405px;} 
 }
+
+#spiderMedio:hover {
+  background: url(./../assets/imgs/araniaMove-removebg-preview-removebg-preview.png) repeat-x;
+  width: 88px;
+  height: 88px;
+  transform: translateY(-190%);
+  animation: movimiento-sm-derecha 3000ms steps(10) infinite;
+}
+/* Spiderman medio */
 
 #spiderIzquierda{
   background-image: url(./../assets/imgs/blackSpiderTiraSpriteSheet.png);
