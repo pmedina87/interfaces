@@ -38,14 +38,14 @@ document.onscroll = () => {
   
   edificio_fondo.style.transform = `translateY(${y * -0.1}px) translateX(${y * -0.3}px) `; 
   edificio_izquierdo.style.left = `${0 - (y * 0.2)}px`; 
-  edificio_derecho.style.top = `${0 - (y * 0.15)}px`; 
+  edificio_derecho.style.top = `${0 + (y * 0.05)}px`; 
+  edificio_derecho.style.right = `${0 - (y * 0.15)}px`; 
   sm_blanco.style.bottom = `${0 + (y * 0.11)}px`; 
   sm_negro.style.bottom = `${20 + (y * 0.12)}px`; 
-  
+  edificio_fondo.style.bottom = `${20 - (y * 0.12)}px`;
   sm_original.style.scale = 1 + (y / 1000);
 
   if(y < 100) {
-    
     sm_original.style.transform = `translateY(${20 + y * 0.05}%) translateX(${-80 + y * 0.05}%) `;
   }
   telaraña_derecha.style.bottom = `${10 + (y * 0.12)}px`;

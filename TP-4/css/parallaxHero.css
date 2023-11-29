@@ -20,8 +20,19 @@
   width: 543.5px;
   height: 213.5px;
   left: 50%;
-  transform: translate(-50%, 3%);
+  opacity: 0;
   bottom: 0;
+  animation: animacion_edificio_fondo 700ms ease-out forwards;
+}
+
+@keyframes animacion_edificio_fondo {
+  0% {
+    transform: translate(-50%, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 3%);
+  }
 }
 
 /* Edificio de la izquierda */
@@ -29,17 +40,18 @@
   width: 452px;
   height: 720px;
   left: 0;
-  /* transform: translate(-15%, 4%); */
   bottom: 0;
-  animation: animacion_edificio_izquierda 0.5s ease-in forwards;
+  opacity: 0;
+  animation: animacion_edificio_izquierda 800ms ease-out forwards;
 }
 
 @keyframes animacion_edificio_izquierda {
   0% {
-    transform: translate(-500%, -320%);
+    transform: translate(-200%, 0);
   }
 
   100% {
+    opacity: 1;
     transform: translate(-15%, 4%);
   }
 }
@@ -49,17 +61,18 @@
   width: 452px;
   height: 720px;
   right: 0;
-  /* transform: translate(10%, 4%); */
-  animation: animacion_edificio_derecha 0.5s ease-in forwards;
   bottom: 0;
+  opacity: 0;
+  animation: animacion_edificio_derecha 900ms ease-out forwards;
 }
 
 @keyframes animacion_edificio_derecha {
   0% {
-    transform: translate(-500%, -320%);
+    transform: translate(200%, 0);
   }
 
   100% {
+    opacity: 1;
     transform: translate(10%, 4%);
   }
 }
@@ -91,14 +104,13 @@
   height: 393px;
   left: 50%;
   z-index: 4000;
-  transform: translate(-500%, -320%);
   bottom: 0;
   animation: animacion_sm_negro 2s ease-in forwards;
 }
 
 @keyframes animacion_sm_negro {
   0% {
-    transform: translate(-500%, -320%);
+    transform: translate(300%, -320%);
   }
 
   100% {
